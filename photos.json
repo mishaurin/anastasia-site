@@ -1,0 +1,110 @@
+[
+  {
+    "file": "chateau-bagnols-2024.jpg",
+    "category": "mariage",
+    "caption_fr": "Château de Bagnols · 2024",
+    "caption_en": "Château de Bagnols · 2024"
+  },
+  {
+    "file": "cannes-2024.jpg",
+    "category": "gala",
+    "caption_fr": "Festival de Cannes · 2024",
+    "caption_en": "Cannes Film Festival · 2024"
+  },
+  {
+    "file": "france2-plateau.jpg",
+    "category": "tv",
+    "caption_fr": "France 2 · Plateau TV",
+    "caption_en": "France 2 · TV Studio"
+  },
+  {
+    "file": "milan-editorial.jpg",
+    "category": "shooting",
+    "caption_fr": "Shooting éditorial · Milan",
+    "caption_en": "Editorial Shoot · Milan"
+  },
+  {
+    "file": "provence-domaine.jpg",
+    "category": "mariage",
+    "caption_fr": "Domaine de Provence · 2024",
+    "caption_en": "Provence Estate · 2024"
+  },
+  {
+    "file": "fashionweek-paris.jpg",
+    "category": "shooting",
+    "caption_fr": "Fashion Week · Paris",
+    "caption_en": "Fashion Week · Paris"
+  },
+  {
+    "file": "chateau-loire.jpg",
+    "category": "mariage",
+    "caption_fr": "Château de la Loire",
+    "caption_en": "Loire Valley Château"
+  },
+  {
+    "file": "monaco-soiree.jpg",
+    "category": "gala",
+    "caption_fr": "Soirée privée · Monaco",
+    "caption_en": "Private Evening · Monaco"
+  },
+  {
+    "file": "villa-mediterranee.jpg",
+    "category": "mariage",
+    "caption_fr": "Villa Méditerranée",
+    "caption_en": "Mediterranean Villa"
+  },
+  {
+    "file": "eurovision.jpg",
+    "category": "tv",
+    "caption_fr": "Eurovision · Liverpool",
+    "caption_en": "Eurovision · Liverpool"
+  },
+  {
+    "file": "studio-paris-beaute.jpg",
+    "category": "shooting",
+    "caption_fr": "Beauté · Studio Paris",
+    "caption_en": "Beauty · Paris Studio"
+  },
+  {
+    "file": "remise-prix-paris.jpg",
+    "category": "gala",
+    "caption_fr": "Remise de prix · Paris",
+    "caption_en": "Awards Ceremony · Paris"
+  },
+  {
+    "file": "fashionweek-milan.jpg",
+    "category": "shooting",
+    "caption_fr": "Fashion Week · Milan",
+    "caption_en": "Fashion Week · Milan"
+  },
+  {
+    "file": "mas-provence.jpg",
+    "category": "mariage",
+    "caption_fr": "Mas de Provence · 2024",
+    "caption_en": "Provence Farmhouse · 2024"
+  },
+  {
+    "file": "bfmtv-interview.jpg",
+    "category": "tv",
+    "caption_fr": "BFM TV · Interview",
+    "caption_en": "BFM TV · Interview"
+  },
+  {
+    "file": "diner-prive-lyon.jpg",
+    "category": "gala",
+    "caption_fr": "Dîner privé · Lyon",
+    "caption_en": "Private Dinner · Lyon"
+  },
+  {
+    "file": "chateau-languedoc.jpg",
+    "category": "mariage",
+    "caption_fr": "Château du Languedoc",
+    "caption_en": "Languedoc Château"
+  },
+  {
+    "file": "vogue-beaute.jpg",
+    "category": "shooting",
+    "caption_fr": "Beauté · Vogue France",
+    "caption_en": "Beauty · Vogue France"
+  }
+]

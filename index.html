@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anastasia Mishurina — Maquilleuse Professionnelle · Lyon & Europe</title>
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Anastasia Mishurina — Maquilleuse Professionnelle">
+<meta property="og:description" content="Maquilleuse professionnelle basée à Lyon. Mariages de luxe, galas, plateau TV, Fashion Week. Disponible dans toute l'Europe.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://anastasiamishurina.fr">
+<link rel="canonical" href="https://anastasiamishurina.fr">
+<link rel="alternate" hreflang="fr" href="https://anastasiamishurina.fr">
+<link rel="alternate" hreflang="en" href="https://anastasiamishurina.fr/?lang=en">
+<meta name="description" content="Maquilleuse professionnelle basée à Lyon. Mariages de luxe, galas, plateau TV, Fashion Week. Disponible dans toute l'Europe.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Nunito:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white:     #FFFFFF;
+  --off-white: #FAF8F5;
+  --cream:     #F2EDE6;
+  --blue-mist: #E8EFF7;
+  --blue-soft: #D4E3F0;
+  --blue-mid:  #A8C4DC;
+  --blue-deep: #6A9CBD;
+  --blue-ink:  #3A6B8A;
+  --petal:     #EDD9D0;
+  --rose:      #C9A090;
+  --ink:       #2C3A42;
+  --ink-soft:  #4A5C66;
+  --ink-faint: #8A9DA8;
+  --gold:      #C8A882;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--white); color: var(--ink); font-family: 'Nunito', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+/* ══ NAV ══ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 56px; height: 72px;
+  background: var(--white);
+  border-bottom: 0.5px solid var(--blue-soft);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px; font-weight: 500;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+}
+.nav-menu { display: flex; gap: 36px; list-style: none; }
+.nav-menu a {
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none; transition: color 0.3s;
+}
+.nav-menu a:hover { color: var(--blue-ink); }
+.nav-right { display: flex; align-items: center; gap: 24px; }
+.nav-lang { display: flex; gap: 8px; align-items: center; }
+.lang-btn {
+  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+  background: none; border: none; color: var(--ink-faint);
+  font-family: 'Nunito', sans-serif; font-weight: 300; transition: color 0.3s;
+}
+.lang-btn.active { color: var(--blue-ink); font-weight: 500; }
+.lang-sep { width: 0.5px; height: 10px; background: var(--blue-soft); }
+.nav-cta {
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 10px 22px; border: 0.5px solid var(--blue-ink);
+  color: var(--blue-ink); text-decoration: none; transition: all 0.3s;
+}
+.nav-cta:hover { background: var(--blue-ink); color: white; }
+
+/* ══ HERO CAROUSEL ══ */
+#hero {
+  margin-top: 72px;
+  position: relative;
+  overflow: hidden;
+  height: calc(100vh - 72px);
+}
+.slides-wrap {
+  display: flex;
+  height: 100%;
+  transition: transform 0.9s cubic-bezier(0.77, 0, 0.18, 1);
+}
+.slide {
+  flex: 0 0 100%;
+  position: relative;
+  overflow: hidden;
+}
+.slide-bg {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transform: scale(1.04);
+  transition: transform 8s ease;
+}
+.slide.active .slide-bg { transform: scale(1); }
+
+/* Ken Burns placeholders */
+.slide-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 12px;
+}
+.slide:nth-child(1) .slide-placeholder { background: linear-gradient(160deg, #D4E3F0 0%, #A8C4DC 100%); }
+.slide:nth-child(2) .slide-placeholder { background: linear-gradient(160deg, #EDD9D0 0%, #C9A090 60%, #A08070 100%); }
+.slide:nth-child(3) .slide-placeholder { background: linear-gradient(160deg, #E0E8D8 0%, #B8C8AC 100%); }
+.slide:nth-child(4) .slide-placeholder { background: linear-gradient(160deg, #E8E0F0 0%, #C0B0D0 100%); }
+.slide:nth-child(5) .slide-placeholder { background: linear-gradient(160deg, #F0E8D8 0%, #D4C0A0 100%); }
+
+/* Slide overlay gradient */
+.slide::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(44,58,66,0.1) 0%,
+    rgba(44,58,66,0.0) 30%,
+    rgba(44,58,66,0.3) 70%,
+    rgba(44,58,66,0.65) 100%
+  );
+  z-index: 1;
+}
+
+/* Slide text */
+.slide-text {
+  position: absolute; bottom: 60px; left: 56px; right: 56px;
+  z-index: 2;
+  display: flex; align-items: flex-end; justify-content: space-between;
+}
+.slide-category {
+  font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 12px;
+}
+.slide-category::before { content: ''; width: 20px; height: 0.5px; background: rgba(255,255,255,0.4); }
+.slide-title-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 58px); font-weight: 300; line-height: 1.1;
+  color: white;
+}
+.slide-title-text em { font-style: italic; color: rgba(255,255,255,0.75); }
+.slide-action { text-align: right; }
+.slide-location {
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.45); margin-bottom: 20px;
+}
+.slide-btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 13px 28px;
+  border: 0.5px solid rgba(255,255,255,0.45);
+  color: white; text-decoration: none;
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  transition: background 0.4s, gap 0.3s;
+  backdrop-filter: blur(4px);
+}
+.slide-btn:hover { background: rgba(255,255,255,0.12); gap: 18px; }
+.slide-btn svg { width: 13px; height: 13px; stroke: white; fill: none; }
+
+/* Carousel controls */
+.carousel-dots {
+  position: absolute; bottom: 28px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 8px; z-index: 3;
+}
+.c-dot {
+  width: 24px; height: 2px; background: rgba(255,255,255,0.35);
+  border: none; padding: 0; transition: all 0.4s; cursor: pointer;
+}
+.c-dot.active { width: 40px; background: white; }
+.carousel-arrows {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 100%; display: flex; justify-content: space-between;
+  padding: 0 24px; z-index: 3; pointer-events: none;
+}
+.c-arrow {
+  width: 44px; height: 44px; border: 0.5px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.08); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; pointer-events: all; transition: all 0.3s;
+}
+.c-arrow:hover { background: rgba(255,255,255,0.18); }
+.c-arrow svg { width: 18px; height: 18px; stroke: white; fill: none; }
+
+/* Progress bar */
+.carousel-progress {
+  position: absolute; bottom: 0; left: 0;
+  height: 2px; background: rgba(255,255,255,0.25); z-index: 3; width: 100%;
+}
+.carousel-progress-bar {
+  height: 100%; background: white; width: 0%;
+  transition: width linear;
+}
+
+/* Slide counter */
+.slide-counter {
+  position: absolute; top: 28px; right: 56px;
+  z-index: 3;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px; color: rgba(255,255,255,0.45);
+  letter-spacing: 0.1em;
+}
+
+/* ══ INTRO STRIP ══ */
+.intro-strip {
+  background: var(--off-white);
+  padding: 56px 56px;
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  gap: 48px; align-items: center;
+  border-bottom: 0.5px solid var(--blue-soft);
+}
+.intro-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 2.5vw, 32px); font-weight: 300; font-style: italic;
+  color: var(--ink); line-height: 1.4;
+}
+.intro-tagline em { color: var(--blue-deep); font-style: normal; }
+.intro-divider { width: 0.5px; height: 64px; background: var(--blue-soft); justify-self: center; }
+.intro-meta { display: flex; flex-direction: column; gap: 16px; }
+.intro-meta-item {
+  display: flex; align-items: center; gap: 14px;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.intro-meta-item::before {
+  content: ''; width: 20px; height: 0.5px; background: var(--blue-mid);
+}
+
+/* ══ SERVICES ══ */
+#services { background: var(--white); padding: 100px 56px; }
+.section-eyebrow {
+  font-size: 9.5px; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--blue-deep); margin-bottom: 14px;
+  display: flex; align-items: center; gap: 14px;
+}
+.section-eyebrow::before { content: ''; width: 24px; height: 0.5px; background: var(--blue-mid); }
+.section-h {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 3.5vw, 48px); font-weight: 300; line-height: 1.1;
+  color: var(--ink); margin-bottom: 56px;
+}
+.section-h em { font-style: italic; color: var(--blue-deep); }
+.services-row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--blue-soft);
+}
+.svc {
+  background: var(--white); padding: 44px 32px;
+  transition: background 0.4s; position: relative; overflow: hidden;
+}
+.svc::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue-soft), var(--blue-mid));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+}
+.svc:hover { background: var(--blue-mist); }
+.svc:hover::before { transform: scaleX(1); }
+.svc-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px; color: var(--blue-mid); letter-spacing: 0.2em; margin-bottom: 20px;
+}
+.svc-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 16px;
+}
+.svc-desc { font-size: 13px; line-height: 1.85; color: var(--ink-soft); margin-bottom: 28px; }
+.svc-price {
+  font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue-deep);
+}
+
+/* ══ ABOUT PREVIEW ══ */
+#about-preview {
+  background: var(--ink);
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 600px;
+}
+.about-photo-side {
+  position: relative; overflow: hidden;
+  background: var(--blue-mist);
+  min-height: 500px;
+}
+.about-photo-side img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  display: block;
+}
+.about-photo-placeholder {
+  width: 100%; height: 100%; min-height: 500px;
+  background: linear-gradient(160deg, #515865 0%, #2C3A42 100%);
+  display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 14px;
+}
+.about-text-side {
+  padding: 80px 72px 80px 64px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.about-text-side .section-eyebrow { color: var(--blue-mid); }
+.about-text-side .section-eyebrow::before { background: var(--blue-mid); }
+.about-text-side .section-h { color: var(--white); margin-bottom: 32px; }
+.about-intro {
+  font-size: 15px; line-height: 1.95; color: rgba(232,239,247,0.7);
+  margin-bottom: 40px;
+}
+.about-highlights {
+  display: flex; flex-direction: column; gap: 0;
+  margin-bottom: 48px;
+  border-top: 0.5px solid rgba(255,255,255,0.1);
+}
+.about-hl {
+  padding: 18px 0;
+  border-bottom: 0.5px solid rgba(255,255,255,0.1);
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--blue-mid); display: flex; align-items: center; gap: 14px;
+}
+.about-hl::before { content: '✦'; font-size: 8px; color: var(--gold); }
+.about-link {
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 15px 32px; border: 0.5px solid rgba(255,255,255,0.3);
+  color: white; text-decoration: none;
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  transition: all 0.4s; align-self: flex-start;
+}
+.about-link:hover { background: white; color: var(--ink); gap: 20px; }
+.about-link svg { width: 13px; height: 13px; stroke: currentColor; fill: none; }
+
+/* ══ PORTFOLIO ══ */
+#portfolio { background: var(--off-white); padding: 100px 56px 80px; }
+.portfolio-top {
+  display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; gap: 24px;
+}
+.filter-wrap { display: flex; gap: 4px; flex-wrap: wrap; }
+.filter-btn {
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  background: none; border: 0.5px solid var(--blue-soft); padding: 8px 18px;
+  color: var(--ink-faint); font-family: 'Nunito', sans-serif; font-weight: 300; transition: all 0.3s;
+}
+.filter-btn.active, .filter-btn:hover { background: var(--blue-ink); border-color: var(--blue-ink); color: white; }
+.masonry-grid { columns: 4; column-gap: 12px; }
+.masonry-item { break-inside: avoid; margin-bottom: 12px; overflow: hidden; position: relative; }
+.masonry-item.hidden { display: none; }
+.m-bg {
+  width: 100%; display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 8px; transition: transform 0.5s ease;
+}
+.masonry-item:hover .m-bg { transform: scale(1.03); }
+.masonry-item.tall .m-bg   { height: 380px; }
+.masonry-item.medium .m-bg { height: 280px; }
+.masonry-item.short .m-bg  { height: 200px; }
+.masonry-item[data-cat="mariage"] .m-bg  { background: linear-gradient(160deg,#EEF3F8,#C8DAEA); }
+.masonry-item[data-cat="gala"] .m-bg     { background: linear-gradient(160deg,#F0EBE8,#D8C4BC); }
+.masonry-item[data-cat="tv"] .m-bg       { background: linear-gradient(160deg,#E8EEE8,#C4D4C0); }
+.masonry-item[data-cat="shooting"] .m-bg { background: linear-gradient(160deg,#EEE8F0,#D0C0D4); }
+.m-ph-icon {
+  width: 30px; height: 30px; border: 0.5px solid rgba(106,156,189,0.25);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+}
+.m-ph-icon svg { width: 12px; height: 12px; stroke: var(--blue-deep); fill: none; opacity: 0.4; }
+.m-ph-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-deep); opacity: 0.4; }
+.m-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(44,58,66,0.6) 0%, transparent 55%);
+  opacity: 0; transition: opacity 0.4s;
+  display: flex; align-items: flex-end; padding: 14px;
+}
+.masonry-item:hover .m-overlay { opacity: 1; }
+.m-caption { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: white; transform: translateY(6px); transition: transform 0.35s; line-height: 1.5; }
+.masonry-item:hover .m-caption { transform: translateY(0); }
+.m-cat-tag { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.55); display: block; margin-bottom: 2px; }
+
+/* ══ PRAISE (TESTIMONIALS) ══ */
+#praise {
+  background: var(--white);
+  padding: 100px 56px;
+}
+.praise-header { text-align: center; margin-bottom: 72px; }
+.praise-header .section-eyebrow { justify-content: center; }
+.praise-header .section-eyebrow::before { display: none; }
+
+/* Large quote slider */
+.praise-slider { position: relative; overflow: hidden; }
+.praise-track {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.praise-card {
+  flex: 0 0 100%;
+  padding: 0 120px;
+  text-align: center;
+}
+.praise-quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 120px; font-weight: 300; line-height: 0.7;
+  color: var(--blue-mist); display: block; margin-bottom: 8px;
+}
+.praise-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 2.2vw, 28px); font-weight: 300; font-style: italic;
+  line-height: 1.7; color: var(--ink); margin-bottom: 48px;
+}
+.praise-text strong {
+  font-weight: 500; font-style: normal; color: var(--blue-ink);
+}
+.praise-author { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.praise-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--blue-mist); border: 0.5px solid var(--blue-soft);
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.praise-avatar svg { width: 22px; height: 22px; stroke: var(--blue-mid); fill: none; }
+.praise-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 400; font-style: italic; color: var(--ink);
+}
+.praise-role {
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-deep);
+}
+
+/* Praise navigation */
+.praise-nav {
+  display: flex; align-items: center; justify-content: center;
+  gap: 24px; margin-top: 56px;
+}
+.praise-arrow {
+  width: 40px; height: 40px;
+  border: 0.5px solid var(--blue-soft); background: none;
+  display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+}
+.praise-arrow:hover { background: var(--blue-ink); border-color: var(--blue-ink); }
+.praise-arrow:hover svg { stroke: white; }
+.praise-arrow:disabled { opacity: 0.2; pointer-events: none; }
+.praise-arrow svg { width: 16px; height: 16px; stroke: var(--blue-ink); fill: none; }
+.praise-dots { display: flex; gap: 8px; }
+.praise-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--blue-soft); border: none; transition: all 0.3s; padding: 0;
+}
+.praise-dot.active { background: var(--blue-ink); transform: scale(1.3); }
+
+/* ══ CONTACT ══ */
+#contact {
+  background: var(--ink);
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.contact-left {
+  padding: 100px 64px 100px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+/* Decorative element */
+.contact-left::before {
+  content: '';
+  position: absolute;
+  top: -120px; left: -120px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: rgba(58,107,138,0.12);
+  pointer-events: none;
+}
+.contact-left::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; right: -80px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: rgba(200,168,130,0.07);
+  pointer-events: none;
+}
+#contact .section-eyebrow {
+  color: var(--blue-mid);
+  margin-bottom: 14px;
+}
+#contact .section-eyebrow::before { background: var(--blue-mid); }
+#contact .section-h {
+  color: var(--white);
+  margin-bottom: 48px;
+  font-size: clamp(36px, 4vw, 56px);
+}
+#contact .section-h em { color: var(--gold); }
+.contact-detail { margin-bottom: 24px; }
+.c-label {
+  font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--blue-mid); margin-bottom: 6px; opacity: 0.7;
+}
+.c-value { font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 300; }
+.c-value a {
+  color: rgba(255,255,255,0.85); text-decoration: none;
+  border-bottom: 0.5px solid rgba(168,196,220,0.3); padding-bottom: 1px;
+  transition: color 0.3s, border-color 0.3s;
+}
+.c-value a:hover { color: white; border-color: var(--blue-mid); }
+
+/* Availability indicator */
+.contact-availability {
+  display: flex; align-items: center; gap: 10px;
+  margin-top: 48px; padding-top: 40px;
+  border-top: 0.5px solid rgba(255,255,255,0.1);
+  font-size: 12px; color: rgba(255,255,255,0.45);
+  letter-spacing: 0.1em;
+}
+.avail-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #7BC47F;
+  box-shadow: 0 0 0 3px rgba(123,196,127,0.2);
+  animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(123,196,127,0.2); }
+  50% { box-shadow: 0 0 0 6px rgba(123,196,127,0.1); }
+}
+
+/* Right — form panel */
+.contact-right {
+  background: var(--white);
+  padding: 80px 56px 80px 64px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 400; color: var(--ink);
+  margin-bottom: 40px; line-height: 1.3;
+}
+.form-title span { color: var(--blue-deep); font-style: italic; }
+
+.contact-form { display: flex; flex-direction: column; }
+.f-field {
+  padding: 16px 0;
+  border-bottom: 1px solid #E8EFF7;
+  position: relative;
+  transition: border-color 0.3s;
+}
+.f-field:first-child { border-top: 1px solid #E8EFF7; }
+.f-field:focus-within { border-color: var(--blue-ink); }
+.f-label {
+  font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--ink-soft); display: block; margin-bottom: 7px; font-weight: 400;
+}
+.f-field:focus-within .f-label { color: var(--blue-ink); }
+.f-input, .f-select, .f-textarea {
+  width: 100%; background: none; border: none; outline: none;
+  font-family: 'Nunito', sans-serif; font-size: 15px;
+  font-weight: 300; color: var(--ink); resize: none;
+}
+.f-input::placeholder, .f-textarea::placeholder { color: #B0C4D0; }
+.f-select { appearance: none; cursor: pointer; color: var(--ink); }
+.f-select option { background: white; color: var(--ink); }
+.f-textarea { min-height: 72px; }
+.f-submit {
+  margin-top: 40px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.btn-send {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  padding: 20px 40px;
+  background: var(--ink); color: white; border: none;
+  font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 400;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  transition: background 0.35s, gap 0.3s, letter-spacing 0.3s;
+  cursor: pointer; width: 100%;
+}
+.btn-send:hover {
+  background: var(--blue-ink);
+  gap: 20px;
+  letter-spacing: 0.3em;
+}
+.btn-send svg { width: 15px; height: 15px; stroke: white; fill: none; transition: transform 0.3s; }
+.btn-send:hover svg { transform: translateX(4px); }
+.f-note {
+  font-size: 11px; color: var(--ink-faint);
+  text-align: center; line-height: 1.65;
+}
+
+/* ══ FOOTER ══ */
+footer {
+  background: var(--ink); padding: 48px 56px;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 40px;
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--blue-mid); font-weight: 400; line-height: 1.8;
+}
+.footer-center { text-align: center; font-size: 10px; letter-spacing: 0.2em; color: rgba(168,196,220,0.3); }
+.footer-right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.footer-social { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-mid); text-decoration: none; opacity: 0.5; transition: opacity 0.3s; }
+.footer-social:hover { opacity: 1; }
+.footer-copy { font-size: 10px; color: rgba(168,196,220,0.25); }
+
+/* ══ REVEAL ══ */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 960px) {
+  nav { padding: 0 24px; }
+  .nav-menu { display: none; }
+  #about-preview { grid-template-columns: 1fr; }
+  .about-photo-side { min-height: 320px; }
+  .about-text-side { padding: 56px 28px; }
+  #contact { grid-template-columns: 1fr; padding: 0; }
+  .contact-left { padding: 64px 28px 48px; }
+  .contact-right { padding: 48px 28px 64px; }
+  .praise-card { padding: 0 24px; }
+  .masonry-grid { columns: 2; }
+  .masonry-item.tall .m-bg { height: 280px; }
+  section, #services, #portfolio, #praise { padding-left: 28px; padding-right: 28px; }
+  .intro-strip { grid-template-columns: 1fr; padding: 40px 28px; gap: 24px; }
+  .intro-divider { display: none; }
+  .services-row { grid-template-columns: 1fr 1fr; }
+  footer { grid-template-columns: 1fr; text-align: center; gap: 16px; padding: 40px 28px; }
+  .footer-right { align-items: center; }
+}
+
+/* ══ FAQ ══ */
+#faq {
+  background: var(--blue-mist);
+  padding: 100px 56px;
+}
+#faq .section-eyebrow { margin-bottom: 12px; }
+#faq .section-h { margin-bottom: 64px; }
+
+.faq-list { max-width: 860px; }
+
+.faq-item {
+  border-top: 0.5px solid var(--blue-soft);
+}
+.faq-item:last-child { border-bottom: 0.5px solid var(--blue-soft); }
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px 0;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.3;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+.faq-question:hover { color: var(--blue-ink); }
+.faq-question.open { color: var(--blue-ink); }
+
+.faq-icon {
+  width: 36px; height: 36px; flex-shrink: 0;
+  border: 1px solid var(--blue-deep);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.4s;
+  background: transparent;
+}
+.faq-icon svg {
+  width: 14px; height: 14px;
+  stroke: var(--blue-deep);
+  stroke-width: 2;
+  fill: none;
+  transition: transform 0.4s;
+}
+.faq-question:hover .faq-icon {
+  border-color: var(--blue-ink);
+}
+.faq-question:hover .faq-icon svg {
+  stroke: var(--blue-ink);
+}
+.faq-question.open .faq-icon {
+  background: var(--blue-ink);
+  border-color: var(--blue-ink);
+}
+.faq-question.open .faq-icon svg {
+  stroke: white;
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.faq-answer-inner {
+  padding: 0 48px 36px 0;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  font-weight: 300;
+}
+.faq-answer-inner strong {
+  color: var(--ink);
+  font-weight: 400;
+}
+
+
+/* ── PHOTO PROTECTION ── */
+.m-bg img, .slide-bg, .about-photo-side img {
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+.masonry-item, .slide, .about-photo-side {
+  -webkit-user-select: none;
+  user-select: none;
+}
+/* Invisible overlay blocks right-click on photos */
+.photo-shield {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: transparent;
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Anastasia Mishurina Makeup Artist",
+  "description": "Maquilleuse professionnelle basée à Lyon. Mariages de luxe, galas, plateau TV, Fashion Week. Disponible dans toute l'Europe.",
+  "url": "https://anastasiamishurina.fr",
+  "telephone": "+33745713679",
+  "email": "aemishurina@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lyon",
+    "addressCountry": "FR"
+  },
+  "areaServed": ["France", "Europe"],
+  "priceRange": "€€€",
+  "serviceType": ["Maquillage mariage", "Maquillage gala", "Maquillage TV", "Shooting photo"]
+}
+
+// ── PHOTOS from photos.json ──
+async function loadPortfolio() {
+  try {
+    const res = await fetch('photos.json');
+    const photos = await res.json();
+    const grid = document.getElementById('masonryGrid');
+    if (!grid || !photos.length) return;
+    
+    const sizes = ['tall', 'medium', 'short', 'medium', 'short', 'tall', 'medium', 'short', 'tall', 'medium'];
+    const gradients = {
+      mariage:  'linear-gradient(160deg,#EEF3F8,#C8DAEA)',
+      gala:     'linear-gradient(160deg,#F0EBE8,#D8C4BC)',
+      tv:       'linear-gradient(160deg,#E8EEE8,#C4D4C0)',
+      shooting: 'linear-gradient(160deg,#EEE8F0,#D0C0D4)'
+    };
+    
+    grid.innerHTML = '';
+    photos.forEach((p, i) => {
+      const size = sizes[i % sizes.length];
+      const grad = gradients[p.category] || gradients.mariage;
+      const el = document.createElement('div');
+      el.className = `masonry-item ${size}`;
+      el.dataset.cat = p.category;
+      el.innerHTML = `
+        <div class="m-bg" style="background:${grad}">
+          <img src="photos/${p.category}/${p.file}"
+               alt="${p.caption_fr}"
+               loading="lazy"
+               style="width:100%;height:100%;object-fit:cover;display:block"
+               onerror="this.style.display='none'">
+        </div>
+        <div class="m-overlay">
+          <div class="m-caption">
+            <span class="m-cat-tag">${p.category.charAt(0).toUpperCase()+p.category.slice(1)}</span>
+            ${p.caption_fr}
+          </div>
+        </div>`;
+      grid.appendChild(el);
+    });
+  } catch(e) {
+    // photos.json not found — keep placeholder grid
+    console.log('Portfolio: using placeholders');
+  }
+}
+loadPortfolio();
+
+
+// ── PHOTO PROTECTION ──
+(function() {
+  // 1. Disable right-click on images
+  document.addEventListener('contextmenu', function(e) {
+    if (e.target.tagName === 'IMG' || e.target.closest('.masonry-item, .slide, .about-photo-side')) {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // 2. Disable drag on images
+  document.addEventListener('dragstart', function(e) {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // 3. Disable keyboard shortcuts for saving (Ctrl+S, Ctrl+U, F12 partial)
+  document.addEventListener('keydown', function(e) {
+    // Ctrl+S — save page
+    if (e.ctrlKey && e.key === 's') { e.preventDefault(); return false; }
+    // Ctrl+U — view source
+    if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
+    // Ctrl+Shift+I — devtools
+    if (e.ctrlKey && e.shiftKey && e.key === 'I') { e.preventDefault(); return false; }
+    // Ctrl+Shift+J — devtools console
+    if (e.ctrlKey && e.shiftKey && e.key === 'J') { e.preventDefault(); return false; }
+  });
+
+  // 4. Disable print (Ctrl+P)
+  window.addEventListener('beforeprint', function(e) {
+    e.preventDefault();
+    return false;
+  });
+
+  // 5. Add invisible shield divs over all photo containers
+  function addShields() {
+    document.querySelectorAll('.masonry-item, .slide, .about-photo-side').forEach(el => {
+      if (!el.querySelector('.photo-shield')) {
+        const shield = document.createElement('div');
+        shield.className = 'photo-shield';
+        shield.addEventListener('contextmenu', e => e.preventDefault());
+        el.appendChild(shield);
+      }
+    });
+  }
+  
+  // Run after portfolio loads
+  setTimeout(addShields, 1500);
+  
+  // 6. Watermark via CSS — anastasiamishurina.fr overlaid on all photo grids
+  const style = document.createElement('style');
+  style.textContent = `
+    .masonry-item::before {
+      content: 'anastasiamishurina.fr';
+      position: absolute;
+      bottom: 8px; right: 8px;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.0);
+      z-index: 10;
+      pointer-events: none;
+      font-family: sans-serif;
+      text-shadow: 0 0 0 rgba(255,255,255,0.35);
+    }
+  `;
+  document.head.appendChild(style);
+})();
+
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Anastasia Mishurina</a>
+  <ul class="nav-menu">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about-preview">À propos</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#praise">Témoignages</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-lang">
+      <button class="lang-btn active">FR</button>
+      <div class="lang-sep"></div>
+      <button class="lang-btn">EN</button>
+    </div>
+    <a href="#contact" class="nav-cta">Réserver</a>
+  </div>
+</nav>
+
+<!-- HERO CAROUSEL -->
+<section id="hero">
+  <div class="slides-wrap" id="slidesWrap">
+
+    <div class="slide active">
+      <img src="photos/hero/hero-1.jpg" alt="Anastasia Mishurina — Mariage" class="slide-bg"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="slide-placeholder" style="display:none">
+        <svg viewBox="0 0 24 24" width="32" style="stroke:rgba(255,255,255,0.3);fill:none"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      </div>
+      <div class="slide-text">
+        <div>
+          <div class="slide-category">Mariage</div>
+          <div class="slide-title-text">Pour le jour<br><em>le plus important</em></div>
+        </div>
+        <div class="slide-action">
+          <div class="slide-location">Lyon · France · Europe</div>
+          <a href="#contact" class="slide-btn">Réserver <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-placeholder">
+        <svg viewBox="0 0 24 24" width="32" style="stroke:rgba(255,255,255,0.3);fill:none"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      </div>
+      <div class="slide-text">
+        <div>
+          <div class="slide-category">Gala & Soirée</div>
+          <div class="slide-title-text">L'élégance<br><em>à son apogée</em></div>
+        </div>
+        <div class="slide-action">
+          <div class="slide-location">Cannes · Paris · Monaco</div>
+          <a href="#contact" class="slide-btn">Découvrir <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-placeholder">
+        <svg viewBox="0 0 24 24" width="32" style="stroke:rgba(255,255,255,0.3);fill:none"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      </div>
+      <div class="slide-text">
+        <div>
+          <div class="slide-category">Fashion Week</div>
+          <div class="slide-title-text">Milan · Paris<br><em>sur les podiums</em></div>
+        </div>
+        <div class="slide-action">
+          <div class="slide-location">Milano · Paris</div>
+          <a href="#portfolio" class="slide-btn">Voir le portfolio <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-placeholder">
+        <svg viewBox="0 0 24 24" width="32" style="stroke:rgba(255,255,255,0.3);fill:none"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      </div>
+      <div class="slide-text">
+        <div>
+          <div class="slide-category">Plateau TV & Interview</div>
+          <div class="slide-title-text">Impeccable<br><em>à l'écran</em></div>
+        </div>
+        <div class="slide-action">
+          <div class="slide-location">Eurovision · France TV</div>
+          <a href="#contact" class="slide-btn">Réserver <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-placeholder">
+        <svg viewBox="0 0 24 24" width="32" style="stroke:rgba(255,255,255,0.3);fill:none"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      </div>
+      <div class="slide-text">
+        <div>
+          <div class="slide-category">Shooting Editorial</div>
+          <div class="slide-title-text">L'art<br><em>en image</em></div>
+        </div>
+        <div class="slide-action">
+          <div class="slide-location">Paris · Milan · Lyon</div>
+          <a href="#portfolio" class="slide-btn">Voir le portfolio <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Arrows -->
+  <div class="carousel-arrows">
+    <button class="c-arrow" id="heroPrev"><svg viewBox="0 0 24 24" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <button class="c-arrow" id="heroNext"><svg viewBox="0 0 24 24" stroke-width="1.5"><polyline points="9 6 15 12 9 18"/></svg></button>
+  </div>
+
+  <!-- Dots -->
+  <div class="carousel-dots" id="heroDots"></div>
+
+  <!-- Counter -->
+  <div class="slide-counter" id="heroCounter">1 / 5</div>
+
+  <!-- Progress -->
+  <div class="carousel-progress"><div class="carousel-progress-bar" id="heroProgress"></div></div>
+</section>
+
+<!-- INTRO STRIP -->
+<div class="intro-strip reveal">
+  <div class="intro-tagline">
+    Je crois que chaque femme mérite de se sentir<br>
+    <em>rayonnante</em> — vraiment elle-même, en mieux.
+  </div>
+  <div class="intro-divider"></div>
+  <div class="intro-meta">
+    <div class="intro-meta-item">Fashion Week Milan & Paris</div>
+    <div class="intro-meta-item">Festival de Cannes · Eurovision</div>
+    <div class="intro-meta-item">Mariages de luxe · Châteaux de France</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="reveal">
+    <div class="section-eyebrow">Prestations</div>
+    <h2 class="section-h">Pour chaque<br><em>occasion unique</em></h2>
+  </div>
+  <div class="services-row reveal">
+    <div class="svc">
+      <div class="svc-num">01</div>
+      <div class="svc-name">Mariage</div>
+      <p class="svc-desc">Le jour le plus photographié de votre vie mérite une attention absolue. Essai inclus. Châteaux, domaines, terrasses — j'ai tout connu.</p>
+      <div class="svc-price">Prix sur demande</div>
+    </div>
+    <div class="svc">
+      <div class="svc-num">02</div>
+      <div class="svc-name">Gala & Soirée</div>
+      <p class="svc-desc">Ce que j'adore dans ces soirées ? Le maquillage doit tenir jusqu'au dernier verre — et rester aussi parfait qu'au premier regard.</p>
+      <div class="svc-price">Prix sur demande</div>
+    </div>
+    <div class="svc">
+      <div class="svc-num">03</div>
+      <div class="svc-name">Plateau TV & Interview</div>
+      <p class="svc-desc">La lumière studio est impitoyable. Après des années sur les plateaux, je sais exactement ce qu'une caméra HD voit.</p>
+      <div class="svc-price">Prix sur demande</div>
+    </div>
+    <div class="svc">
+      <div class="svc-num">04</div>
+      <div class="svc-name">Shooting Photo</div>
+      <p class="svc-desc">Je travaille main dans la main avec le photographe. Chaque détail compte quand l'objectif est à 50cm de votre visage.</p>
+      <div class="svc-price">Prix sur demande</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT PREVIEW -->
+<section id="about-preview">
+  <div class="about-photo-side">
+    <img src="photos/hero/hero-1.jpg" alt="Anastasia Mishurina"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="about-photo-placeholder">
+      <svg viewBox="0 0 24 24" width="36" style="stroke:rgba(255,255,255,0.25);fill:none"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    </div>
+  </div>
+  <div class="about-text-side reveal">
+    <div class="section-eyebrow">À propos</div>
+    <h2 class="section-h">Ce que je fais,<br>et pourquoi<br><em>ça compte</em></h2>
+    <p class="about-intro">
+      Je suis Anastasia. Maquilleuse depuis plus de 10 ans, basée à Lyon. Mon parcours m'a menée sur les podiums de la Fashion Week de Milan et de Paris, dans les coulisses du Festival de Cannes, sur les plateaux de l'Eurovision — et surtout, aux côtés de mariées dans les plus beaux domaines de France.
+    </p>
+    <div class="about-highlights">
+      <div class="about-hl">Fashion Week Milan & Paris</div>
+      <div class="about-hl">Festival de Cannes</div>
+      <div class="about-hl">Eurovision</div>
+      <div class="about-hl">Mariages de luxe · Châteaux de France</div>
+      <div class="about-hl">Célébrités & Mannequins internationaux</div>
+    </div>
+    <a href="#contact" class="about-link">
+      Me contacter
+      <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="portfolio-top reveal">
+    <div>
+      <div class="section-eyebrow">Portfolio</div>
+      <h2 class="section-h">Ce dont je suis<br><em>la plus fière</em></h2>
+    </div>
+    <div class="filter-wrap">
+      <button class="filter-btn active" data-filter="all">Tout</button>
+      <button class="filter-btn" data-filter="mariage">Mariage</button>
+      <button class="filter-btn" data-filter="gala">Gala</button>
+      <button class="filter-btn" data-filter="tv">TV</button>
+      <button class="filter-btn" data-filter="shooting">Shooting</button>
+    </div>
+  </div>
+  <div class="masonry-grid reveal" id="masonryGrid">
+    <div class="masonry-item tall" data-cat="mariage"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Mariage</span>Château de Bagnols · 2024</div></div></div>
+    <div class="masonry-item medium" data-cat="gala"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Gala & Soirée</span>Festival de Cannes</div></div></div>
+    <div class="masonry-item short" data-cat="tv"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">TV & Interview</span>France 2 · Plateau</div></div></div>
+    <div class="masonry-item medium" data-cat="shooting"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Shooting</span>Editorial · Milan</div></div></div>
+    <div class="masonry-item short" data-cat="mariage"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Mariage</span>Domaine de Provence</div></div></div>
+    <div class="masonry-item tall" data-cat="shooting"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Shooting</span>Fashion Week · Paris</div></div></div>
+    <div class="masonry-item medium" data-cat="mariage"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Mariage</span>Château de la Loire</div></div></div>
+    <div class="masonry-item short" data-cat="gala"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Gala</span>Soirée privée · Monaco</div></div></div>
+    <div class="masonry-item tall" data-cat="mariage"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Mariage</span>Villa Méditerranée</div></div></div>
+    <div class="masonry-item medium" data-cat="tv"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">TV</span>Eurovision · Liverpool</div></div></div>
+    <div class="masonry-item short" data-cat="shooting"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Shooting</span>Beauté · Studio Paris</div></div></div>
+    <div class="masonry-item medium" data-cat="gala"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Gala</span>Remise de prix · Paris</div></div></div>
+    <div class="masonry-item tall" data-cat="shooting"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Shooting</span>Fashion Week · Milan</div></div></div>
+    <div class="masonry-item short" data-cat="mariage"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Mariage</span>Mas de Provence · 2024</div></div></div>
+    <div class="masonry-item medium" data-cat="tv"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">TV</span>BFM TV · Interview</div></div></div>
+    <div class="masonry-item short" data-cat="gala"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Gala</span>Dîner privé · Lyon</div></div></div>
+    <div class="masonry-item tall" data-cat="mariage"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Mariage</span>Château du Languedoc</div></div></div>
+    <div class="masonry-item medium" data-cat="shooting"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Shooting</span>Beauté · Vogue France</div></div></div>
+  </div>
+</section>
+
+<!-- PRAISE -->
+<section id="praise">
+  <div class="praise-header reveal">
+    <div class="section-eyebrow">Témoignages</div>
+    <h2 class="section-h">Ce qu'elles<br><em>ont vécu</em></h2>
+  </div>
+  <div class="praise-slider reveal">
+    <div class="praise-track" id="praiseTrack">
+
+      <div class="praise-card">
+        <span class="praise-quote-mark">"</span>
+        <p class="praise-text">Je ne savais pas trop à quoi m'attendre — je ne voulais pas me retrouver méconnaissable sur mes photos de mariage. Anastasia a compris ça immédiatement. <strong>Le soir, après 8 heures de fête, j'étais encore impeccable.</strong></p>
+        <div class="praise-author">
+          <div class="praise-avatar"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div class="praise-name">Camille R.</div>
+          <div class="praise-role">Mariée · Château de Bagnols, juin 2024</div>
+        </div>
+      </div>
+
+      <div class="praise-card">
+        <span class="praise-quote-mark">"</span>
+        <p class="praise-text">En 12 ans de plateau TV, j'ai vu beaucoup de maquilleuses. Anastasia est la première qui comprend vraiment ce que fait la lumière studio sur le visage. <strong>Je lui fais une confiance totale — elle sait ce que la caméra voit.</strong></p>
+        <div class="praise-author">
+          <div class="praise-avatar"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div class="praise-name">Sophie M.</div>
+          <div class="praise-role">Journaliste · France Télévisions</div>
+        </div>
+      </div>
+
+      <div class="praise-card">
+        <span class="praise-quote-mark">"</span>
+        <p class="praise-text">Ce que j'aime chez Anastasia, c'est qu'elle écoute vraiment. Elle n'impose pas son style — elle cherche le vôtre, et elle le révèle. <strong>Pour nos shootings éditoriaux, c'est exactement le profil qu'on cherche.</strong></p>
+        <div class="praise-author">
+          <div class="praise-avatar"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div class="praise-name">Isabelle D.</div>
+          <div class="praise-role">Directrice artistique · Paris</div>
+        </div>
+      </div>
+
+      <div class="praise-card">
+        <span class="praise-quote-mark">"</span>
+        <p class="praise-text">Anastasia a su capter exactement l'énergie du défilé. Les mannequins étaient sublimes, le maquillage tenait sous les projecteurs et la pression. <strong>Une professionnelle au sens plein du terme.</strong></p>
+        <div class="praise-author">
+          <div class="praise-avatar"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div class="praise-name">Léa V.</div>
+          <div class="praise-role">Directrice de casting · Fashion Week Paris</div>
+        </div>
+      </div>
+
+      <div class="praise-card">
+        <span class="praise-quote-mark">"</span>
+        <p class="praise-text">Pour une cérémonie aussi importante, nous avions besoin de quelqu'un d'irréprochable. <strong>Anastasia a dépassé toutes nos attentes — disponible, précise, et d'une gentillesse rare.</strong></p>
+        <div class="praise-author">
+          <div class="praise-avatar"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div class="praise-name">Marie-Claire B.</div>
+          <div class="praise-role">Mariée · Provence, septembre 2024</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="praise-nav">
+      <button class="praise-arrow" id="praisePrev"><svg viewBox="0 0 24 24" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <div class="praise-dots" id="praiseDots"></div>
+      <button class="praise-arrow" id="praiseNext"><svg viewBox="0 0 24 24" stroke-width="1.5"><polyline points="9 6 15 12 9 18"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="reveal">
+    <div class="section-eyebrow">FAQ</div>
+    <h2 class="section-h">Questions &amp; <em>réponses</em></h2>
+  </div>
+  <div class="faq-list reveal">
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Proposez-vous un essai avant le jour J ?
+        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Oui, et je le recommande vivement — surtout pour les mariages. L'essai nous permet de trouver ensemble <strong>le maquillage qui vous ressemble vraiment</strong>, d'ajuster les couleurs, de tester la tenue, et surtout de vous sentir rassurée le grand jour. C'est aussi l'occasion de créer un lien de confiance avant l'événement.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Comment se passe la réservation ?
+        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Tout commence par un message via le formulaire de contact ou par email. Je vous réponds dans les 48 heures pour en savoir plus sur votre projet. Si nous décidons de travailler ensemble, <strong>un acompte confirme la date</strong> et la prépare officiellement dans mon agenda. Simple, rapide, sans stress.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Intervenez-vous en dehors de Lyon ?
+        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Absolument. Je me déplace dans toute la France et à l'international. J'ai travaillé sur des mariages et des événements à Paris, en Provence, sur la Côte d'Azur, à Milan, à Londres et bien au-delà. <strong>Les frais de déplacement sont calculés selon la distance</strong> et intégrés dans le devis personnalisé.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Quels produits utilisez-vous ?
+        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Je travaille exclusivement avec des marques professionnelles de haute qualité — <strong>Charlotte Tilbury, NARS, Make Up For Ever, Armani Beauty, Dior</strong> — sélectionnées pour leur tenue, leur rendu photographique et leur respect de la peau. Si vous avez des allergies ou des sensibilités particulières, merci de me le signaler à l'avance.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Combien de temps à l'avance faut-il réserver ?
+        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Pour les mariages, je recommande de réserver <strong>6 à 12 mois à l'avance</strong>, surtout pour les dates de haute saison (mai à septembre). Pour les événements ponctuels — galas, shootings, plateau TV — quelques semaines suffisent généralement. N'hésitez pas à me contacter même si votre date est proche, je ferai mon possible.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Pouvez-vous maquiller plusieurs personnes le même jour ?
+        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Oui. Pour les mariages avec une grande suite nuptiale, je peux faire appel à <strong>une assistante de confiance</strong> afin que tout le monde soit prêt dans les temps. Le nombre de personnes et le planning sont discutés lors de notre premier échange pour organiser la matinée sereinement.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-left reveal">
+    <div class="section-eyebrow">Contact</div>
+    <h2 class="section-h">On se parle<br>de votre<br><em>grand moment ?</em></h2>
+    <div class="contact-detail">
+      <div class="c-label">Email</div>
+      <div class="c-value"><a href="mailto:aemishurina@gmail.com">aemishurina@gmail.com</a></div>
+    </div>
+    <div class="contact-detail">
+      <div class="c-label">Téléphone</div>
+      <div class="c-value"><a href="tel:+33745713679">+33 74 571 36 79</a></div>
+    </div>
+    <div class="contact-detail">
+      <div class="c-label">Localisation</div>
+      <div class="c-value">Lyon, France · Toute l'Europe</div>
+    </div>
+    <div class="contact-availability">
+      <div class="avail-dot"></div>
+      Disponible pour 2025 & 2026
+    </div>
+  </div>
+
+  <div class="contact-right reveal">
+    <div class="form-title">
+      Décrivez-moi votre événement —<br>
+      <span>je reviens vers vous sous 48h.</span>
+    </div>
+    <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)"><input type="hidden" name="form-name" value="contact">
+      <div class="f-field">
+        <label class="f-label">Votre prénom</label>
+        <input class="f-input" type="text" placeholder="Marie">
+      </div>
+      <div class="f-field">
+        <label class="f-label">Date de l'événement</label>
+        <input class="f-input" type="text" placeholder="15 juin 2025">
+      </div>
+      <div class="f-field">
+        <label class="f-label">Type d'événement</label>
+        <select class="f-select f-input">
+          <option value="" disabled selected>Choisissez une prestation</option>
+          <option>Mariage</option>
+          <option>Gala & Soirée</option>
+          <option>Plateau TV / Interview</option>
+          <option>Shooting photo</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="f-field">
+        <label class="f-label">Lieu approximatif</label>
+        <input class="f-input" type="text" placeholder="Lyon, Paris, Provence…">
+      </div>
+      <div class="f-field">
+        <label class="f-label">Votre message</label>
+        <textarea class="f-textarea f-input" placeholder="Décrivez votre événement et vos attentes…" rows="3"></textarea>
+      </div>
+      <div class="f-submit">
+        <button type="submit" class="btn-send">
+          Envoyer mon message
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <p class="f-note">Chaque demande reçoit une réponse personnalisée dans les 48 heures.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Anastasia Mishurina<br><span style="font-size:9px;opacity:0.4;letter-spacing:0.3em">Makeup Artist</span></div>
+  <div class="footer-center">anastasiamishurina.fr</div>
+  <div class="footer-right">
+    <a href="#" class="footer-social">Instagram</a>
+    <div class="footer-copy">© 2025 Anastasia Mishurina</div>
+  </div>
+</footer>
+
+<script>
+// ── HERO CAROUSEL ──
+(function(){
+  const wrap    = document.getElementById('slidesWrap');
+  const slides  = wrap.querySelectorAll('.slide');
+  const dotsEl  = document.getElementById('heroDots');
+  const counter = document.getElementById('heroCounter');
+  const bar     = document.getElementById('heroProgress');
+  const total   = slides.length;
+  const AUTO_MS = 7000;
+  let current = 0, timer, barTimer;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'c-dot' + (i===0?' active':'');
+    d.onclick = () => goTo(i);
+    dotsEl.appendChild(d);
+  });
+
+  function goTo(idx) {
+    slides[current].classList.remove('active');
+    current = (idx + total) % total;
+    slides[current].classList.add('active');
+    wrap.style.transform = 'translateX(-' + current*100 + '%)';
+    dotsEl.querySelectorAll('.c-dot').forEach((d,i) => d.classList.toggle('active', i===current));
+    counter.textContent = (current+1) + ' / ' + total;
+    resetProgress();
+  }
+
+  function resetProgress() {
+    clearTimeout(barTimer);
+    bar.style.transition = 'none';
+    bar.style.width = '0%';
+    requestAnimationFrame(() => {
+      bar.style.transition = 'width ' + AUTO_MS + 'ms linear';
+      bar.style.width = '100%';
+    });
+  }
+
+  function startAuto() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current+1), AUTO_MS);
+  }
+
+  document.getElementById('heroPrev').onclick = () => { goTo(current-1); startAuto(); };
+  document.getElementById('heroNext').onclick = () => { goTo(current+1); startAuto(); };
+
+  goTo(0);
+  startAuto();
+})();
+
+// ── PRAISE SLIDER ──
+(function(){
+  const track   = document.getElementById('praiseTrack');
+  const dotsEl  = document.getElementById('praiseDots');
+  const prevBtn = document.getElementById('praisePrev');
+  const nextBtn = document.getElementById('praiseNext');
+  const cards   = track.querySelectorAll('.praise-card');
+  const total   = cards.length;
+  let current   = 0;
+
+  cards.forEach((_,i) => {
+    const d = document.createElement('button');
+    d.className = 'praise-dot' + (i===0?' active':'');
+    d.onclick = () => goTo(i);
+    dotsEl.appendChild(d);
+  });
+
+  function goTo(idx) {
+    current = Math.max(0, Math.min(total-1, idx));
+    track.style.transform = 'translateX(-' + current*100 + '%)';
+    dotsEl.querySelectorAll('.praise-dot').forEach((d,i) => d.classList.toggle('active', i===current));
+    prevBtn.disabled = current===0;
+    nextBtn.disabled = current===total-1;
+  }
+
+  window.praiseSlide = d => goTo(current+d);
+  prevBtn.onclick = () => goTo(current-1);
+  nextBtn.onclick = () => goTo(current+1);
+  prevBtn.disabled = true;
+  goTo(0);
+})();
+
+// ── MASONRY FILTER ──
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.masonry-item').forEach(item => {
+      item.classList.toggle('hidden', f !== 'all' && item.dataset.cat !== f);
+    });
+  });
+});
+
+// ── REVEAL ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// ── FORM ──
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-send');
+  btn.textContent = 'Message envoyé ✓';
+  btn.style.background = '#6A9CBD';
+}
+
+// ── FAQ ──
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-question.open').forEach(q => {
+    q.classList.remove('open');
+    q.nextElementSibling.style.maxHeight = null;
+  });
+  // Open clicked if was closed
+  if (!isOpen) {
+    btn.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+</script>
+</body>
+</html>
