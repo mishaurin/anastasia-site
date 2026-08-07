@@ -1136,7 +1136,6 @@ async function loadPortfolio() {
     const grid = document.getElementById('masonryGrid');
     if (!grid || !photos.length) return;
 
-    const sizes = ['tall', 'medium', 'short', 'medium', 'short', 'tall', 'medium', 'short', 'tall', 'medium'];
     const gradients = {
       mariage:  'linear-gradient(160deg,#EEF3F8,#C8DAEA)',
       gala:     'linear-gradient(160deg,#F0EBE8,#D8C4BC)',
@@ -1145,18 +1144,19 @@ async function loadPortfolio() {
     };
 
     grid.innerHTML = '';
-    photos.forEach((p, i) => {
-      const size = sizes[i % sizes.length];
+    photos.forEach((p) => {
       const grad = gradients[p.category] || gradients.mariage;
       const el = document.createElement('div');
-      el.className = `masonry-item ${size}`;
+      // без tall/medium/short — высота карточки теперь берётся из
+      // реальных пропорций фото (object-fit убран, чтобы не обрезать)
+      el.className = 'masonry-item';
       el.dataset.cat = p.category;
       el.innerHTML = `
         <div class="m-bg" style="background:${grad}">
           <img src="photos/${p.category}/${p.file}"
                alt="${p.caption_fr}"
                loading="lazy"
-               style="width:100%;height:100%;object-fit:cover;display:block"
+               style="width:100%;height:auto;display:block"
                onerror="this.style.display='none'">
         </div>
         <div class="m-overlay">
