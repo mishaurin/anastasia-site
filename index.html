@@ -738,126 +738,6 @@ footer {
   "priceRange": "€€€",
   "serviceType": ["Maquillage mariage", "Maquillage gala", "Maquillage TV", "Shooting photo"]
 }
-
-// ── PHOTOS from photos.json ──
-async function loadPortfolio() {
-  try {
-    const res = await fetch('photos.json');
-    // категория "hero" — это фото для карусели на главной (hero.json),
-    // в сетку портфолио они не попадают
-    const photos = (await res.json()).filter(p => p.category !== 'hero');
-    const grid = document.getElementById('masonryGrid');
-    if (!grid || !photos.length) return;
-    
-    const sizes = ['tall', 'medium', 'short', 'medium', 'short', 'tall', 'medium', 'short', 'tall', 'medium'];
-    const gradients = {
-      mariage:  'linear-gradient(160deg,#EEF3F8,#C8DAEA)',
-      gala:     'linear-gradient(160deg,#F0EBE8,#D8C4BC)',
-      tv:       'linear-gradient(160deg,#E8EEE8,#C4D4C0)',
-      shooting: 'linear-gradient(160deg,#EEE8F0,#D0C0D4)'
-    };
-    
-    grid.innerHTML = '';
-    photos.forEach((p, i) => {
-      const size = sizes[i % sizes.length];
-      const grad = gradients[p.category] || gradients.mariage;
-      const el = document.createElement('div');
-      el.className = `masonry-item ${size}`;
-      el.dataset.cat = p.category;
-      el.innerHTML = `
-        <div class="m-bg" style="background:${grad}">
-          <img src="photos/${p.category}/${p.file}"
-               alt="${p.caption_fr}"
-               loading="lazy"
-               style="width:100%;height:100%;object-fit:cover;display:block"
-               onerror="this.style.display='none'">
-        </div>
-        <div class="m-overlay">
-          <div class="m-caption">
-            <span class="m-cat-tag">${p.category.charAt(0).toUpperCase()+p.category.slice(1)}</span>
-            ${p.caption_fr}
-          </div>
-        </div>`;
-      grid.appendChild(el);
-    });
-  } catch(e) {
-    // photos.json not found — keep placeholder grid
-    console.log('Portfolio: using placeholders');
-  }
-}
-loadPortfolio();
-
-
-// ── PHOTO PROTECTION ──
-(function() {
-  // 1. Disable right-click on images
-  document.addEventListener('contextmenu', function(e) {
-    if (e.target.tagName === 'IMG' || e.target.closest('.masonry-item, .slide, .about-photo-side')) {
-      e.preventDefault();
-      return false;
-    }
-  });
-
-  // 2. Disable drag on images
-  document.addEventListener('dragstart', function(e) {
-    if (e.target.tagName === 'IMG') {
-      e.preventDefault();
-      return false;
-    }
-  });
-
-  // 3. Disable keyboard shortcuts for saving (Ctrl+S, Ctrl+U, F12 partial)
-  document.addEventListener('keydown', function(e) {
-    // Ctrl+S — save page
-    if (e.ctrlKey && e.key === 's') { e.preventDefault(); return false; }
-    // Ctrl+U — view source
-    if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
-    // Ctrl+Shift+I — devtools
-    if (e.ctrlKey && e.shiftKey && e.key === 'I') { e.preventDefault(); return false; }
-    // Ctrl+Shift+J — devtools console
-    if (e.ctrlKey && e.shiftKey && e.key === 'J') { e.preventDefault(); return false; }
-  });
-
-  // 4. Disable print (Ctrl+P)
-  window.addEventListener('beforeprint', function(e) {
-    e.preventDefault();
-    return false;
-  });
-
-  // 5. Add invisible shield divs over all photo containers
-  function addShields() {
-    document.querySelectorAll('.masonry-item, .slide, .about-photo-side').forEach(el => {
-      if (!el.querySelector('.photo-shield')) {
-        const shield = document.createElement('div');
-        shield.className = 'photo-shield';
-        shield.addEventListener('contextmenu', e => e.preventDefault());
-        el.appendChild(shield);
-      }
-    });
-  }
-  
-  // Run after portfolio loads
-  setTimeout(addShields, 1500);
-  
-  // 6. Watermark via CSS — anastasiamishurina.fr overlaid on all photo grids
-  const style = document.createElement('style');
-  style.textContent = `
-    .masonry-item::before {
-      content: 'anastasiamishurina.fr';
-      position: absolute;
-      bottom: 8px; right: 8px;
-      font-size: 9px;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.0);
-      z-index: 10;
-      pointer-events: none;
-      font-family: sans-serif;
-      text-shadow: 0 0 0 rgba(255,255,255,0.35);
-    }
-  `;
-  document.head.appendChild(style);
-})();
-
 </script>
 </head>
 <body>
@@ -1246,6 +1126,120 @@ loadPortfolio();
 </footer>
 
 <script>
+// ── PHOTOS from photos.json ──
+async function loadPortfolio() {
+  try {
+    const res = await fetch('photos.json');
+    // категория "hero" — это фото для карусели на главной (hero.json),
+    // в сетку портфолио они не попадают
+    const photos = (await res.json()).filter(p => p.category !== 'hero');
+    const grid = document.getElementById('masonryGrid');
+    if (!grid || !photos.length) return;
+
+    const sizes = ['tall', 'medium', 'short', 'medium', 'short', 'tall', 'medium', 'short', 'tall', 'medium'];
+    const gradients = {
+      mariage:  'linear-gradient(160deg,#EEF3F8,#C8DAEA)',
+      gala:     'linear-gradient(160deg,#F0EBE8,#D8C4BC)',
+      tv:       'linear-gradient(160deg,#E8EEE8,#C4D4C0)',
+      shooting: 'linear-gradient(160deg,#EEE8F0,#D0C0D4)'
+    };
+
+    grid.innerHTML = '';
+    photos.forEach((p, i) => {
+      const size = sizes[i % sizes.length];
+      const grad = gradients[p.category] || gradients.mariage;
+      const el = document.createElement('div');
+      el.className = `masonry-item ${size}`;
+      el.dataset.cat = p.category;
+      el.innerHTML = `
+        <div class="m-bg" style="background:${grad}">
+          <img src="photos/${p.category}/${p.file}"
+               alt="${p.caption_fr}"
+               loading="lazy"
+               style="width:100%;height:100%;object-fit:cover;display:block"
+               onerror="this.style.display='none'">
+        </div>
+        <div class="m-overlay">
+          <div class="m-caption">
+            <span class="m-cat-tag">${p.category.charAt(0).toUpperCase()+p.category.slice(1)}</span>
+            ${p.caption_fr}
+          </div>
+        </div>`;
+      grid.appendChild(el);
+    });
+  } catch(e) {
+    // photos.json not found — keep placeholder grid
+    console.log('Portfolio: using placeholders');
+  }
+}
+loadPortfolio();
+
+// ── PHOTO PROTECTION ──
+(function() {
+  // 1. Disable right-click on images
+  document.addEventListener('contextmenu', function(e) {
+    if (e.target.tagName === 'IMG' || e.target.closest('.masonry-item, .slide, .about-photo-side')) {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // 2. Disable drag on images
+  document.addEventListener('dragstart', function(e) {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // 3. Disable keyboard shortcuts for saving (Ctrl+S, Ctrl+U, F12 partial)
+  document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.key === 's') { e.preventDefault(); return false; }
+    if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
+    if (e.ctrlKey && e.shiftKey && e.key === 'I') { e.preventDefault(); return false; }
+    if (e.ctrlKey && e.shiftKey && e.key === 'J') { e.preventDefault(); return false; }
+  });
+
+  // 4. Disable print (Ctrl+P)
+  window.addEventListener('beforeprint', function(e) {
+    e.preventDefault();
+    return false;
+  });
+
+  // 5. Add invisible shield divs over all photo containers
+  function addShields() {
+    document.querySelectorAll('.masonry-item, .slide, .about-photo-side').forEach(el => {
+      if (!el.querySelector('.photo-shield')) {
+        const shield = document.createElement('div');
+        shield.className = 'photo-shield';
+        shield.addEventListener('contextmenu', e => e.preventDefault());
+        el.appendChild(shield);
+      }
+    });
+  }
+
+  // Run after portfolio/hero load
+  setTimeout(addShields, 1500);
+
+  // 6. Watermark via CSS — anastasiamishurina.fr overlaid on all photo grids
+  const style = document.createElement('style');
+  style.textContent = `
+    .masonry-item::before {
+      content: 'anastasiamishurina.fr';
+      position: absolute;
+      bottom: 8px; right: 8px;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.0);
+      z-index: 10;
+      pointer-events: none;
+      font-family: sans-serif;
+      text-shadow: 0 0 0 rgba(255,255,255,0.35);
+    }
+  `;
+  document.head.appendChild(style);
+})();
+
 // ── HERO CAROUSEL (слайды из hero.json) ──
 async function loadHero() {
   const wrap = document.getElementById('slidesWrap');
