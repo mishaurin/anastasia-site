@@ -743,7 +743,9 @@ footer {
 async function loadPortfolio() {
   try {
     const res = await fetch('photos.json');
-    const photos = await res.json();
+    // категория "hero" — это фото для карусели на главной (hero.json),
+    // в сетку портфолио они не попадают
+    const photos = (await res.json()).filter(p => p.category !== 'hero');
     const grid = document.getElementById('masonryGrid');
     if (!grid || !photos.length) return;
     
@@ -881,93 +883,9 @@ loadPortfolio();
   </div>
 </nav>
 
-<!-- HERO CAROUSEL -->
+<!-- HERO CAROUSEL (слайды рендерятся из hero.json скриптом внизу страницы) -->
 <section id="hero">
-  <div class="slides-wrap" id="slidesWrap">
-
-    <div class="slide active">
-      <img src="photos/hero/IMG_7691.JPG" alt="Anastasia Mishurina — Mariage" class="slide-bg"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="slide-placeholder" style="display:none">
-        <svg viewBox="0 0 24 24" width="32" style="stroke:rgba(255,255,255,0.3);fill:none"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      </div>
-      <div class="slide-text">
-        <div>
-          <div class="slide-category">Mariage</div>
-          <div class="slide-title-text">Pour le jour<br><em>le plus important</em></div>
-        </div>
-        <div class="slide-action">
-          <div class="slide-location">Lyon · France · Europe</div>
-          <a href="#contact" class="slide-btn">Réserver <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide">
-      <div class="slide-placeholder">
-        <svg viewBox="0 0 24 24" width="32" style="stroke:rgba(255,255,255,0.3);fill:none"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      </div>
-      <div class="slide-text">
-        <div>
-          <div class="slide-category">Gala & Soirée</div>
-          <div class="slide-title-text">L'élégance<br><em>à son apogée</em></div>
-        </div>
-        <div class="slide-action">
-          <div class="slide-location">Cannes · Paris · Monaco</div>
-          <a href="#contact" class="slide-btn">Découvrir <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide">
-      <div class="slide-placeholder">
-        <svg viewBox="0 0 24 24" width="32" style="stroke:rgba(255,255,255,0.3);fill:none"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      </div>
-      <div class="slide-text">
-        <div>
-          <div class="slide-category">Fashion Week</div>
-          <div class="slide-title-text">Milan · Paris<br><em>sur les podiums</em></div>
-        </div>
-        <div class="slide-action">
-          <div class="slide-location">Milano · Paris</div>
-          <a href="#portfolio" class="slide-btn">Voir le portfolio <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide">
-      <div class="slide-placeholder">
-        <svg viewBox="0 0 24 24" width="32" style="stroke:rgba(255,255,255,0.3);fill:none"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      </div>
-      <div class="slide-text">
-        <div>
-          <div class="slide-category">Plateau TV & Interview</div>
-          <div class="slide-title-text">Impeccable<br><em>à l'écran</em></div>
-        </div>
-        <div class="slide-action">
-          <div class="slide-location">Eurovision · France TV</div>
-          <a href="#contact" class="slide-btn">Réserver <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide">
-      <div class="slide-placeholder">
-        <svg viewBox="0 0 24 24" width="32" style="stroke:rgba(255,255,255,0.3);fill:none"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      </div>
-      <div class="slide-text">
-        <div>
-          <div class="slide-category">Shooting Editorial</div>
-          <div class="slide-title-text">L'art<br><em>en image</em></div>
-        </div>
-        <div class="slide-action">
-          <div class="slide-location">Paris · Milan · Lyon</div>
-          <a href="#portfolio" class="slide-btn">Voir le portfolio <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-        </div>
-      </div>
-    </div>
-
-  </div>
+  <div class="slides-wrap" id="slidesWrap"></div>
 
   <!-- Arrows -->
   <div class="carousel-arrows">
@@ -1328,8 +1246,44 @@ loadPortfolio();
 </footer>
 
 <script>
-// ── HERO CAROUSEL ──
-(function(){
+// ── HERO CAROUSEL (слайды из hero.json) ──
+async function loadHero() {
+  const wrap = document.getElementById('slidesWrap');
+  try {
+    const res = await fetch('hero.json');
+    const heroSlides = await res.json();
+    if (!wrap || !heroSlides.length) return;
+
+    wrap.innerHTML = heroSlides.map((s, i) => `
+      <div class="slide${i === 0 ? ' active' : ''}">
+        ${s.file ? `
+        <img src="photos/hero/${s.file}" alt="Anastasia Mishurina — ${s.category}" class="slide-bg"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="slide-placeholder" style="display:none">
+          <svg viewBox="0 0 24 24" width="32" style="stroke:rgba(255,255,255,0.3);fill:none"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>` : `
+        <div class="slide-placeholder">
+          <svg viewBox="0 0 24 24" width="32" style="stroke:rgba(255,255,255,0.3);fill:none"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>`}
+        <div class="slide-text">
+          <div>
+            <div class="slide-category">${s.category}</div>
+            <div class="slide-title-text">${s.title}<br><em>${s.titleEm}</em></div>
+          </div>
+          <div class="slide-action">
+            <div class="slide-location">${s.location}</div>
+            <a href="${s.btnHref}" class="slide-btn">${s.btnLabel} <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>`).join('');
+
+    initHeroCarousel();
+  } catch (e) {
+    console.log('Hero carousel: hero.json not found or invalid', e);
+  }
+}
+
+function initHeroCarousel() {
   const wrap    = document.getElementById('slidesWrap');
   const slides  = wrap.querySelectorAll('.slide');
   const dotsEl  = document.getElementById('heroDots');
@@ -1340,6 +1294,7 @@ loadPortfolio();
   let current = 0, timer, barTimer;
 
   // Build dots
+  dotsEl.innerHTML = '';
   slides.forEach((_, i) => {
     const d = document.createElement('button');
     d.className = 'c-dot' + (i===0?' active':'');
@@ -1377,7 +1332,9 @@ loadPortfolio();
 
   goTo(0);
   startAuto();
-})();
+}
+
+loadHero();
 
 // ── PRAISE SLIDER ──
 (function(){

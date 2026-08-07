@@ -1,0 +1,47 @@
+[
+  {
+    "file": "IMG_7691.JPG",
+    "category": "Mariage",
+    "title": "Pour le jour",
+    "titleEm": "le plus important",
+    "location": "Lyon · France · Europe",
+    "btnLabel": "Réserver",
+    "btnHref": "#contact"
+  },
+  {
+    "file": "IMG_7585.JPG",
+    "category": "Gala & Soirée",
+    "title": "L'élégance",
+    "titleEm": "à son apogée",
+    "location": "Cannes · Paris · Monaco",
+    "btnLabel": "Découvrir",
+    "btnHref": "#contact"
+  },
+  {
+    "file": "IMG_7688.JPG",
+    "category": "Fashion Week",
+    "title": "Milan · Paris",
+    "titleEm": "sur les podiums",
+    "location": "Milano · Paris",
+    "btnLabel": "Voir le portfolio",
+    "btnHref": "#portfolio"
+  },
+  {
+    "file": "IMG_7276.JPG",
+    "category": "Plateau TV & Interview",
+    "title": "Impeccable",
+    "titleEm": "à l'écran",
+    "location": "Eurovision · France TV",
+    "btnLabel": "Réserver",
+    "btnHref": "#contact"
+  },
+  {
+    "file": "IMG_7062.JPG",
+    "category": "Shooting Editorial",
+    "title": "L'art",
+    "titleEm": "en image",
+    "location": "Paris · Milan · Lyon",
+    "btnLabel": "Voir le portfolio",
+    "btnHref": "#portfolio"
+  }
+]

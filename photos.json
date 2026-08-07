@@ -1,17 +1,5 @@
 [
   {
-    "file": "IMG_7585.JPG",
-    "category": "hero",
-    "caption_fr": "Mariage · Cérémonie",
-    "caption_en": "Wedding · Ceremony"
-  },
-    {
-    "file": "IMG_7688.JPG",
-    "category": "hero",
-    "caption_fr": "Mariage · Cérémonie",
-    "caption_en": "Wedding · Ceremony"
-  },
-  {
     "file": "IMG_7837.JPG",
     "category": "mariage",
     "caption_fr": "Mariage · Cérémonie",
@@ -30,9 +18,45 @@
     "caption_en": "Wedding · Details"
   },
   {
+    "file": "IMG_7827.JPG",
+    "category": "mariage",
+    "caption_fr": "Mariage · Cérémonie",
+    "caption_en": "Wedding · Ceremony"
+  },
+  {
+    "file": "IMG_7860.JPG",
+    "category": "mariage",
+    "caption_fr": "Mariage · Cérémonie",
+    "caption_en": "Wedding · Ceremony"
+  },
+  {
     "file": "IMG_7062.JPG",
     "category": "shooting",
     "caption_fr": "Shooting éditorial",
     "caption_en": "Editorial Shoot"
+  },
+  {
+    "file": "IMG_7824.JPG",
+    "category": "shooting",
+    "caption_fr": "Shooting éditorial",
+    "caption_en": "Editorial Shoot"
+  },
+  {
+    "file": "IMG_7276.JPG",
+    "category": "tv",
+    "caption_fr": "Eurovision",
+    "caption_en": "Eurovision"
+  },
+  {
+    "file": "IMG_4823.JPG",
+    "category": "gala",
+    "caption_fr": "Dîner de gala",
+    "caption_en": "Gala Dinner"
+  },
+  {
+    "file": "IMG_6980.JPG",
+    "category": "gala",
+    "caption_fr": "Dîner de gala",
+    "caption_en": "Gala Dinner"
   }
 ]
