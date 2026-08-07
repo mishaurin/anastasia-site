@@ -54,7 +54,7 @@ anastasia-site/
 ## Категории портфолио
 
 | Категория в JSON | Папка | Отображается как |
-|-----------------|-------|-----------------|
+| --- | --- | --- |
 | `mariage` | `photos/mariage/` | Mariage |
 | `gala` | `photos/gala/` | Gala & Soirée |
 | `tv` | `photos/tv/` | TV & Interview |

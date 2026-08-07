@@ -1,13 +1,6 @@
 [build]
   publish = "."
 
-# ── Блокировка прямого доступа к папке photos/ ──
-[[redirects]]
-  from = "/photos/*"
-  to = "/index.html"
-  status = 200
-  conditions = {Role = ["public"]}
-
 # Запрет листинга директорий
 [[headers]]
   for = "/photos/*"
@@ -38,6 +31,16 @@
 
 [[headers]]
   for = "/photos/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/photos/*.JPG"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/photos/*.JPEG"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
