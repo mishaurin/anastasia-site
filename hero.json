@@ -1,6 +1,6 @@
 [
   {
-    "file": "Hero1.JPG",
+    "file": "Hero1.jpeg",
     "category": "Mariage",
     "title": "Pour le jour",
     "titleEm": "le plus important",
@@ -9,7 +9,7 @@
     "btnHref": "#contact"
   },
   {
-    "file": "hero2.JPG",
+    "file": "hero2.jpeg",
     "category": "Gala & Soirée",
     "title": "L'élégance",
     "titleEm": "à son apogée",
@@ -18,7 +18,7 @@
     "btnHref": "#contact"
   },
   {
-    "file": "hero3.JPG",
+    "file": "hero3.jpeg",
     "category": "Fashion Week",
     "title": "Milan · Paris",
     "titleEm": "sur les podiums",
@@ -27,7 +27,7 @@
     "btnHref": "#portfolio"
   },
   {
-    "file": "hero4.JPG",
+    "file": "hero4.jpeg",
     "category": "Plateau TV & Interview",
     "title": "Impeccable",
     "titleEm": "à l'écran",
@@ -36,7 +36,7 @@
     "btnHref": "#contact"
   },
   {
-    "file": "hero5.JPG",
+    "file": "hero5.jpeg",
     "category": "Shooting Editorial",
     "title": "L'art",
     "titleEm": "en image",
