@@ -292,22 +292,21 @@ nav {
 /* ══ ABOUT PREVIEW ══ */
 #about-preview {
   background: var(--ink);
-  display: grid; grid-template-columns: 1fr 1fr;
+  display: grid; grid-template-columns: max-content 1fr;
   min-height: 600px;
 }
 .about-photo-side {
   position: relative; overflow: hidden;
   background: var(--blue-mist);
-  min-height: 500px;
 }
 .about-photo-side img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  height: 100%; width: auto;
   display: block;
 }
 .about-photo-placeholder {
-  width: 100%; height: 100%; min-height: 500px;
+  width: 100%; height: 500px;
   background: linear-gradient(160deg, #515865 0%, #2C3A42 100%);
-  display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 14px;
+  display: none; align-items: center; justify-content: center; flex-direction: column; gap: 14px;
 }
 .about-text-side {
   padding: 80px 72px 80px 64px;
@@ -622,7 +621,7 @@ footer {
   .nav-menu { display: none; }
   .nav-toggle { display: flex; }
   #about-preview { grid-template-columns: 1fr; }
-  .about-photo-side { min-height: 320px; }
+  .about-photo-side img { height: auto; width: 100%; }
   .about-text-side { padding: 56px 28px; }
   #contact { grid-template-columns: 1fr; padding: 0; }
   .contact-left { padding: 64px 28px 48px; }
@@ -868,7 +867,7 @@ footer {
 <!-- ABOUT PREVIEW -->
 <section id="about-preview">
   <div class="about-photo-side">
-    <img src="photos/hero/hero3.jpeg" alt="Anastasia Mishurina"
+    <img src="photos/about/1.jpg" alt="Anastasia Mishurina"
          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="about-photo-placeholder">
       <svg viewBox="0 0 24 24" width="36" style="stroke:rgba(255,255,255,0.25);fill:none"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
