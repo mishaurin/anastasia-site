@@ -10,8 +10,6 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://anastasiamishurina.fr">
 <link rel="canonical" href="https://anastasiamishurina.fr">
-<link rel="alternate" hreflang="fr" href="https://anastasiamishurina.fr">
-<link rel="alternate" hreflang="en" href="https://anastasiamishurina.fr/?lang=en">
 <meta name="description" content="Maquilleuse professionnelle basée à Lyon. Mariages de luxe, galas, plateau TV, Fashion Week. Disponible dans toute l'Europe.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Nunito:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -22,13 +20,13 @@
   --blue-mist: #E8EFF7;
   --blue-soft: #D4E3F0;
   --blue-mid:  #A8C4DC;
-  --blue-deep: #6A9CBD;
+  --blue-deep: #467798;
   --blue-ink:  #3A6B8A;
   --petal:     #EDD9D0;
   --rose:      #C9A090;
   --ink:       #2C3A42;
   --ink-soft:  #4A5C66;
-  --ink-faint: #8A9DA8;
+  --ink-faint: #5C707C;
   --gold:      #C8A882;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -56,20 +54,39 @@ nav {
 }
 .nav-menu a:hover { color: var(--blue-ink); }
 .nav-right { display: flex; align-items: center; gap: 24px; }
-.nav-lang { display: flex; gap: 8px; align-items: center; }
-.lang-btn {
-  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
-  background: none; border: none; color: var(--ink-faint);
-  font-family: 'Nunito', sans-serif; font-weight: 300; transition: color 0.3s;
-}
-.lang-btn.active { color: var(--blue-ink); font-weight: 500; }
-.lang-sep { width: 0.5px; height: 10px; background: var(--blue-soft); }
 .nav-cta {
   font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
   padding: 10px 22px; border: 0.5px solid var(--blue-ink);
   color: var(--blue-ink); text-decoration: none; transition: all 0.3s;
 }
 .nav-cta:hover { background: var(--blue-ink); color: white; }
+
+/* ══ MOBILE NAV ══ */
+.nav-toggle {
+  display: none; width: 32px; height: 32px; padding: 0; margin: 0;
+  background: none; border: none; cursor: pointer;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+}
+.nav-toggle span {
+  display: block; width: 20px; height: 1px; background: var(--ink);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.nav-mobile-panel {
+  display: none; position: fixed; top: 72px; left: 0; right: 0; z-index: 99;
+  background: var(--white); border-bottom: 0.5px solid var(--blue-soft);
+  flex-direction: column; padding: 8px 24px 24px;
+  max-height: calc(100vh - 72px); overflow-y: auto;
+}
+.nav-mobile-panel.open { display: flex; }
+.nav-mobile-panel a {
+  font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none; padding: 16px 0;
+  border-bottom: 0.5px solid var(--blue-soft);
+}
+.nav-mobile-panel a:last-child { border-bottom: none; }
 
 /* ══ HERO CAROUSEL ══ */
 #hero {
@@ -190,8 +207,9 @@ nav {
   height: 2px; background: rgba(255,255,255,0.25); z-index: 3; width: 100%;
 }
 .carousel-progress-bar {
-  height: 100%; background: white; width: 0%;
-  transition: width linear;
+  height: 100%; width: 100%; background: white;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform linear;
 }
 
 /* Slide counter */
@@ -337,6 +355,8 @@ nav {
 }
 .filter-btn.active, .filter-btn:hover { background: var(--blue-ink); border-color: var(--blue-ink); color: white; }
 .masonry-grid { columns: 4; column-gap: 12px; }
+.masonry-grid.is-columned { columns: initial; display: flex; align-items: flex-start; gap: 12px; }
+.masonry-col { display: flex; flex-direction: column; flex: 1 1 0; min-width: 0; }
 .masonry-item { break-inside: avoid; margin-bottom: 12px; overflow: hidden; position: relative; }
 .masonry-item.hidden { display: none; }
 .m-bg {
@@ -485,7 +505,7 @@ nav {
 .contact-detail { margin-bottom: 24px; }
 .c-label {
   font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--blue-mid); margin-bottom: 6px; opacity: 0.7;
+  color: var(--blue-mid); margin-bottom: 6px; opacity: 0.92;
 }
 .c-value { font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 300; }
 .c-value a {
@@ -500,7 +520,7 @@ nav {
   display: flex; align-items: center; gap: 10px;
   margin-top: 48px; padding-top: 40px;
   border-top: 0.5px solid rgba(255,255,255,0.1);
-  font-size: 12px; color: rgba(255,255,255,0.45);
+  font-size: 12px; color: rgba(255,255,255,0.65);
   letter-spacing: 0.1em;
 }
 .avail-dot {
@@ -547,7 +567,7 @@ nav {
   font-family: 'Nunito', sans-serif; font-size: 15px;
   font-weight: 300; color: var(--ink); resize: none;
 }
-.f-input::placeholder, .f-textarea::placeholder { color: #B0C4D0; }
+.f-input::placeholder, .f-textarea::placeholder { color: var(--ink-faint); }
 .f-select { appearance: none; cursor: pointer; color: var(--ink); }
 .f-select option { background: white; color: var(--ink); }
 .f-textarea { min-height: 72px; }
@@ -586,11 +606,11 @@ footer {
   font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--blue-mid); font-weight: 400; line-height: 1.8;
 }
-.footer-center { text-align: center; font-size: 10px; letter-spacing: 0.2em; color: rgba(168,196,220,0.3); }
+.footer-center { text-align: center; font-size: 10px; letter-spacing: 0.2em; color: rgba(168,196,220,0.85); }
 .footer-right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
-.footer-social { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-mid); text-decoration: none; opacity: 0.5; transition: opacity 0.3s; }
+.footer-social { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-mid); text-decoration: none; opacity: 0.85; transition: opacity 0.3s; }
 .footer-social:hover { opacity: 1; }
-.footer-copy { font-size: 10px; color: rgba(168,196,220,0.25); }
+.footer-copy { font-size: 10px; color: rgba(168,196,220,0.85); }
 
 /* ══ REVEAL ══ */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }
@@ -600,6 +620,7 @@ footer {
 @media (max-width: 960px) {
   nav { padding: 0 24px; }
   .nav-menu { display: none; }
+  .nav-toggle { display: flex; }
   #about-preview { grid-template-columns: 1fr; }
   .about-photo-side { min-height: 320px; }
   .about-text-side { padding: 56px 28px; }
@@ -684,11 +705,17 @@ footer {
 }
 
 .faq-answer {
-  max-height: 0;
+  display: grid;
+  grid-template-rows: 0fr;
   overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.faq-answer.open {
+  grid-template-rows: 1fr;
 }
 .faq-answer-inner {
+  min-height: 0;
+  overflow: hidden;
   padding: 0 48px 36px 0;
   font-size: 15px;
   line-height: 1.9;
@@ -717,6 +744,7 @@ footer {
   inset: 0;
   z-index: 2;
   background: transparent;
+  pointer-events: none;
 }
 
 </style>
@@ -754,14 +782,20 @@ footer {
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
-    <div class="nav-lang">
-      <button class="lang-btn active">FR</button>
-      <div class="lang-sep"></div>
-      <button class="lang-btn">EN</button>
-    </div>
     <a href="#contact" class="nav-cta">Réserver</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMobilePanel">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="nav-mobile-panel" id="navMobilePanel">
+  <a href="#services">Services</a>
+  <a href="#about-preview">À propos</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#praise">Témoignages</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+</div>
 
 <!-- HERO CAROUSEL (слайды рендерятся из hero.json скриптом внизу страницы) -->
 <section id="hero">
@@ -834,7 +868,7 @@ footer {
 <!-- ABOUT PREVIEW -->
 <section id="about-preview">
   <div class="about-photo-side">
-    <img src="photos/hero/IMG_7691.JPG" alt="Anastasia Mishurina"
+    <img src="photos/hero/hero3.jpeg" alt="Anastasia Mishurina"
          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="about-photo-placeholder">
       <svg viewBox="0 0 24 24" width="36" style="stroke:rgba(255,255,255,0.25);fill:none"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
@@ -1079,15 +1113,15 @@ footer {
     <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)"><input type="hidden" name="form-name" value="contact">
       <div class="f-field">
         <label class="f-label">Votre prénom</label>
-        <input class="f-input" type="text" placeholder="Marie">
+        <input class="f-input" type="text" name="prenom" placeholder="Marie">
       </div>
       <div class="f-field">
         <label class="f-label">Date de l'événement</label>
-        <input class="f-input" type="text" placeholder="15 juin 2025">
+        <input class="f-input" type="text" name="date" placeholder="15 juin 2025">
       </div>
       <div class="f-field">
         <label class="f-label">Type d'événement</label>
-        <select class="f-select f-input">
+        <select class="f-select f-input" name="prestation">
           <option value="" disabled selected>Choisissez une prestation</option>
           <option>Mariage</option>
           <option>Gala & Soirée</option>
@@ -1098,11 +1132,11 @@ footer {
       </div>
       <div class="f-field">
         <label class="f-label">Lieu approximatif</label>
-        <input class="f-input" type="text" placeholder="Lyon, Paris, Provence…">
+        <input class="f-input" type="text" name="lieu" placeholder="Lyon, Paris, Provence…">
       </div>
       <div class="f-field">
         <label class="f-label">Votre message</label>
-        <textarea class="f-textarea f-input" placeholder="Décrivez votre événement et vos attentes…" rows="3"></textarea>
+        <textarea class="f-textarea f-input" name="message" placeholder="Décrivez votre événement et vos attentes…" rows="3"></textarea>
       </div>
       <div class="f-submit">
         <button type="submit" class="btn-send">
@@ -1143,12 +1177,27 @@ async function loadPortfolio() {
       shooting: 'linear-gradient(160deg,#EEE8F0,#D0C0D4)'
     };
 
+    // Настоящие колонки (flex), а не CSS `columns:` — иначе браузер
+    // перебалансирует элементы между колонками при каждой лениво
+    // подгруженной картинке, и фото визуально "перепрыгивают" во время скролла.
+    // Пропорции фото не задаются заранее (object-fit не используется,
+    // чтобы не обрезать) — реальная высота приходит из самой картинки.
+    const columnCount = window.matchMedia('(max-width: 960px)').matches ? 2 : 4;
     grid.innerHTML = '';
+    grid.classList.add('is-columned');
+    const cols = [];
+    const colHeights = [];
+    for (let i = 0; i < columnCount; i++) {
+      const col = document.createElement('div');
+      col.className = 'masonry-col';
+      grid.appendChild(col);
+      cols.push(col);
+      colHeights.push(0);
+    }
+
     photos.forEach((p) => {
       const grad = gradients[p.category] || gradients.mariage;
       const el = document.createElement('div');
-      // без tall/medium/short — высота карточки теперь берётся из
-      // реальных пропорций фото (object-fit убран, чтобы не обрезать)
       el.className = 'masonry-item';
       el.dataset.cat = p.category;
       el.innerHTML = `
@@ -1165,13 +1214,32 @@ async function loadPortfolio() {
             ${p.caption_fr}
           </div>
         </div>`;
-      grid.appendChild(el);
+
+      // Все колонки одной ширины, поэтому для баланса достаточно
+      // сравнивать соотношение h/w (реальные пропорции фото из photos.json),
+      // без обращения к пиксельным размерам колонки.
+      let shortest = 0;
+      for (let i = 1; i < colHeights.length; i++) {
+        if (colHeights[i] < colHeights[shortest]) shortest = i;
+      }
+      cols[shortest].appendChild(el);
+      colHeights[shortest] += (p.h && p.w) ? (p.h / p.w) : 1;
     });
   } catch(e) {
     // photos.json not found — keep placeholder grid
     console.log('Portfolio: using placeholders');
   }
 }
+
+let portfolioColumnCount = null;
+window.addEventListener('resize', () => {
+  const isMobile = window.matchMedia('(max-width: 960px)').matches;
+  const nextCount = isMobile ? 2 : 4;
+  if (portfolioColumnCount !== null && portfolioColumnCount !== nextCount) {
+    loadPortfolio();
+  }
+  portfolioColumnCount = nextCount;
+});
 loadPortfolio();
 
 // ── PHOTO PROTECTION ──
@@ -1309,10 +1377,10 @@ function initHeroCarousel() {
   function resetProgress() {
     clearTimeout(barTimer);
     bar.style.transition = 'none';
-    bar.style.width = '0%';
+    bar.style.transform = 'scaleX(0)';
     requestAnimationFrame(() => {
-      bar.style.transition = 'width ' + AUTO_MS + 'ms linear';
-      bar.style.width = '100%';
+      bar.style.transition = 'transform ' + AUTO_MS + 'ms linear';
+      bar.style.transform = 'scaleX(1)';
     });
   }
 
@@ -1380,12 +1448,64 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
+// ── MOBILE NAV ──
+(function() {
+  const toggle = document.getElementById('navToggle');
+  const panel = document.getElementById('navMobilePanel');
+  if (!toggle || !panel) return;
+
+  function closeMenu() {
+    panel.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  function openMenu() {
+    panel.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  toggle.addEventListener('click', () => {
+    const isOpen = panel.classList.contains('open');
+    isOpen ? closeMenu() : openMenu();
+  });
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+})();
+
 // ── FORM ──
 function handleSubmit(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('.btn-send');
-  btn.textContent = 'Message envoyé ✓';
-  btn.style.background = '#6A9CBD';
+  const form = e.target;
+  const btn = form.querySelector('.btn-send');
+  const originalText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Envoi en cours…';
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(new FormData(form)).toString()
+  })
+    .then(() => {
+      btn.textContent = 'Message envoyé ✓';
+      btn.style.background = '#6A9CBD';
+      form.reset();
+    })
+    .catch(() => {
+      btn.disabled = false;
+      btn.textContent = originalText;
+      alertFormError(form);
+    });
+}
+
+function alertFormError(form) {
+  let note = form.querySelector('.f-error');
+  if (!note) {
+    note = document.createElement('p');
+    note.className = 'f-error';
+    note.style.cssText = 'font-size:11px;color:#B23A3A;text-align:center;line-height:1.65;margin-top:12px';
+    form.querySelector('.f-submit').appendChild(note);
+  }
+  note.textContent = "L'envoi a échoué. Réessayez, ou écrivez directement à aemishurina@gmail.com.";
 }
 
 // ── FAQ ──
@@ -1395,12 +1515,12 @@ function toggleFaq(btn) {
   // Close all
   document.querySelectorAll('.faq-question.open').forEach(q => {
     q.classList.remove('open');
-    q.nextElementSibling.style.maxHeight = null;
+    q.nextElementSibling.classList.remove('open');
   });
   // Open clicked if was closed
   if (!isOpen) {
     btn.classList.add('open');
-    answer.style.maxHeight = answer.scrollHeight + 'px';
+    answer.classList.add('open');
   }
 }
 
