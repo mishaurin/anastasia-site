@@ -1,47 +1,92 @@
 [
   {
     "file": "Hero1.jpeg",
-    "category": "Mariage",
-    "title": "Pour le jour",
-    "titleEm": "le plus important",
-    "location": "Lyon · France · Europe",
-    "btnLabel": "Réserver",
+    "fr": {
+      "category": "Mariage",
+      "title": "Pour le jour",
+      "titleEm": "le plus important",
+      "location": "Lyon · France · Europe",
+      "btnLabel": "Réserver"
+    },
+    "en": {
+      "category": "Wedding",
+      "title": "For the day",
+      "titleEm": "that matters most",
+      "location": "Lyon · France · Europe",
+      "btnLabel": "Book now"
+    },
     "btnHref": "#contact"
   },
   {
     "file": "hero2.jpeg",
-    "category": "Gala & Soirée",
-    "title": "L'élégance",
-    "titleEm": "à son apogée",
-    "location": "Cannes · Paris · Monaco",
-    "btnLabel": "Découvrir",
+    "fr": {
+      "category": "Gala & Soirée",
+      "title": "L'élégance",
+      "titleEm": "à son apogée",
+      "location": "Cannes · Paris · Monaco",
+      "btnLabel": "Découvrir"
+    },
+    "en": {
+      "category": "Gala & Evening",
+      "title": "Elegance",
+      "titleEm": "at its peak",
+      "location": "Cannes · Paris · Monaco",
+      "btnLabel": "Discover"
+    },
     "btnHref": "#contact"
   },
   {
     "file": "hero3.jpeg",
-    "category": "Fashion Week",
-    "title": "Milan · Paris",
-    "titleEm": "sur les podiums",
-    "location": "Milano · Paris",
-    "btnLabel": "Voir le portfolio",
+    "fr": {
+      "category": "Fashion Week",
+      "title": "Milan · Paris",
+      "titleEm": "sur les podiums",
+      "location": "Milano · Paris",
+      "btnLabel": "Voir le portfolio"
+    },
+    "en": {
+      "category": "Fashion Week",
+      "title": "Milan · Paris",
+      "titleEm": "on the runway",
+      "location": "Milano · Paris",
+      "btnLabel": "View portfolio"
+    },
     "btnHref": "#portfolio"
   },
   {
     "file": "hero4.jpeg",
-    "category": "Plateau TV & Interview",
-    "title": "Impeccable",
-    "titleEm": "à l'écran",
-    "location": "Eurovision · France TV",
-    "btnLabel": "Réserver",
+    "fr": {
+      "category": "Plateau TV & Interview",
+      "title": "Impeccable",
+      "titleEm": "à l'écran",
+      "location": "Eurovision · France TV",
+      "btnLabel": "Réserver"
+    },
+    "en": {
+      "category": "TV & Interview",
+      "title": "Impeccable",
+      "titleEm": "on screen",
+      "location": "Eurovision · France TV",
+      "btnLabel": "Book now"
+    },
     "btnHref": "#contact"
   },
   {
     "file": "hero5.jpeg",
-    "category": "Shooting Editorial",
-    "title": "L'art",
-    "titleEm": "en image",
-    "location": "Paris · Milan · Lyon",
-    "btnLabel": "Voir le portfolio",
+    "fr": {
+      "category": "Shooting Editorial",
+      "title": "L'art",
+      "titleEm": "en image",
+      "location": "Paris · Milan · Lyon",
+      "btnLabel": "Voir le portfolio"
+    },
+    "en": {
+      "category": "Editorial Shoot",
+      "title": "The art",
+      "titleEm": "of the image",
+      "location": "Paris · Milan · Lyon",
+      "btnLabel": "View portfolio"
+    },
     "btnHref": "#portfolio"
   }
 ]

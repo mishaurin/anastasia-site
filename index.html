@@ -61,6 +61,18 @@ nav {
 }
 .nav-cta:hover { background: var(--blue-ink); color: white; }
 
+/* ══ LANGUAGE ══ */
+html:not([lang="en"]) .i18n-en { display: none; }
+html[lang="en"] .i18n-fr { display: none; }
+.nav-lang { display: flex; gap: 8px; align-items: center; }
+.lang-btn {
+  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+  background: none; border: none; color: var(--ink-faint); cursor: pointer;
+  font-family: 'Nunito', sans-serif; font-weight: 300; transition: color 0.3s;
+}
+.lang-btn.active { color: var(--blue-ink); font-weight: 500; }
+.lang-sep { width: 0.5px; height: 10px; background: var(--blue-soft); }
+
 /* ══ MOBILE NAV ══ */
 .nav-toggle {
   display: none; width: 32px; height: 32px; padding: 0; margin: 0;
@@ -774,14 +786,19 @@ footer {
   <a href="#" class="nav-logo">Anastasia Mishurina</a>
   <ul class="nav-menu">
     <li><a href="#services">Services</a></li>
-    <li><a href="#about-preview">À propos</a></li>
+    <li><a href="#about-preview"><span class="i18n-fr">À propos</span><span class="i18n-en">About</span></a></li>
     <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#praise">Témoignages</a></li>
+    <li><a href="#praise"><span class="i18n-fr">Témoignages</span><span class="i18n-en">Testimonials</span></a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
-    <a href="#contact" class="nav-cta">Réserver</a>
+    <div class="nav-lang">
+      <button class="lang-btn active" data-lang="fr">FR</button>
+      <div class="lang-sep"></div>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <a href="#contact" class="nav-cta"><span class="i18n-fr">Réserver</span><span class="i18n-en">Book now</span></a>
     <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMobilePanel">
       <span></span><span></span><span></span>
     </button>
@@ -789,9 +806,9 @@ footer {
 </nav>
 <div class="nav-mobile-panel" id="navMobilePanel">
   <a href="#services">Services</a>
-  <a href="#about-preview">À propos</a>
+  <a href="#about-preview"><span class="i18n-fr">À propos</span><span class="i18n-en">About</span></a>
   <a href="#portfolio">Portfolio</a>
-  <a href="#praise">Témoignages</a>
+  <a href="#praise"><span class="i18n-fr">Témoignages</span><span class="i18n-en">Testimonials</span></a>
   <a href="#faq">FAQ</a>
   <a href="#contact">Contact</a>
 </div>
@@ -819,47 +836,62 @@ footer {
 <!-- INTRO STRIP -->
 <div class="intro-strip reveal">
   <div class="intro-tagline">
-    Je crois que chaque femme mérite de se sentir<br>
-    <em>rayonnante</em> — vraiment elle-même, en mieux.
+    <span class="i18n-fr">Je crois que chaque femme mérite de se sentir<br><em>rayonnante</em> — vraiment elle-même, en mieux.</span>
+    <span class="i18n-en">I believe every woman deserves to feel<br><em>radiant</em> — truly herself, only more so.</span>
   </div>
   <div class="intro-divider"></div>
   <div class="intro-meta">
     <div class="intro-meta-item">Fashion Week Milan & Paris</div>
     <div class="intro-meta-item">Festival de Cannes · Eurovision</div>
-    <div class="intro-meta-item">Mariages de luxe · Châteaux de France</div>
+    <div class="intro-meta-item"><span class="i18n-fr">Mariages de luxe · Châteaux de France</span><span class="i18n-en">Luxury weddings · Châteaux of France</span></div>
   </div>
 </div>
 
 <!-- SERVICES -->
 <section id="services">
   <div class="reveal">
-    <div class="section-eyebrow">Prestations</div>
-    <h2 class="section-h">Pour chaque<br><em>occasion unique</em></h2>
+    <div class="section-eyebrow"><span class="i18n-fr">Prestations</span><span class="i18n-en">Services</span></div>
+    <h2 class="section-h">
+      <span class="i18n-fr">Pour chaque<br><em>occasion unique</em></span>
+      <span class="i18n-en">For every<br><em>unique occasion</em></span>
+    </h2>
   </div>
   <div class="services-row reveal">
     <div class="svc">
       <div class="svc-num">01</div>
-      <div class="svc-name">Mariage</div>
-      <p class="svc-desc">Le jour le plus photographié de votre vie mérite une attention absolue. Essai inclus. Châteaux, domaines, terrasses — j'ai tout connu.</p>
-      <div class="svc-price">Prix sur demande</div>
+      <div class="svc-name"><span class="i18n-fr">Mariage</span><span class="i18n-en">Wedding</span></div>
+      <p class="svc-desc">
+        <span class="i18n-fr">Le jour le plus photographié de votre vie mérite une attention absolue. Essai inclus. Châteaux, domaines, terrasses — j'ai tout connu.</span>
+        <span class="i18n-en">The most photographed day of your life deserves absolute attention. Trial included. Châteaux, estates, terraces — I've seen it all.</span>
+      </p>
+      <div class="svc-price"><span class="i18n-fr">Prix sur demande</span><span class="i18n-en">Price on request</span></div>
     </div>
     <div class="svc">
       <div class="svc-num">02</div>
-      <div class="svc-name">Gala & Soirée</div>
-      <p class="svc-desc">Ce que j'adore dans ces soirées ? Le maquillage doit tenir jusqu'au dernier verre — et rester aussi parfait qu'au premier regard.</p>
-      <div class="svc-price">Prix sur demande</div>
+      <div class="svc-name"><span class="i18n-fr">Gala & Soirée</span><span class="i18n-en">Gala & Evening</span></div>
+      <p class="svc-desc">
+        <span class="i18n-fr">Ce que j'adore dans ces soirées ? Le maquillage doit tenir jusqu'au dernier verre — et rester aussi parfait qu'au premier regard.</span>
+        <span class="i18n-en">What I love about these evenings? The makeup has to last until the last glass — and still look as perfect as it did at first glance.</span>
+      </p>
+      <div class="svc-price"><span class="i18n-fr">Prix sur demande</span><span class="i18n-en">Price on request</span></div>
     </div>
     <div class="svc">
       <div class="svc-num">03</div>
-      <div class="svc-name">Plateau TV & Interview</div>
-      <p class="svc-desc">La lumière studio est impitoyable. Après des années sur les plateaux, je sais exactement ce qu'une caméra HD voit.</p>
-      <div class="svc-price">Prix sur demande</div>
+      <div class="svc-name"><span class="i18n-fr">Plateau TV & Interview</span><span class="i18n-en">TV & Interview</span></div>
+      <p class="svc-desc">
+        <span class="i18n-fr">La lumière studio est impitoyable. Après des années sur les plateaux, je sais exactement ce qu'une caméra HD voit.</span>
+        <span class="i18n-en">Studio lighting is unforgiving. After years on set, I know exactly what an HD camera sees.</span>
+      </p>
+      <div class="svc-price"><span class="i18n-fr">Prix sur demande</span><span class="i18n-en">Price on request</span></div>
     </div>
     <div class="svc">
       <div class="svc-num">04</div>
-      <div class="svc-name">Shooting Photo</div>
-      <p class="svc-desc">Je travaille main dans la main avec le photographe. Chaque détail compte quand l'objectif est à 50cm de votre visage.</p>
-      <div class="svc-price">Prix sur demande</div>
+      <div class="svc-name"><span class="i18n-fr">Shooting Photo</span><span class="i18n-en">Photo Shoot</span></div>
+      <p class="svc-desc">
+        <span class="i18n-fr">Je travaille main dans la main avec le photographe. Chaque détail compte quand l'objectif est à 50cm de votre visage.</span>
+        <span class="i18n-en">I work hand in hand with the photographer. Every detail matters when the lens is 50cm from your face.</span>
+      </p>
+      <div class="svc-price"><span class="i18n-fr">Prix sur demande</span><span class="i18n-en">Price on request</span></div>
     </div>
   </div>
 </section>
@@ -874,20 +906,24 @@ footer {
     </div>
   </div>
   <div class="about-text-side reveal">
-    <div class="section-eyebrow">À propos</div>
-    <h2 class="section-h">Ce que je fais,<br>et pourquoi<br><em>ça compte</em></h2>
+    <div class="section-eyebrow"><span class="i18n-fr">À propos</span><span class="i18n-en">About</span></div>
+    <h2 class="section-h">
+      <span class="i18n-fr">Ce que je fais,<br>et pourquoi<br><em>ça compte</em></span>
+      <span class="i18n-en">What I do,<br>and why<br><em>it matters</em></span>
+    </h2>
     <p class="about-intro">
-      Je suis Anastasia. Maquilleuse depuis plus de 10 ans, basée à Lyon. Mon parcours m'a menée sur les podiums de la Fashion Week de Milan et de Paris, dans les coulisses du Festival de Cannes, sur les plateaux de l'Eurovision — et surtout, aux côtés de mariées dans les plus beaux domaines de France.
+      <span class="i18n-fr">Je suis Anastasia. Maquilleuse depuis plus de 10 ans, basée à Lyon. Mon parcours m'a menée sur les podiums de la Fashion Week de Milan et de Paris, dans les coulisses du Festival de Cannes, sur les plateaux de l'Eurovision — et surtout, aux côtés de mariées dans les plus beaux domaines de France.</span>
+      <span class="i18n-en">I'm Anastasia. A makeup artist for over 10 years, based in Lyon. My path has taken me across the runways of Milan and Paris Fashion Week, backstage at the Cannes Film Festival, on set at Eurovision — and above all, alongside brides in the most beautiful estates of France.</span>
     </p>
     <div class="about-highlights">
       <div class="about-hl">Fashion Week Milan & Paris</div>
       <div class="about-hl">Festival de Cannes</div>
       <div class="about-hl">Eurovision</div>
-      <div class="about-hl">Mariages de luxe · Châteaux de France</div>
-      <div class="about-hl">Célébrités & Mannequins internationaux</div>
+      <div class="about-hl"><span class="i18n-fr">Mariages de luxe · Châteaux de France</span><span class="i18n-en">Luxury weddings · Châteaux of France</span></div>
+      <div class="about-hl"><span class="i18n-fr">Célébrités & Mannequins internationaux</span><span class="i18n-en">International celebrities & models</span></div>
     </div>
     <a href="#contact" class="about-link">
-      Me contacter
+      <span class="i18n-fr">Me contacter</span><span class="i18n-en">Get in touch</span>
       <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
   </div>
@@ -898,14 +934,17 @@ footer {
   <div class="portfolio-top reveal">
     <div>
       <div class="section-eyebrow">Portfolio</div>
-      <h2 class="section-h">Ce dont je suis<br><em>la plus fière</em></h2>
+      <h2 class="section-h">
+        <span class="i18n-fr">Ce dont je suis<br><em>la plus fière</em></span>
+        <span class="i18n-en">What I'm<br><em>most proud of</em></span>
+      </h2>
     </div>
     <div class="filter-wrap">
-      <button class="filter-btn active" data-filter="all">Tout</button>
-      <button class="filter-btn" data-filter="mariage">Mariage</button>
+      <button class="filter-btn active" data-filter="all"><span class="i18n-fr">Tout</span><span class="i18n-en">All</span></button>
+      <button class="filter-btn" data-filter="mariage"><span class="i18n-fr">Mariage</span><span class="i18n-en">Wedding</span></button>
       <button class="filter-btn" data-filter="gala">Gala</button>
       <button class="filter-btn" data-filter="tv">TV</button>
-      <button class="filter-btn" data-filter="shooting">Shooting</button>
+      <button class="filter-btn" data-filter="shooting"><span class="i18n-fr">Shooting</span><span class="i18n-en">Shoot</span></button>
     </div>
   </div>
   <div class="masonry-grid reveal" id="masonryGrid">
@@ -933,59 +972,77 @@ footer {
 <!-- PRAISE -->
 <section id="praise">
   <div class="praise-header reveal">
-    <div class="section-eyebrow">Témoignages</div>
-    <h2 class="section-h">Ce qu'elles<br><em>ont vécu</em></h2>
+    <div class="section-eyebrow"><span class="i18n-fr">Témoignages</span><span class="i18n-en">Testimonials</span></div>
+    <h2 class="section-h">
+      <span class="i18n-fr">Ce qu'elles<br><em>ont vécu</em></span>
+      <span class="i18n-en">What they've<br><em>experienced</em></span>
+    </h2>
   </div>
   <div class="praise-slider reveal">
     <div class="praise-track" id="praiseTrack">
 
       <div class="praise-card">
         <span class="praise-quote-mark">"</span>
-        <p class="praise-text">Je ne savais pas trop à quoi m'attendre — je ne voulais pas me retrouver méconnaissable sur mes photos de mariage. Anastasia a compris ça immédiatement. <strong>Le soir, après 8 heures de fête, j'étais encore impeccable.</strong></p>
+        <p class="praise-text">
+          <span class="i18n-fr">Je ne savais pas trop à quoi m'attendre — je ne voulais pas me retrouver méconnaissable sur mes photos de mariage. Anastasia a compris ça immédiatement. <strong>Le soir, après 8 heures de fête, j'étais encore impeccable.</strong></span>
+          <span class="i18n-en">I wasn't quite sure what to expect — I didn't want to look unrecognizable in my wedding photos. Anastasia understood that right away. <strong>By the evening, after 8 hours of celebration, I still looked impeccable.</strong></span>
+        </p>
         <div class="praise-author">
           <div class="praise-avatar"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
           <div class="praise-name">Camille R.</div>
-          <div class="praise-role">Mariée · Château de Bagnols, juin 2024</div>
+          <div class="praise-role"><span class="i18n-fr">Mariée · Château de Bagnols, juin 2024</span><span class="i18n-en">Bride · Château de Bagnols, June 2024</span></div>
         </div>
       </div>
 
       <div class="praise-card">
         <span class="praise-quote-mark">"</span>
-        <p class="praise-text">En 12 ans de plateau TV, j'ai vu beaucoup de maquilleuses. Anastasia est la première qui comprend vraiment ce que fait la lumière studio sur le visage. <strong>Je lui fais une confiance totale — elle sait ce que la caméra voit.</strong></p>
+        <p class="praise-text">
+          <span class="i18n-fr">En 12 ans de plateau TV, j'ai vu beaucoup de maquilleuses. Anastasia est la première qui comprend vraiment ce que fait la lumière studio sur le visage. <strong>Je lui fais une confiance totale — elle sait ce que la caméra voit.</strong></span>
+          <span class="i18n-en">In 12 years on TV sets, I've seen many makeup artists. Anastasia is the first who truly understands what studio lighting does to a face. <strong>I trust her completely — she knows exactly what the camera sees.</strong></span>
+        </p>
         <div class="praise-author">
           <div class="praise-avatar"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
           <div class="praise-name">Sophie M.</div>
-          <div class="praise-role">Journaliste · France Télévisions</div>
+          <div class="praise-role"><span class="i18n-fr">Journaliste · France Télévisions</span><span class="i18n-en">Journalist · France Télévisions</span></div>
         </div>
       </div>
 
       <div class="praise-card">
         <span class="praise-quote-mark">"</span>
-        <p class="praise-text">Ce que j'aime chez Anastasia, c'est qu'elle écoute vraiment. Elle n'impose pas son style — elle cherche le vôtre, et elle le révèle. <strong>Pour nos shootings éditoriaux, c'est exactement le profil qu'on cherche.</strong></p>
+        <p class="praise-text">
+          <span class="i18n-fr">Ce que j'aime chez Anastasia, c'est qu'elle écoute vraiment. Elle n'impose pas son style — elle cherche le vôtre, et elle le révèle. <strong>Pour nos shootings éditoriaux, c'est exactement le profil qu'on cherche.</strong></span>
+          <span class="i18n-en">What I love about Anastasia is that she truly listens. She doesn't impose her own style — she finds yours, and brings it out. <strong>For our editorial shoots, she's exactly the talent we look for.</strong></span>
+        </p>
         <div class="praise-author">
           <div class="praise-avatar"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
           <div class="praise-name">Isabelle D.</div>
-          <div class="praise-role">Directrice artistique · Paris</div>
+          <div class="praise-role"><span class="i18n-fr">Directrice artistique · Paris</span><span class="i18n-en">Art Director · Paris</span></div>
         </div>
       </div>
 
       <div class="praise-card">
         <span class="praise-quote-mark">"</span>
-        <p class="praise-text">Anastasia a su capter exactement l'énergie du défilé. Les mannequins étaient sublimes, le maquillage tenait sous les projecteurs et la pression. <strong>Une professionnelle au sens plein du terme.</strong></p>
+        <p class="praise-text">
+          <span class="i18n-fr">Anastasia a su capter exactement l'énergie du défilé. Les mannequins étaient sublimes, le maquillage tenait sous les projecteurs et la pression. <strong>Une professionnelle au sens plein du terme.</strong></span>
+          <span class="i18n-en">Anastasia captured exactly the energy of the show. The models looked stunning, and the makeup held up under the lights and the pressure. <strong>A true professional in every sense.</strong></span>
+        </p>
         <div class="praise-author">
           <div class="praise-avatar"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
           <div class="praise-name">Léa V.</div>
-          <div class="praise-role">Directrice de casting · Fashion Week Paris</div>
+          <div class="praise-role"><span class="i18n-fr">Directrice de casting · Fashion Week Paris</span><span class="i18n-en">Casting Director · Paris Fashion Week</span></div>
         </div>
       </div>
 
       <div class="praise-card">
         <span class="praise-quote-mark">"</span>
-        <p class="praise-text">Pour une cérémonie aussi importante, nous avions besoin de quelqu'un d'irréprochable. <strong>Anastasia a dépassé toutes nos attentes — disponible, précise, et d'une gentillesse rare.</strong></p>
+        <p class="praise-text">
+          <span class="i18n-fr">Pour une cérémonie aussi importante, nous avions besoin de quelqu'un d'irréprochable. <strong>Anastasia a dépassé toutes nos attentes — disponible, précise, et d'une gentillesse rare.</strong></span>
+          <span class="i18n-en">For such an important ceremony, we needed someone flawless. <strong>Anastasia exceeded all our expectations — available, precise, and remarkably kind.</strong></span>
+        </p>
         <div class="praise-author">
           <div class="praise-avatar"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
           <div class="praise-name">Marie-Claire B.</div>
-          <div class="praise-role">Mariée · Provence, septembre 2024</div>
+          <div class="praise-role"><span class="i18n-fr">Mariée · Provence, septembre 2024</span><span class="i18n-en">Bride · Provence, September 2024</span></div>
         </div>
       </div>
 
@@ -1002,78 +1059,93 @@ footer {
 <section id="faq">
   <div class="reveal">
     <div class="section-eyebrow">FAQ</div>
-    <h2 class="section-h">Questions &amp; <em>réponses</em></h2>
+    <h2 class="section-h">
+      <span class="i18n-fr">Questions &amp; <em>réponses</em></span>
+      <span class="i18n-en">Questions &amp; <em>answers</em></span>
+    </h2>
   </div>
   <div class="faq-list reveal">
 
     <div class="faq-item">
       <button class="faq-question" onclick="toggleFaq(this)">
-        Proposez-vous un essai avant le jour J ?
+        <span class="i18n-fr">Proposez-vous un essai avant le jour J ?</span>
+        <span class="i18n-en">Do you offer a trial before the big day?</span>
         <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          Oui, et je le recommande vivement — surtout pour les mariages. L'essai nous permet de trouver ensemble <strong>le maquillage qui vous ressemble vraiment</strong>, d'ajuster les couleurs, de tester la tenue, et surtout de vous sentir rassurée le grand jour. C'est aussi l'occasion de créer un lien de confiance avant l'événement.
+          <span class="i18n-fr">Oui, et je le recommande vivement — surtout pour les mariages. L'essai nous permet de trouver ensemble <strong>le maquillage qui vous ressemble vraiment</strong>, d'ajuster les couleurs, de tester la tenue, et surtout de vous sentir rassurée le grand jour. C'est aussi l'occasion de créer un lien de confiance avant l'événement.</span>
+          <span class="i18n-en">Yes, and I strongly recommend it — especially for weddings. The trial lets us find <strong>the makeup that truly looks like you</strong>, adjust the colors, test how it holds up, and above all feel confident on the big day. It's also a chance to build trust before the event.</span>
         </div>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-question" onclick="toggleFaq(this)">
-        Comment se passe la réservation ?
+        <span class="i18n-fr">Comment se passe la réservation ?</span>
+        <span class="i18n-en">How does booking work?</span>
         <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          Tout commence par un message via le formulaire de contact ou par email. Je vous réponds dans les 48 heures pour en savoir plus sur votre projet. Si nous décidons de travailler ensemble, <strong>un acompte confirme la date</strong> et la prépare officiellement dans mon agenda. Simple, rapide, sans stress.
+          <span class="i18n-fr">Tout commence par un message via le formulaire de contact ou par email. Je vous réponds dans les 48 heures pour en savoir plus sur votre projet. Si nous décidons de travailler ensemble, <strong>un acompte confirme la date</strong> et la prépare officiellement dans mon agenda. Simple, rapide, sans stress.</span>
+          <span class="i18n-en">It all starts with a message through the contact form or by email. I reply within 48 hours to learn more about your event. If we decide to work together, <strong>a deposit confirms the date</strong> and officially secures it in my calendar. Simple, quick, no stress.</span>
         </div>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-question" onclick="toggleFaq(this)">
-        Intervenez-vous en dehors de Lyon ?
+        <span class="i18n-fr">Intervenez-vous en dehors de Lyon ?</span>
+        <span class="i18n-en">Do you travel outside Lyon?</span>
         <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          Absolument. Je me déplace dans toute la France et à l'international. J'ai travaillé sur des mariages et des événements à Paris, en Provence, sur la Côte d'Azur, à Milan, à Londres et bien au-delà. <strong>Les frais de déplacement sont calculés selon la distance</strong> et intégrés dans le devis personnalisé.
+          <span class="i18n-fr">Absolument. Je me déplace dans toute la France et à l'international. J'ai travaillé sur des mariages et des événements à Paris, en Provence, sur la Côte d'Azur, à Milan, à Londres et bien au-delà. <strong>Les frais de déplacement sont calculés selon la distance</strong> et intégrés dans le devis personnalisé.</span>
+          <span class="i18n-en">Absolutely. I travel throughout France and internationally. I've worked on weddings and events in Paris, Provence, the Côte d'Azur, Milan, London, and beyond. <strong>Travel costs are calculated based on distance</strong> and included in your personalized quote.</span>
         </div>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-question" onclick="toggleFaq(this)">
-        Quels produits utilisez-vous ?
+        <span class="i18n-fr">Quels produits utilisez-vous ?</span>
+        <span class="i18n-en">What products do you use?</span>
         <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          Je travaille exclusivement avec des marques professionnelles de haute qualité — <strong>Charlotte Tilbury, NARS, Make Up For Ever, Armani Beauty, Dior</strong> — sélectionnées pour leur tenue, leur rendu photographique et leur respect de la peau. Si vous avez des allergies ou des sensibilités particulières, merci de me le signaler à l'avance.
+          <span class="i18n-fr">Je travaille exclusivement avec des marques professionnelles de haute qualité — <strong>Charlotte Tilbury, NARS, Make Up For Ever, Armani Beauty, Dior</strong> — sélectionnées pour leur tenue, leur rendu photographique et leur respect de la peau. Si vous avez des allergies ou des sensibilités particulières, merci de me le signaler à l'avance.</span>
+          <span class="i18n-en">I work exclusively with high-quality professional brands — <strong>Charlotte Tilbury, NARS, Make Up For Ever, Armani Beauty, Dior</strong> — chosen for their longevity, how they photograph, and how gentle they are on skin. If you have any allergies or sensitivities, please let me know in advance.</span>
         </div>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-question" onclick="toggleFaq(this)">
-        Combien de temps à l'avance faut-il réserver ?
+        <span class="i18n-fr">Combien de temps à l'avance faut-il réserver ?</span>
+        <span class="i18n-en">How far in advance should I book?</span>
         <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          Pour les mariages, je recommande de réserver <strong>6 à 12 mois à l'avance</strong>, surtout pour les dates de haute saison (mai à septembre). Pour les événements ponctuels — galas, shootings, plateau TV — quelques semaines suffisent généralement. N'hésitez pas à me contacter même si votre date est proche, je ferai mon possible.
+          <span class="i18n-fr">Pour les mariages, je recommande de réserver <strong>6 à 12 mois à l'avance</strong>, surtout pour les dates de haute saison (mai à septembre). Pour les événements ponctuels — galas, shootings, plateau TV — quelques semaines suffisent généralement. N'hésitez pas à me contacter même si votre date est proche, je ferai mon possible.</span>
+          <span class="i18n-en">For weddings, I recommend booking <strong>6 to 12 months in advance</strong>, especially for peak season dates (May to September). For one-off events — galas, shoots, TV — a few weeks is usually enough. Don't hesitate to reach out even if your date is close, I'll do my best to accommodate you.</span>
         </div>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-question" onclick="toggleFaq(this)">
-        Pouvez-vous maquiller plusieurs personnes le même jour ?
+        <span class="i18n-fr">Pouvez-vous maquiller plusieurs personnes le même jour ?</span>
+        <span class="i18n-en">Can you do makeup for several people on the same day?</span>
         <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          Oui. Pour les mariages avec une grande suite nuptiale, je peux faire appel à <strong>une assistante de confiance</strong> afin que tout le monde soit prêt dans les temps. Le nombre de personnes et le planning sont discutés lors de notre premier échange pour organiser la matinée sereinement.
+          <span class="i18n-fr">Oui. Pour les mariages avec une grande suite nuptiale, je peux faire appel à <strong>une assistante de confiance</strong> afin que tout le monde soit prêt dans les temps. Le nombre de personnes et le planning sont discutés lors de notre premier échange pour organiser la matinée sereinement.</span>
+          <span class="i18n-en">Yes. For weddings with a large bridal party, I can bring in <strong>a trusted assistant</strong> to make sure everyone is ready on time. The number of people and the schedule are discussed during our first conversation so the morning runs smoothly.</span>
         </div>
       </div>
     </div>
@@ -1085,41 +1157,44 @@ footer {
 <section id="contact">
   <div class="contact-left reveal">
     <div class="section-eyebrow">Contact</div>
-    <h2 class="section-h">On se parle<br>de votre<br><em>grand moment ?</em></h2>
+    <h2 class="section-h">
+      <span class="i18n-fr">On se parle<br>de votre<br><em>grand moment ?</em></span>
+      <span class="i18n-en">Let's talk<br>about your<br><em>big moment</em></span>
+    </h2>
     <div class="contact-detail">
       <div class="c-label">Email</div>
       <div class="c-value"><a href="mailto:aemishurina@gmail.com">aemishurina@gmail.com</a></div>
     </div>
     <div class="contact-detail">
-      <div class="c-label">Téléphone</div>
+      <div class="c-label"><span class="i18n-fr">Téléphone</span><span class="i18n-en">Phone</span></div>
       <div class="c-value"><a href="tel:+33745713679">+33 74 571 36 79</a></div>
     </div>
     <div class="contact-detail">
-      <div class="c-label">Localisation</div>
-      <div class="c-value">Lyon, France · Toute l'Europe</div>
+      <div class="c-label"><span class="i18n-fr">Localisation</span><span class="i18n-en">Location</span></div>
+      <div class="c-value"><span class="i18n-fr">Lyon, France · Toute l'Europe</span><span class="i18n-en">Lyon, France · All of Europe</span></div>
     </div>
     <div class="contact-availability">
       <div class="avail-dot"></div>
-      Disponible pour 2025 & 2026
+      <span class="i18n-fr">Disponible pour 2025 & 2026</span><span class="i18n-en">Available for 2025 & 2026</span>
     </div>
   </div>
 
   <div class="contact-right reveal">
     <div class="form-title">
-      Décrivez-moi votre événement —<br>
-      <span>je reviens vers vous sous 48h.</span>
+      <span class="i18n-fr">Décrivez-moi votre événement —<br><span>je reviens vers vous sous 48h.</span></span>
+      <span class="i18n-en">Tell me about your event —<br><span>I'll get back to you within 48h.</span></span>
     </div>
     <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)"><input type="hidden" name="form-name" value="contact">
       <div class="f-field">
-        <label class="f-label">Votre prénom</label>
+        <label class="f-label"><span class="i18n-fr">Votre prénom</span><span class="i18n-en">Your first name</span></label>
         <input class="f-input" type="text" name="prenom" placeholder="Marie">
       </div>
       <div class="f-field">
-        <label class="f-label">Date de l'événement</label>
+        <label class="f-label"><span class="i18n-fr">Date de l'événement</span><span class="i18n-en">Event date</span></label>
         <input class="f-input" type="text" name="date" placeholder="15 juin 2025">
       </div>
       <div class="f-field">
-        <label class="f-label">Type d'événement</label>
+        <label class="f-label"><span class="i18n-fr">Type d'événement</span><span class="i18n-en">Event type</span></label>
         <select class="f-select f-input" name="prestation">
           <option value="" disabled selected>Choisissez une prestation</option>
           <option>Mariage</option>
@@ -1130,19 +1205,19 @@ footer {
         </select>
       </div>
       <div class="f-field">
-        <label class="f-label">Lieu approximatif</label>
+        <label class="f-label"><span class="i18n-fr">Lieu approximatif</span><span class="i18n-en">Approximate location</span></label>
         <input class="f-input" type="text" name="lieu" placeholder="Lyon, Paris, Provence…">
       </div>
       <div class="f-field">
-        <label class="f-label">Votre message</label>
+        <label class="f-label"><span class="i18n-fr">Votre message</span><span class="i18n-en">Your message</span></label>
         <textarea class="f-textarea f-input" name="message" placeholder="Décrivez votre événement et vos attentes…" rows="3"></textarea>
       </div>
       <div class="f-submit">
         <button type="submit" class="btn-send">
-          Envoyer mon message
+          <span class="i18n-fr">Envoyer mon message</span><span class="i18n-en">Send my message</span>
           <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </button>
-        <p class="f-note">Chaque demande reçoit une réponse personnalisée dans les 48 heures.</p>
+        <p class="f-note"><span class="i18n-fr">Chaque demande reçoit une réponse personnalisée dans les 48 heures.</span><span class="i18n-en">Every request gets a personal reply within 48 hours.</span></p>
       </div>
     </form>
   </div>
@@ -1194,23 +1269,27 @@ async function loadPortfolio() {
       colHeights.push(0);
     }
 
+    const lang = getLang();
     photos.forEach((p) => {
       const grad = gradients[p.category] || gradients.mariage;
       const el = document.createElement('div');
       el.className = 'masonry-item';
       el.dataset.cat = p.category;
+      el._photo = p;
+      const caption = lang === 'en' ? (p.caption_en || p.caption_fr) : p.caption_fr;
+      const catLabel = (CATEGORY_LABELS[lang] || CATEGORY_LABELS.fr)[p.category] || p.category;
       el.innerHTML = `
         <div class="m-bg" style="background:${grad}">
           <img src="photos/${p.category}/${p.file}"
-               alt="${p.caption_fr}"
+               alt="${caption}"
                loading="lazy"
                style="width:100%;height:auto;display:block"
                onerror="this.style.display='none'">
         </div>
         <div class="m-overlay">
           <div class="m-caption">
-            <span class="m-cat-tag">${p.category.charAt(0).toUpperCase()+p.category.slice(1)}</span>
-            ${p.caption_fr}
+            <span class="m-cat-tag">${catLabel}</span>
+            ${caption}
           </div>
         </div>`;
 
@@ -1228,6 +1307,27 @@ async function loadPortfolio() {
     // photos.json not found — keep placeholder grid
     console.log('Portfolio: using placeholders');
   }
+}
+
+const CATEGORY_LABELS = {
+  fr: { mariage: 'Mariage', gala: 'Gala', tv: 'TV', shooting: 'Shooting' },
+  en: { mariage: 'Wedding', gala: 'Gala', tv: 'TV', shooting: 'Shoot' }
+};
+
+function updatePortfolioLanguage() {
+  const lang = getLang();
+  document.querySelectorAll('#masonryGrid .masonry-item').forEach((item) => {
+    const p = item._photo;
+    if (!p) return;
+    const caption = lang === 'en' ? (p.caption_en || p.caption_fr) : p.caption_fr;
+    const catLabel = (CATEGORY_LABELS[lang] || CATEGORY_LABELS.fr)[p.category] || p.category;
+    const img = item.querySelector('img');
+    if (img) img.alt = caption;
+    const overlay = item.querySelector('.m-overlay');
+    if (overlay) {
+      overlay.innerHTML = `<div class="m-caption"><span class="m-cat-tag">${catLabel}</span>${caption}</div>`;
+    }
+  });
 }
 
 let portfolioColumnCount = null;
@@ -1315,10 +1415,24 @@ async function loadHero() {
     const heroSlides = await res.json();
     if (!wrap || !heroSlides.length) return;
 
-    wrap.innerHTML = heroSlides.map((s, i) => `
+    window._heroSlides = heroSlides;
+    renderHero();
+  } catch (e) {
+    console.log('Hero carousel: hero.json not found or invalid', e);
+  }
+}
+
+function renderHero() {
+  const wrap = document.getElementById('slidesWrap');
+  const heroSlides = window._heroSlides;
+  if (!wrap || !heroSlides) return;
+  const lang = getLang();
+  wrap.innerHTML = heroSlides.map((raw, i) => {
+    const s = raw[lang] || raw.fr;
+    return `
       <div class="slide${i === 0 ? ' active' : ''}">
-        ${s.file ? `
-        <img src="photos/hero/${s.file}" alt="Anastasia Mishurina — ${s.category}" class="slide-bg"
+        ${raw.file ? `
+        <img src="photos/hero/${raw.file}" alt="Anastasia Mishurina — ${s.category}" class="slide-bg"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="slide-placeholder" style="display:none">
           <svg viewBox="0 0 24 24" width="32" style="stroke:rgba(255,255,255,0.3);fill:none"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
@@ -1333,15 +1447,38 @@ async function loadHero() {
           </div>
           <div class="slide-action">
             <div class="slide-location">${s.location}</div>
-            <a href="${s.btnHref}" class="slide-btn">${s.btnLabel} <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            <a href="${raw.btnHref}" class="slide-btn">${s.btnLabel} <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
-      </div>`).join('');
+      </div>`;
+  }).join('');
+  initHeroCarousel();
+}
 
-    initHeroCarousel();
-  } catch (e) {
-    console.log('Hero carousel: hero.json not found or invalid', e);
-  }
+// Обновляет текст уже отрисованных слайдов на лету, без пересборки
+// DOM — иначе пришлось бы заново инициализировать карусель (таймер,
+// текущий слайд), и переключение языка сбрасывало бы автопрокрутку.
+function updateHeroLanguage() {
+  const heroSlides = window._heroSlides;
+  const wrap = document.getElementById('slidesWrap');
+  if (!wrap || !heroSlides) return;
+  const lang = getLang();
+  const slideEls = wrap.querySelectorAll('.slide');
+  slideEls.forEach((el, i) => {
+    const raw = heroSlides[i];
+    if (!raw) return;
+    const s = raw[lang] || raw.fr;
+    const cat = el.querySelector('.slide-category');
+    if (cat) cat.textContent = s.category;
+    const titleEl = el.querySelector('.slide-title-text');
+    if (titleEl) titleEl.innerHTML = `${s.title}<br><em>${s.titleEm}</em>`;
+    const loc = el.querySelector('.slide-location');
+    if (loc) loc.textContent = s.location;
+    const btn = el.querySelector('.slide-btn');
+    if (btn) btn.innerHTML = `${s.btnLabel} <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>`;
+    const bg = el.querySelector('.slide-bg');
+    if (bg) bg.alt = `Anastasia Mishurina — ${s.category}`;
+  });
 }
 
 function initHeroCarousel() {
@@ -1468,6 +1605,74 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   });
   panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+})();
+
+// ── LANGUAGE (FR / EN) ──
+// Строки, живущие в атрибутах (placeholder, aria-label, текст <option>),
+// не могут переключаться через .i18n-fr/.i18n-en спаны — <option> не
+// поддерживает вложенную разметку, атрибуты не читают CSS. Меняем их
+// напрямую через JS.
+const ATTR_I18N = [
+  { sel: '#navToggle', attr: 'aria-label', fr: 'Ouvrir le menu', en: 'Open menu' },
+  { sel: 'textarea[name="message"]', attr: 'placeholder', fr: 'Décrivez votre événement et vos attentes…', en: 'Describe your event and what you have in mind…' },
+  { sel: '.f-select option[value=""]', attr: 'text', fr: 'Choisissez une prestation', en: 'Choose a service' },
+  { sel: '.f-select option:nth-child(2)', attr: 'text', fr: 'Mariage', en: 'Wedding' },
+  { sel: '.f-select option:nth-child(3)', attr: 'text', fr: 'Gala & Soirée', en: 'Gala & Evening' },
+  { sel: '.f-select option:nth-child(4)', attr: 'text', fr: 'Plateau TV / Interview', en: 'TV / Interview' },
+  { sel: '.f-select option:nth-child(5)', attr: 'text', fr: 'Shooting photo', en: 'Photo shoot' },
+  { sel: '.f-select option:nth-child(6)', attr: 'text', fr: 'Autre', en: 'Other' },
+];
+
+let currentLang = 'fr';
+
+function getLang() { return currentLang; }
+
+function applyAttrI18n(lang) {
+  ATTR_I18N.forEach(({ sel, attr, fr, en }) => {
+    const els = document.querySelectorAll(sel);
+    const value = lang === 'en' ? en : fr;
+    els.forEach(el => {
+      if (attr === 'text') el.textContent = value;
+      else el.setAttribute(attr, value);
+    });
+  });
+}
+
+function setLang(lang) {
+  if (lang !== 'fr' && lang !== 'en') lang = 'fr';
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  try { localStorage.setItem('site-lang', lang); } catch (e) {}
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  applyAttrI18n(lang);
+  updateHeroLanguage();
+  updatePortfolioLanguage();
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.dataset.lang));
+});
+
+(function initLang() {
+  let lang = 'fr';
+  try {
+    const url = new URL(window.location.href);
+    const urlLang = url.searchParams.get('lang');
+    if (urlLang === 'en' || urlLang === 'fr') {
+      lang = urlLang;
+    } else {
+      const saved = localStorage.getItem('site-lang');
+      if (saved === 'en' || saved === 'fr') lang = saved;
+    }
+  } catch (e) {}
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  applyAttrI18n(lang);
 })();
 
 // ── FORM ──
