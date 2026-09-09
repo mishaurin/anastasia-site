@@ -580,6 +580,9 @@ html[lang="en"] .i18n-fr { display: none; }
 }
 .f-input::placeholder, .f-textarea::placeholder { color: var(--ink-faint); }
 .f-select { appearance: none; cursor: pointer; color: var(--ink); }
+.f-date { cursor: pointer; color-scheme: light; }
+.f-date::-webkit-calendar-picker-indicator { cursor: pointer; opacity: 0.55; }
+.f-date::-webkit-calendar-picker-indicator:hover { opacity: 1; }
 .f-select option { background: white; color: var(--ink); }
 .f-textarea { min-height: 72px; }
 .f-submit {
@@ -1175,7 +1178,7 @@ footer {
     </div>
     <div class="contact-availability">
       <div class="avail-dot"></div>
-      <span class="i18n-fr">Disponible pour 2025 & 2026</span><span class="i18n-en">Available for 2025 & 2026</span>
+      <span class="i18n-fr">Disponible pour 2026 & 2027</span><span class="i18n-en">Available for 2026 & 2027</span>
     </div>
   </div>
 
@@ -1191,7 +1194,7 @@ footer {
       </div>
       <div class="f-field">
         <label class="f-label"><span class="i18n-fr">Date de l'événement</span><span class="i18n-en">Event date</span></label>
-        <input class="f-input" type="text" name="date" placeholder="15 juin 2025">
+        <input class="f-input f-date" type="date" name="date" id="eventDate">
       </div>
       <div class="f-field">
         <label class="f-label"><span class="i18n-fr">Type d'événement</span><span class="i18n-en">Event type</span></label>
@@ -1673,6 +1676,36 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
   applyAttrI18n(lang);
+})();
+
+// ── EVENT DATE DEFAULT ──
+(function() {
+  const dateInput = document.getElementById('eventDate');
+  if (!dateInput) return;
+  function toISODate(d) {
+    const yyyy = d.getFullYear();
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd}`;
+  }
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(today.getDate() + 1);
+  dateInput.min = toISODate(today);
+  dateInput.value = toISODate(tomorrow);
+
+  // Chrome/Edge/Firefox n'ouvrent le calendrier qu'au clic sur l'icône —
+  // on force l'ouverture au clic n'importe où dans le champ.
+  dateInput.addEventListener('click', () => {
+    if (typeof dateInput.showPicker === 'function') {
+      try { dateInput.showPicker(); } catch (e) {}
+    }
+  });
+  dateInput.addEventListener('focus', () => {
+    if (typeof dateInput.showPicker === 'function') {
+      try { dateInput.showPicker(); } catch (e) {}
+    }
+  });
 })();
 
 // ── FORM ──
