@@ -952,7 +952,8 @@ footer {
       <button class="filter-btn" data-filter="editorial">EDITORIAL</button>
     </div>
   </div>
-  <div class="masonry-grid reveal" id="masonryGrid">
+  <div class="reveal">
+  <div class="masonry-grid" id="masonryGrid">
     <div class="masonry-item tall" data-cat="weddings"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">WEDDINGS</span>Château de Bagnols · 2024</div></div></div>
     <div class="masonry-item medium" data-cat="events"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">EVENTS</span>Festival de Cannes</div></div></div>
     <div class="masonry-item short" data-cat="on-camera"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">ON CAMERA</span>France 2 · Plateau</div></div></div>
@@ -971,6 +972,7 @@ footer {
     <div class="masonry-item short" data-cat="events"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">EVENTS</span>Dîner privé · Lyon</div></div></div>
     <div class="masonry-item tall" data-cat="weddings"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">WEDDINGS</span>Château du Languedoc</div></div></div>
     <div class="masonry-item medium" data-cat="editorial"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">EDITORIAL</span>Beauté · Vogue France</div></div></div>
+  </div>
   </div>
 </section>
 
@@ -1558,9 +1560,12 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 });
 
 // ── REVEAL ──
+// threshold bas (pas un pourcentage de la hauteur) — sinon un bloc très
+// haut (ex: la grille du portfolio, ~76 photos) n'atteint jamais 8% de
+// sa propre hauteur visible et reste caché indéfiniment.
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
-}, { threshold: 0.08 });
+}, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 // ── MOBILE NAV ──
