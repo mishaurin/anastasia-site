@@ -157,36 +157,30 @@ html[lang="en"] .i18n-fr { display: none; }
 .slide-text {
   position: absolute; bottom: 60px; left: 56px; right: 56px;
   z-index: 2;
-  display: flex; align-items: flex-end; justify-content: space-between;
+  display: flex; align-items: flex-end;
 }
 .slide-category {
-  font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase;
-  color: rgba(255,255,255,0.55); margin-bottom: 10px;
-  display: flex; align-items: center; gap: 12px;
+  font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); margin-bottom: 14px;
 }
-.slide-category::before { content: ''; width: 20px; height: 0.5px; background: rgba(255,255,255,0.4); }
+.slide-num-line { width: 29px; height: 0.5px; background: rgba(255,255,255,0.4); margin-bottom: 17px; }
 .slide-title-text {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(36px, 4vw, 58px); font-weight: 300; line-height: 1.1;
   color: white;
 }
-.slide-title-text em { font-style: italic; color: rgba(255,255,255,0.75); }
-.slide-action { text-align: right; }
-.slide-location {
-  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(255,255,255,0.45); margin-bottom: 20px;
+.slide-title-text .headline {
+  display: block;
+  font-weight: 400; letter-spacing: 0.02em;
+  font-size: clamp(22px, 2.3vw, 30px);
+  line-height: 1.3; margin-bottom: 7px;
+  color: rgba(255,255,255,1);
 }
-.slide-btn {
-  display: inline-flex; align-items: center; gap: 12px;
-  padding: 13px 28px;
-  border: 0.5px solid rgba(255,255,255,0.45);
-  color: white; text-decoration: none;
-  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
-  transition: background 0.4s, gap 0.3s;
-  backdrop-filter: blur(4px);
+.slide-title-text em {
+  display: block;
+  font-style: italic; font-weight: 300; letter-spacing: 0.02em; line-height: 1.4;
+  font-size: clamp(18px, 2vw, 23px);
+  color: rgba(255,255,255,0.6);
 }
-.slide-btn:hover { background: rgba(255,255,255,0.12); gap: 18px; }
-.slide-btn svg { width: 13px; height: 13px; stroke: white; fill: none; }
 
 /* Carousel controls */
 .carousel-dots {
@@ -237,8 +231,8 @@ html[lang="en"] .i18n-fr { display: none; }
 .intro-strip {
   background: var(--off-white);
   padding: 56px 56px;
-  display: grid; grid-template-columns: 1fr auto 1fr;
-  gap: 48px; align-items: center;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 64px; align-items: center;
   border-bottom: 0.5px solid var(--blue-soft);
 }
 .intro-tagline {
@@ -247,19 +241,21 @@ html[lang="en"] .i18n-fr { display: none; }
   color: var(--ink); line-height: 1.4;
 }
 .intro-tagline em { color: var(--blue-deep); font-style: normal; }
-.intro-divider { width: 0.5px; height: 64px; background: var(--blue-soft); justify-self: center; }
-.intro-meta { display: flex; flex-direction: column; gap: 16px; }
+.intro-proof { display: flex; align-items: center; gap: 32px; }
+.intro-divider { width: 1px; height: 72px; background: var(--blue-mid); flex-shrink: 0; }
+.intro-meta { display: flex; flex-direction: column; gap: 14px; }
 .intro-meta-item {
-  display: flex; align-items: center; gap: 14px;
-  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--ink-faint);
+  display: flex; align-items: center; gap: 12px;
+  font-size: 12px; letter-spacing: 0.1em;
+  color: var(--ink-faint); white-space: nowrap;
 }
 .intro-meta-item::before {
-  content: ''; width: 20px; height: 0.5px; background: var(--blue-mid);
+  content: ''; width: 16px; height: 0.5px; background: var(--blue-mid); flex-shrink: 0;
 }
 
 /* ══ SERVICES ══ */
 #services { background: var(--white); padding: 100px 56px; }
+#services .section-eyebrow { letter-spacing: 0.45em; font-weight: 400; }
 .section-eyebrow {
   font-size: 9.5px; letter-spacing: 0.35em; text-transform: uppercase;
   color: var(--blue-deep); margin-bottom: 14px;
@@ -290,16 +286,15 @@ html[lang="en"] .i18n-fr { display: none; }
 .svc:hover::before { transform: scaleX(1); }
 .svc-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 11px; color: var(--blue-mid); letter-spacing: 0.2em; margin-bottom: 20px;
+  font-size: 11px; font-weight: 300; color: var(--blue-mid); letter-spacing: 0.3em;
+  opacity: 0.75; margin-bottom: 20px;
 }
 .svc-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px; font-weight: 400; color: var(--ink); margin-bottom: 16px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--ink); margin-bottom: 16px;
 }
-.svc-desc { font-size: 13px; line-height: 1.85; color: var(--ink-soft); margin-bottom: 28px; }
-.svc-price {
-  font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue-deep);
-}
+.svc-desc { font-size: 16px; font-weight: 400; line-height: 1.85; color: var(--ink-soft); }
 
 /* ══ ABOUT PREVIEW ══ */
 #about-preview {
@@ -328,8 +323,8 @@ html[lang="en"] .i18n-fr { display: none; }
 .about-text-side .section-eyebrow::before { background: var(--blue-mid); }
 .about-text-side .section-h { color: var(--white); margin-bottom: 32px; }
 .about-intro {
-  font-size: 15px; line-height: 1.95; color: rgba(232,239,247,0.7);
-  margin-bottom: 40px;
+  font-size: 17px; font-weight: 400; line-height: 1.75; color: rgba(232,239,247,0.7);
+  margin-bottom: 24px;
 }
 .about-highlights {
   display: flex; flex-direction: column; gap: 0;
@@ -339,7 +334,7 @@ html[lang="en"] .i18n-fr { display: none; }
 .about-hl {
   padding: 18px 0;
   border-bottom: 0.5px solid rgba(255,255,255,0.1);
-  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  font-size: 11px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--blue-mid); display: flex; align-items: center; gap: 14px;
 }
 .about-hl::before { content: '✦'; font-size: 8px; color: var(--gold); }
@@ -378,10 +373,10 @@ html[lang="en"] .i18n-fr { display: none; }
 .masonry-item.tall .m-bg   { height: 380px; }
 .masonry-item.medium .m-bg { height: 280px; }
 .masonry-item.short .m-bg  { height: 200px; }
-.masonry-item[data-cat="mariage"] .m-bg  { background: linear-gradient(160deg,#EEF3F8,#C8DAEA); }
-.masonry-item[data-cat="gala"] .m-bg     { background: linear-gradient(160deg,#F0EBE8,#D8C4BC); }
-.masonry-item[data-cat="tv"] .m-bg       { background: linear-gradient(160deg,#E8EEE8,#C4D4C0); }
-.masonry-item[data-cat="shooting"] .m-bg { background: linear-gradient(160deg,#EEE8F0,#D0C0D4); }
+.masonry-item[data-cat="weddings"] .m-bg  { background: linear-gradient(160deg,#EEF3F8,#C8DAEA); }
+.masonry-item[data-cat="events"] .m-bg     { background: linear-gradient(160deg,#F0EBE8,#D8C4BC); }
+.masonry-item[data-cat="on-camera"] .m-bg       { background: linear-gradient(160deg,#E8EEE8,#C4D4C0); }
+.masonry-item[data-cat="editorial"] .m-bg { background: linear-gradient(160deg,#EEE8F0,#D0C0D4); }
 .m-ph-icon {
   width: 30px; height: 30px; border: 0.5px solid rgba(106,156,189,0.25);
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
@@ -439,6 +434,7 @@ html[lang="en"] .i18n-fr { display: none; }
   display: flex; align-items: center; justify-content: center; overflow: hidden;
 }
 .praise-avatar svg { width: 22px; height: 22px; stroke: var(--blue-mid); fill: none; }
+.praise-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .praise-name {
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px; font-weight: 400; font-style: italic; color: var(--ink);
@@ -536,14 +532,14 @@ html[lang="en"] .i18n-fr { display: none; }
 }
 .avail-dot {
   width: 8px; height: 8px; border-radius: 50%;
-  background: #7BC47F;
-  box-shadow: 0 0 0 3px rgba(123,196,127,0.2);
+  background: var(--gold);
+  box-shadow: 0 0 0 3px rgba(200,168,130,0.25);
   animation: pulse-dot 2s ease-in-out infinite;
   flex-shrink: 0;
 }
 @keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(123,196,127,0.2); }
-  50% { box-shadow: 0 0 0 6px rgba(123,196,127,0.1); }
+  0%, 100% { box-shadow: 0 0 0 3px rgba(200,168,130,0.25); }
+  50% { box-shadow: 0 0 0 6px rgba(200,168,130,0.12); }
 }
 
 /* Right — form panel */
@@ -612,7 +608,7 @@ html[lang="en"] .i18n-fr { display: none; }
 
 /* ══ FOOTER ══ */
 footer {
-  background: var(--ink); padding: 48px 56px;
+  background: var(--ink); padding: 42px 56px;
   display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 40px;
 }
 .footer-logo {
@@ -620,7 +616,9 @@ footer {
   font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--blue-mid); font-weight: 400; line-height: 1.8;
 }
-.footer-center { text-align: center; font-size: 10px; letter-spacing: 0.2em; color: rgba(168,196,220,0.85); }
+.footer-center { text-align: center; font-size: 11px; letter-spacing: 0.2em; color: rgba(168,196,220,0.85); }
+.footer-center a { color: inherit; text-decoration: none; transition: color 0.3s; }
+.footer-center a:hover { color: var(--blue-mid); }
 .footer-right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
 .footer-social { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-mid); text-decoration: none; opacity: 0.85; transition: opacity 0.3s; }
 .footer-social:hover { opacity: 1; }
@@ -747,10 +745,12 @@ footer {
   -webkit-user-select: none;
   user-select: none;
   pointer-events: none;
+  -webkit-touch-callout: none;
 }
 .masonry-item, .slide, .about-photo-side {
   -webkit-user-select: none;
   user-select: none;
+  -webkit-touch-callout: none;
 }
 /* Invisible overlay blocks right-click on photos */
 .photo-shield {
@@ -842,11 +842,13 @@ footer {
     <span class="i18n-fr">Je crois que chaque femme mérite de se sentir<br><em>rayonnante</em> — vraiment elle-même, en mieux.</span>
     <span class="i18n-en">I believe every woman deserves to feel<br><em>radiant</em> — truly herself, only more so.</span>
   </div>
+  <div class="intro-proof">
   <div class="intro-divider"></div>
   <div class="intro-meta">
-    <div class="intro-meta-item">Fashion Week Milan & Paris</div>
+    <div class="intro-meta-item">Fashion Week · Milan &amp; Paris</div>
     <div class="intro-meta-item">Festival de Cannes · Eurovision</div>
-    <div class="intro-meta-item"><span class="i18n-fr">Mariages de luxe · Châteaux de France</span><span class="i18n-en">Luxury weddings · Châteaux of France</span></div>
+    <div class="intro-meta-item"><span class="i18n-fr">Mariages de luxe · Châteaux de France</span><span class="i18n-en">Luxury Weddings · French Châteaux</span></div>
+  </div>
   </div>
 </div>
 
@@ -855,46 +857,42 @@ footer {
   <div class="reveal">
     <div class="section-eyebrow"><span class="i18n-fr">Prestations</span><span class="i18n-en">Services</span></div>
     <h2 class="section-h">
-      <span class="i18n-fr">Pour chaque<br><em>occasion unique</em></span>
+      <span class="i18n-fr">Pour chaque<br><em>moment d'exception</em></span>
       <span class="i18n-en">For every<br><em>unique occasion</em></span>
     </h2>
   </div>
   <div class="services-row reveal">
     <div class="svc">
       <div class="svc-num">01</div>
-      <div class="svc-name"><span class="i18n-fr">Mariage</span><span class="i18n-en">Wedding</span></div>
+      <div class="svc-name">WEDDINGS</div>
       <p class="svc-desc">
-        <span class="i18n-fr">Le jour le plus photographié de votre vie mérite une attention absolue. Essai inclus. Châteaux, domaines, terrasses — j'ai tout connu.</span>
-        <span class="i18n-en">The most photographed day of your life deserves absolute attention. Trial included. Châteaux, estates, terraces — I've seen it all.</span>
+        <span class="i18n-fr">Le jour le plus photographié de votre vie mérite une attention absolue. De l'essai aux dernières retouches, chaque détail est pensé pour révéler votre beauté et vous accompagner avec sérénité tout au long de cette journée unique.</span>
+        <span class="i18n-en">The most photographed day of your life deserves absolute attention. From the trial to the final touch-ups, every detail is designed to reveal your beauty and support you with complete ease throughout this one-of-a-kind day.</span>
       </p>
-      <div class="svc-price"><span class="i18n-fr">Prix sur demande</span><span class="i18n-en">Price on request</span></div>
     </div>
     <div class="svc">
       <div class="svc-num">02</div>
-      <div class="svc-name"><span class="i18n-fr">Gala & Soirée</span><span class="i18n-en">Gala & Evening</span></div>
+      <div class="svc-name">EVENTS</div>
       <p class="svc-desc">
-        <span class="i18n-fr">Ce que j'adore dans ces soirées ? Le maquillage doit tenir jusqu'au dernier verre — et rester aussi parfait qu'au premier regard.</span>
-        <span class="i18n-en">What I love about these evenings? The makeup has to last until the last glass — and still look as perfect as it did at first glance.</span>
+        <span class="i18n-fr">Gala, soirées privées ou événements d'exception : je crée une mise en beauté élégante et durable, pensée pour vous faire vous sentir aussi bien que vous êtes belle.</span>
+        <span class="i18n-en">Galas, private parties, exceptional events: I create an elegant, long-lasting look designed to make you feel just as good as you look.</span>
       </p>
-      <div class="svc-price"><span class="i18n-fr">Prix sur demande</span><span class="i18n-en">Price on request</span></div>
     </div>
     <div class="svc">
       <div class="svc-num">03</div>
-      <div class="svc-name"><span class="i18n-fr">Plateau TV & Interview</span><span class="i18n-en">TV & Interview</span></div>
+      <div class="svc-name">ON CAMERA</div>
       <p class="svc-desc">
-        <span class="i18n-fr">La lumière studio est impitoyable. Après des années sur les plateaux, je sais exactement ce qu'une caméra HD voit.</span>
-        <span class="i18n-en">Studio lighting is unforgiving. After years on set, I know exactly what an HD camera sees.</span>
+        <span class="i18n-fr">La caméra haute définition ne laisse rien au hasard. Forte de plusieurs années d'expérience sur les plateaux, je connais les exigences de la lumière, des objectifs et des longues journées de tournage.</span>
+        <span class="i18n-en">High-definition cameras leave nothing to chance. With several years of experience on set, I understand the demands of lighting, lenses, and long shooting days.</span>
       </p>
-      <div class="svc-price"><span class="i18n-fr">Prix sur demande</span><span class="i18n-en">Price on request</span></div>
     </div>
     <div class="svc">
       <div class="svc-num">04</div>
-      <div class="svc-name"><span class="i18n-fr">Shooting Photo</span><span class="i18n-en">Photo Shoot</span></div>
+      <div class="svc-name">EDITORIAL</div>
       <p class="svc-desc">
-        <span class="i18n-fr">Je travaille main dans la main avec le photographe. Chaque détail compte quand l'objectif est à 50cm de votre visage.</span>
-        <span class="i18n-en">I work hand in hand with the photographer. Every detail matters when the lens is 50cm from your face.</span>
+        <span class="i18n-fr">Chaque image raconte une histoire. Je travaille en étroite collaboration avec le photographe pour créer une mise en beauté qui fonctionne avec la lumière, le stylisme et l'objectif — jusqu'au moindre détail.</span>
+        <span class="i18n-en">Every image tells a story. I work closely with the photographer to create a look that works with the light, the styling, and the lens — down to the smallest detail.</span>
       </p>
-      <div class="svc-price"><span class="i18n-fr">Prix sur demande</span><span class="i18n-en">Price on request</span></div>
     </div>
   </div>
 </section>
@@ -902,7 +900,7 @@ footer {
 <!-- ABOUT PREVIEW -->
 <section id="about-preview">
   <div class="about-photo-side">
-    <img src="photos/about/1.jpg" alt="Anastasia Mishurina"
+    <img src="photos/about/1.jpg" alt="Anastasia Mishurina" draggable="false"
          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="about-photo-placeholder">
       <svg viewBox="0 0 24 24" width="36" style="stroke:rgba(255,255,255,0.25);fill:none"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
@@ -911,22 +909,26 @@ footer {
   <div class="about-text-side reveal">
     <div class="section-eyebrow"><span class="i18n-fr">À propos</span><span class="i18n-en">About</span></div>
     <h2 class="section-h">
-      <span class="i18n-fr">Ce que je fais,<br>et pourquoi<br><em>ça compte</em></span>
-      <span class="i18n-en">What I do,<br>and why<br><em>it matters</em></span>
+      <span class="i18n-fr">La beauté est plus<br><em>qu'un maquillage.</em></span>
+      <span class="i18n-en">Beauty is more<br><em>than makeup.</em></span>
     </h2>
     <p class="about-intro">
-      <span class="i18n-fr">Je suis Anastasia. Maquilleuse depuis plus de 10 ans, basée à Lyon. Mon parcours m'a menée sur les podiums de la Fashion Week de Milan et de Paris, dans les coulisses du Festival de Cannes, sur les plateaux de l'Eurovision — et surtout, aux côtés de mariées dans les plus beaux domaines de France.</span>
-      <span class="i18n-en">I'm Anastasia. A makeup artist for over 10 years, based in Lyon. My path has taken me across the runways of Milan and Paris Fashion Week, backstage at the Cannes Film Festival, on set at Eurovision — and above all, alongside brides in the most beautiful estates of France.</span>
+      <span class="i18n-fr">Je suis Anastasia, maquilleuse basée à Lyon, avec plus de 10 ans d'expérience. Mon parcours m'a menée de la Fashion Week de Milan et de Paris au Festival de Cannes et à l'Eurovision — mais ce que je préfère avant tout, c'est révéler la beauté des femmes dans les moments qui comptent le plus.</span>
+      <span class="i18n-en">I'm Anastasia, a makeup artist based in Lyon, with over 10 years of experience. My work has taken me from Milan and Paris Fashion Week to the Cannes Film Festival and Eurovision — but above all, I love creating beauty for women on the days that matter most.</span>
+    </p>
+    <p class="about-intro">
+      <span class="i18n-fr">Mon approche est simple : créer une beauté qui vous ressemble — raffinée, naturelle et entièrement la vôtre.</span>
+      <span class="i18n-en">My approach is simple: to create a beauty that feels like you — refined, effortless and entirely your own.</span>
     </p>
     <div class="about-highlights">
-      <div class="about-hl">Fashion Week Milan & Paris</div>
-      <div class="about-hl">Festival de Cannes</div>
+      <div class="about-hl">Fashion Week · Milan & Paris</div>
+      <div class="about-hl">Cannes Film Festival</div>
       <div class="about-hl">Eurovision</div>
-      <div class="about-hl"><span class="i18n-fr">Mariages de luxe · Châteaux de France</span><span class="i18n-en">Luxury weddings · Châteaux of France</span></div>
-      <div class="about-hl"><span class="i18n-fr">Célébrités & Mannequins internationaux</span><span class="i18n-en">International celebrities & models</span></div>
+      <div class="about-hl">Luxury Weddings · French Châteaux</div>
+      <div class="about-hl">Celebrities & Models · International</div>
     </div>
     <a href="#contact" class="about-link">
-      <span class="i18n-fr">Me contacter</span><span class="i18n-en">Get in touch</span>
+      <span class="i18n-fr">Me contacter</span><span class="i18n-en">Enquire</span>
       <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
   </div>
@@ -943,32 +945,32 @@ footer {
       </h2>
     </div>
     <div class="filter-wrap">
-      <button class="filter-btn active" data-filter="all"><span class="i18n-fr">Tout</span><span class="i18n-en">All</span></button>
-      <button class="filter-btn" data-filter="mariage"><span class="i18n-fr">Mariage</span><span class="i18n-en">Wedding</span></button>
-      <button class="filter-btn" data-filter="gala">Gala</button>
-      <button class="filter-btn" data-filter="tv">TV</button>
-      <button class="filter-btn" data-filter="shooting"><span class="i18n-fr">Shooting</span><span class="i18n-en">Shoot</span></button>
+      <button class="filter-btn active" data-filter="all">ALL</button>
+      <button class="filter-btn" data-filter="weddings">WEDDINGS</button>
+      <button class="filter-btn" data-filter="events">EVENTS</button>
+      <button class="filter-btn" data-filter="on-camera">ON CAMERA</button>
+      <button class="filter-btn" data-filter="editorial">EDITORIAL</button>
     </div>
   </div>
   <div class="masonry-grid reveal" id="masonryGrid">
-    <div class="masonry-item tall" data-cat="mariage"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Mariage</span>Château de Bagnols · 2024</div></div></div>
-    <div class="masonry-item medium" data-cat="gala"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Gala & Soirée</span>Festival de Cannes</div></div></div>
-    <div class="masonry-item short" data-cat="tv"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">TV & Interview</span>France 2 · Plateau</div></div></div>
-    <div class="masonry-item medium" data-cat="shooting"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Shooting</span>Editorial · Milan</div></div></div>
-    <div class="masonry-item short" data-cat="mariage"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Mariage</span>Domaine de Provence</div></div></div>
-    <div class="masonry-item tall" data-cat="shooting"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Shooting</span>Fashion Week · Paris</div></div></div>
-    <div class="masonry-item medium" data-cat="mariage"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Mariage</span>Château de la Loire</div></div></div>
-    <div class="masonry-item short" data-cat="gala"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Gala</span>Soirée privée · Monaco</div></div></div>
-    <div class="masonry-item tall" data-cat="mariage"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Mariage</span>Villa Méditerranée</div></div></div>
-    <div class="masonry-item medium" data-cat="tv"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">TV</span>Eurovision · Liverpool</div></div></div>
-    <div class="masonry-item short" data-cat="shooting"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Shooting</span>Beauté · Studio Paris</div></div></div>
-    <div class="masonry-item medium" data-cat="gala"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Gala</span>Remise de prix · Paris</div></div></div>
-    <div class="masonry-item tall" data-cat="shooting"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Shooting</span>Fashion Week · Milan</div></div></div>
-    <div class="masonry-item short" data-cat="mariage"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Mariage</span>Mas de Provence · 2024</div></div></div>
-    <div class="masonry-item medium" data-cat="tv"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">TV</span>BFM TV · Interview</div></div></div>
-    <div class="masonry-item short" data-cat="gala"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Gala</span>Dîner privé · Lyon</div></div></div>
-    <div class="masonry-item tall" data-cat="mariage"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Mariage</span>Château du Languedoc</div></div></div>
-    <div class="masonry-item medium" data-cat="shooting"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">Shooting</span>Beauté · Vogue France</div></div></div>
+    <div class="masonry-item tall" data-cat="weddings"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">WEDDINGS</span>Château de Bagnols · 2024</div></div></div>
+    <div class="masonry-item medium" data-cat="events"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">EVENTS</span>Festival de Cannes</div></div></div>
+    <div class="masonry-item short" data-cat="on-camera"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">ON CAMERA</span>France 2 · Plateau</div></div></div>
+    <div class="masonry-item medium" data-cat="editorial"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">EDITORIAL</span>Editorial · Milan</div></div></div>
+    <div class="masonry-item short" data-cat="weddings"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">WEDDINGS</span>Domaine de Provence</div></div></div>
+    <div class="masonry-item tall" data-cat="editorial"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">EDITORIAL</span>Fashion Week · Paris</div></div></div>
+    <div class="masonry-item medium" data-cat="weddings"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">WEDDINGS</span>Château de la Loire</div></div></div>
+    <div class="masonry-item short" data-cat="events"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">EVENTS</span>Soirée privée · Monaco</div></div></div>
+    <div class="masonry-item tall" data-cat="weddings"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">WEDDINGS</span>Villa Méditerranée</div></div></div>
+    <div class="masonry-item medium" data-cat="on-camera"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">ON CAMERA</span>Eurovision · Liverpool</div></div></div>
+    <div class="masonry-item short" data-cat="editorial"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">EDITORIAL</span>Beauté · Studio Paris</div></div></div>
+    <div class="masonry-item medium" data-cat="events"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">EVENTS</span>Remise de prix · Paris</div></div></div>
+    <div class="masonry-item tall" data-cat="editorial"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">EDITORIAL</span>Fashion Week · Milan</div></div></div>
+    <div class="masonry-item short" data-cat="weddings"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">WEDDINGS</span>Mas de Provence · 2024</div></div></div>
+    <div class="masonry-item medium" data-cat="on-camera"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">ON CAMERA</span>BFM TV · Interview</div></div></div>
+    <div class="masonry-item short" data-cat="events"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">EVENTS</span>Dîner privé · Lyon</div></div></div>
+    <div class="masonry-item tall" data-cat="weddings"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">WEDDINGS</span>Château du Languedoc</div></div></div>
+    <div class="masonry-item medium" data-cat="editorial"><div class="m-bg"><div class="m-ph-icon"><svg viewBox="0 0 24 24" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span class="m-ph-label">Photo</span></div><div class="m-overlay"><div class="m-caption"><span class="m-cat-tag">EDITORIAL</span>Beauté · Vogue France</div></div></div>
   </div>
 </section>
 
@@ -991,9 +993,9 @@ footer {
           <span class="i18n-en">I wasn't quite sure what to expect — I didn't want to look unrecognizable in my wedding photos. Anastasia understood that right away. <strong>By the evening, after 8 hours of celebration, I still looked impeccable.</strong></span>
         </p>
         <div class="praise-author">
-          <div class="praise-avatar"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div class="praise-avatar"><img src="photos/review/camille.jpg" alt="Camille R." draggable="false"></div>
           <div class="praise-name">Camille R.</div>
-          <div class="praise-role"><span class="i18n-fr">Mariée · Château de Bagnols, juin 2024</span><span class="i18n-en">Bride · Château de Bagnols, June 2024</span></div>
+          <div class="praise-role"><span class="i18n-fr">Mariée · Château de Bagnols, juin 2026</span><span class="i18n-en">Bride · Château de Bagnols, June 2026</span></div>
         </div>
       </div>
 
@@ -1004,7 +1006,7 @@ footer {
           <span class="i18n-en">In 12 years on TV sets, I've seen many makeup artists. Anastasia is the first who truly understands what studio lighting does to a face. <strong>I trust her completely — she knows exactly what the camera sees.</strong></span>
         </p>
         <div class="praise-author">
-          <div class="praise-avatar"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div class="praise-avatar"><img src="photos/review/sofi.jpg" alt="Sophie M." draggable="false"></div>
           <div class="praise-name">Sophie M.</div>
           <div class="praise-role"><span class="i18n-fr">Journaliste · France Télévisions</span><span class="i18n-en">Journalist · France Télévisions</span></div>
         </div>
@@ -1017,7 +1019,7 @@ footer {
           <span class="i18n-en">What I love about Anastasia is that she truly listens. She doesn't impose her own style — she finds yours, and brings it out. <strong>For our editorial shoots, she's exactly the talent we look for.</strong></span>
         </p>
         <div class="praise-author">
-          <div class="praise-avatar"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div class="praise-avatar"><img src="photos/review/isabelle.jpg" alt="Isabelle D." draggable="false"></div>
           <div class="praise-name">Isabelle D.</div>
           <div class="praise-role"><span class="i18n-fr">Directrice artistique · Paris</span><span class="i18n-en">Art Director · Paris</span></div>
         </div>
@@ -1030,7 +1032,7 @@ footer {
           <span class="i18n-en">Anastasia captured exactly the energy of the show. The models looked stunning, and the makeup held up under the lights and the pressure. <strong>A true professional in every sense.</strong></span>
         </p>
         <div class="praise-author">
-          <div class="praise-avatar"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div class="praise-avatar"><img src="photos/review/lea.jpg" alt="Léa V." draggable="false"></div>
           <div class="praise-name">Léa V.</div>
           <div class="praise-role"><span class="i18n-fr">Directrice de casting · Fashion Week Paris</span><span class="i18n-en">Casting Director · Paris Fashion Week</span></div>
         </div>
@@ -1043,9 +1045,9 @@ footer {
           <span class="i18n-en">For such an important ceremony, we needed someone flawless. <strong>Anastasia exceeded all our expectations — available, precise, and remarkably kind.</strong></span>
         </p>
         <div class="praise-author">
-          <div class="praise-avatar"><svg viewBox="0 0 24 24" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div class="praise-avatar"><img src="photos/review/marie-claire.jpg" alt="Marie-Claire B." draggable="false"></div>
           <div class="praise-name">Marie-Claire B.</div>
-          <div class="praise-role"><span class="i18n-fr">Mariée · Provence, septembre 2024</span><span class="i18n-en">Bride · Provence, September 2024</span></div>
+          <div class="praise-role"><span class="i18n-fr">Mariée · Provence, septembre 2026</span><span class="i18n-en">Bride · Provence, September 2026</span></div>
         </div>
       </div>
 
@@ -1077,8 +1079,8 @@ footer {
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          <span class="i18n-fr">Oui, et je le recommande vivement — surtout pour les mariages. L'essai nous permet de trouver ensemble <strong>le maquillage qui vous ressemble vraiment</strong>, d'ajuster les couleurs, de tester la tenue, et surtout de vous sentir rassurée le grand jour. C'est aussi l'occasion de créer un lien de confiance avant l'événement.</span>
-          <span class="i18n-en">Yes, and I strongly recommend it — especially for weddings. The trial lets us find <strong>the makeup that truly looks like you</strong>, adjust the colors, test how it holds up, and above all feel confident on the big day. It's also a chance to build trust before the event.</span>
+          <span class="i18n-fr">Oui, je le recommande vivement, en particulier pour les mariages. L'essai permet de prendre le temps d'échanger sur votre tenue, votre coiffure et l'ambiance souhaitée, puis de définir ensemble une mise en beauté qui s'accorde parfaitement à votre image. Nous testons les textures, les teintes et les produits afin que tout soit maîtrisé et parfaitement adapté le jour du mariage.</span>
+          <span class="i18n-en">Yes, and I strongly recommend it, especially for weddings. The trial gives us time to talk through your outfit, your hairstyle, and the mood you're after, then design a look together that truly matches your image. We test textures, shades, and products so that everything is dialed in and perfectly suited for your wedding day.</span>
         </div>
       </div>
     </div>
@@ -1091,8 +1093,8 @@ footer {
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          <span class="i18n-fr">Tout commence par un message via le formulaire de contact ou par email. Je vous réponds dans les 48 heures pour en savoir plus sur votre projet. Si nous décidons de travailler ensemble, <strong>un acompte confirme la date</strong> et la prépare officiellement dans mon agenda. Simple, rapide, sans stress.</span>
-          <span class="i18n-en">It all starts with a message through the contact form or by email. I reply within 48 hours to learn more about your event. If we decide to work together, <strong>a deposit confirms the date</strong> and officially secures it in my calendar. Simple, quick, no stress.</span>
+          <span class="i18n-fr">Tout commence par un premier échange, via le formulaire de contact ou par email. Nous discutons de votre événement, de vos envies et de vos besoins afin de vérifier mes disponibilités et de définir ensemble la prestation la plus adaptée. Une fois les détails confirmés, votre date est réservée.</span>
+          <span class="i18n-en">It all starts with a first conversation, through the contact form or by email. We talk through your event, your wishes and your needs so I can check my availability and we can define the service that suits you best together. Once the details are confirmed, your date is secured.</span>
         </div>
       </div>
     </div>
@@ -1105,8 +1107,8 @@ footer {
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          <span class="i18n-fr">Absolument. Je me déplace dans toute la France et à l'international. J'ai travaillé sur des mariages et des événements à Paris, en Provence, sur la Côte d'Azur, à Milan, à Londres et bien au-delà. <strong>Les frais de déplacement sont calculés selon la distance</strong> et intégrés dans le devis personnalisé.</span>
-          <span class="i18n-en">Absolutely. I travel throughout France and internationally. I've worked on weddings and events in Paris, Provence, the Côte d'Azur, Milan, London, and beyond. <strong>Travel costs are calculated based on distance</strong> and included in your personalized quote.</span>
+          <span class="i18n-fr">Absolument. Basée à Lyon, je me déplace dans toute la France ainsi qu'à l'international pour les mariages, événements et shootings. Que votre réception ait lieu dans un château en Provence, à Paris ou ailleurs en Europe, nous pouvons organiser votre mise en beauté directement sur le lieu de votre événement.</span>
+          <span class="i18n-en">Absolutely. Based in Lyon, I travel throughout France and internationally for weddings, events and shoots. Whether your celebration takes place in a château in Provence, in Paris or elsewhere in Europe, we can arrange your beauty preparation directly on site.</span>
         </div>
       </div>
     </div>
@@ -1119,8 +1121,8 @@ footer {
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          <span class="i18n-fr">Je travaille exclusivement avec des marques professionnelles de haute qualité — <strong>Charlotte Tilbury, NARS, Make Up For Ever, Armani Beauty, Dior</strong> — sélectionnées pour leur tenue, leur rendu photographique et leur respect de la peau. Si vous avez des allergies ou des sensibilités particulières, merci de me le signaler à l'avance.</span>
-          <span class="i18n-en">I work exclusively with high-quality professional brands — <strong>Charlotte Tilbury, NARS, Make Up For Ever, Armani Beauty, Dior</strong> — chosen for their longevity, how they photograph, and how gentle they are on skin. If you have any allergies or sensitivities, please let me know in advance.</span>
+          <span class="i18n-fr">Je travaille exclusivement avec des maisons de beauté haut de gamme, choisies pour leur qualité, leurs textures et leur tenue : Dior, Chanel, Charlotte Tilbury, Hourglass, YSL et bien d'autres. Chaque produit est sélectionné en fonction de votre peau, du rendu souhaité et des exigences de votre événement. L'objectif est d'obtenir une mise en beauté élégante, confortable et impeccable, du premier regard jusqu'au dernier moment.</span>
+          <span class="i18n-en">I work exclusively with high-end beauty houses, chosen for their quality, their textures and their staying power: Dior, Chanel, Charlotte Tilbury, Hourglass, YSL and more. Every product is selected according to your skin, the look you want, and the demands of your event. The goal is an elegant, comfortable and impeccable finish, from the very first glance to the very last moment.</span>
         </div>
       </div>
     </div>
@@ -1133,8 +1135,8 @@ footer {
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          <span class="i18n-fr">Pour les mariages, je recommande de réserver <strong>6 à 12 mois à l'avance</strong>, surtout pour les dates de haute saison (mai à septembre). Pour les événements ponctuels — galas, shootings, plateau TV — quelques semaines suffisent généralement. N'hésitez pas à me contacter même si votre date est proche, je ferai mon possible.</span>
-          <span class="i18n-en">For weddings, I recommend booking <strong>6 to 12 months in advance</strong>, especially for peak season dates (May to September). For one-off events — galas, shoots, TV — a few weeks is usually enough. Don't hesitate to reach out even if your date is close, I'll do my best to accommodate you.</span>
+          <span class="i18n-fr">Pour un mariage, je recommande de réserver entre 6 et 12 mois à l'avance, en particulier pour les dates de haute saison. Les disponibilités peuvent être plus limitées pour les week-ends de mai à septembre. Si votre date est plus proche, n'hésitez toutefois pas à me contacter : je vous confirmerai mes disponibilités.</span>
+          <span class="i18n-en">For a wedding, I recommend booking 6 to 12 months ahead, especially for peak season dates. Availability can be more limited for weekends between May and September. If your date is closer, don't hesitate to reach out anyway — I'll confirm my availability with you.</span>
         </div>
       </div>
     </div>
@@ -1147,8 +1149,8 @@ footer {
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          <span class="i18n-fr">Oui. Pour les mariages avec une grande suite nuptiale, je peux faire appel à <strong>une assistante de confiance</strong> afin que tout le monde soit prêt dans les temps. Le nombre de personnes et le planning sont discutés lors de notre premier échange pour organiser la matinée sereinement.</span>
-          <span class="i18n-en">Yes. For weddings with a large bridal party, I can bring in <strong>a trusted assistant</strong> to make sure everyone is ready on time. The number of people and the schedule are discussed during our first conversation so the morning runs smoothly.</span>
+          <span class="i18n-fr">Oui, bien sûr. Pour les mariages et événements réunissant plusieurs personnes, je peux prendre en charge la mise en beauté de plusieurs invitées et faire intervenir, si nécessaire, une assistante de confiance. Le nombre de personnes, les horaires et les besoins de chacune sont définis en amont afin de construire un planning fluide et de garantir une préparation sereine, sans précipitation.</span>
+          <span class="i18n-en">Yes, of course. For weddings and events bringing several people together, I can take care of the beauty preparation for multiple guests and bring in a trusted assistant if needed. The number of people, the schedule, and everyone's needs are worked out in advance to build a smooth timeline and ensure a calm, unhurried preparation.</span>
         </div>
       </div>
     </div>
@@ -1178,14 +1180,14 @@ footer {
     </div>
     <div class="contact-availability">
       <div class="avail-dot"></div>
-      <span class="i18n-fr">Disponible pour 2026 & 2027</span><span class="i18n-en">Available for 2026 & 2027</span>
+      <span class="i18n-fr">Disponible pour les mariages 2026 & 2027</span><span class="i18n-en">Available for weddings 2026 & 2027</span>
     </div>
   </div>
 
   <div class="contact-right reveal">
     <div class="form-title">
-      <span class="i18n-fr">Décrivez-moi votre événement —<br><span>je reviens vers vous sous 48h.</span></span>
-      <span class="i18n-en">Tell me about your event —<br><span>I'll get back to you within 48h.</span></span>
+      <span class="i18n-fr">Parlons de votre événement —<br><span>je vous répondrai personnellement sous 48h.</span></span>
+      <span class="i18n-en">Let's talk about your event —<br><span>I'll reply to you personally within 48h.</span></span>
     </div>
     <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)"><input type="hidden" name="form-name" value="contact">
       <div class="f-field">
@@ -1199,25 +1201,25 @@ footer {
       <div class="f-field">
         <label class="f-label"><span class="i18n-fr">Type d'événement</span><span class="i18n-en">Event type</span></label>
         <select class="f-select f-input" name="prestation">
-          <option value="" disabled selected>Choisissez une prestation</option>
+          <option value="" disabled selected>Choisissez votre événement</option>
           <option>Mariage</option>
-          <option>Gala & Soirée</option>
-          <option>Plateau TV / Interview</option>
-          <option>Shooting photo</option>
+          <option>Événement privé</option>
+          <option>Shooting / Editorial</option>
+          <option>TV / Interview</option>
           <option>Autre</option>
         </select>
       </div>
       <div class="f-field">
         <label class="f-label"><span class="i18n-fr">Lieu approximatif</span><span class="i18n-en">Approximate location</span></label>
-        <input class="f-input" type="text" name="lieu" placeholder="Lyon, Paris, Provence…">
+        <input class="f-input" type="text" name="lieu" placeholder="Ville, domaine ou région…">
       </div>
       <div class="f-field">
         <label class="f-label"><span class="i18n-fr">Votre message</span><span class="i18n-en">Your message</span></label>
-        <textarea class="f-textarea f-input" name="message" placeholder="Décrivez votre événement et vos attentes…" rows="3"></textarea>
+        <textarea class="f-textarea f-input" name="message" placeholder="Parlez-moi de votre événement, de vos envies et de vos attentes…" rows="3"></textarea>
       </div>
       <div class="f-submit">
         <button type="submit" class="btn-send">
-          <span class="i18n-fr">Envoyer mon message</span><span class="i18n-en">Send my message</span>
+          <span class="i18n-fr">Envoyer ma demande</span><span class="i18n-en">Send my enquiry</span>
           <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </button>
         <p class="f-note"><span class="i18n-fr">Chaque demande reçoit une réponse personnalisée dans les 48 heures.</span><span class="i18n-en">Every request gets a personal reply within 48 hours.</span></p>
@@ -1229,10 +1231,10 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Anastasia Mishurina<br><span style="font-size:9px;opacity:0.4;letter-spacing:0.3em">Makeup Artist</span></div>
-  <div class="footer-center">anastasiamishurina.fr</div>
+  <div class="footer-center"><a href="https://anastasiamishurina.com">anastasiamishurina.com</a></div>
   <div class="footer-right">
-    <a href="#" class="footer-social">Instagram</a>
-    <div class="footer-copy">© 2025 Anastasia Mishurina</div>
+    <a href="https://www.instagram.com/anastasiamishurina/" class="footer-social" target="_blank" rel="noopener">Instagram</a>
+    <div class="footer-copy">© 2026 Anastasia Mishurina</div>
   </div>
 </footer>
 
@@ -1248,10 +1250,10 @@ async function loadPortfolio() {
     if (!grid || !photos.length) return;
 
     const gradients = {
-      mariage:  'linear-gradient(160deg,#EEF3F8,#C8DAEA)',
-      gala:     'linear-gradient(160deg,#F0EBE8,#D8C4BC)',
-      tv:       'linear-gradient(160deg,#E8EEE8,#C4D4C0)',
-      shooting: 'linear-gradient(160deg,#EEE8F0,#D0C0D4)'
+      weddings:  'linear-gradient(160deg,#EEF3F8,#C8DAEA)',
+      events:    'linear-gradient(160deg,#F0EBE8,#D8C4BC)',
+      'on-camera': 'linear-gradient(160deg,#E8EEE8,#C4D4C0)',
+      editorial: 'linear-gradient(160deg,#EEE8F0,#D0C0D4)'
     };
 
     // Настоящие колонки (flex), а не CSS `columns:` — иначе браузер
@@ -1274,7 +1276,7 @@ async function loadPortfolio() {
 
     const lang = getLang();
     photos.forEach((p) => {
-      const grad = gradients[p.category] || gradients.mariage;
+      const grad = gradients[p.category] || gradients.weddings;
       const el = document.createElement('div');
       el.className = 'masonry-item';
       el.dataset.cat = p.category;
@@ -1286,6 +1288,7 @@ async function loadPortfolio() {
           <img src="photos/${p.category}/${p.file}"
                alt="${caption}"
                loading="lazy"
+               draggable="false"
                style="width:100%;height:auto;display:block"
                onerror="this.style.display='none'">
         </div>
@@ -1313,8 +1316,8 @@ async function loadPortfolio() {
 }
 
 const CATEGORY_LABELS = {
-  fr: { mariage: 'Mariage', gala: 'Gala', tv: 'TV', shooting: 'Shooting' },
-  en: { mariage: 'Wedding', gala: 'Gala', tv: 'TV', shooting: 'Shoot' }
+  fr: { weddings: 'WEDDINGS', events: 'EVENTS', 'on-camera': 'ON CAMERA', editorial: 'EDITORIAL' },
+  en: { weddings: 'WEDDINGS', events: 'EVENTS', 'on-camera': 'ON CAMERA', editorial: 'EDITORIAL' }
 };
 
 function updatePortfolioLanguage() {
@@ -1390,24 +1393,6 @@ loadPortfolio();
 
   // Run after portfolio/hero load
   setTimeout(addShields, 1500);
-
-  // 6. Watermark via CSS — anastasiamishurina.fr overlaid on all photo grids
-  const style = document.createElement('style');
-  style.textContent = `
-    .masonry-item::before {
-      content: 'anastasiamishurina.fr';
-      position: absolute;
-      bottom: 8px; right: 8px;
-      font-size: 9px;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.0);
-      z-index: 10;
-      pointer-events: none;
-      font-family: sans-serif;
-      text-shadow: 0 0 0 rgba(255,255,255,0.35);
-    }
-  `;
-  document.head.appendChild(style);
 })();
 
 // ── HERO CAROUSEL (слайды из hero.json) ──
@@ -1435,7 +1420,7 @@ function renderHero() {
     return `
       <div class="slide${i === 0 ? ' active' : ''}">
         ${raw.file ? `
-        <img src="photos/hero/${raw.file}" alt="Anastasia Mishurina — ${s.category}" class="slide-bg"
+        <img src="photos/hero/${raw.file}" alt="Anastasia Mishurina — ${s.headline}" class="slide-bg" draggable="false"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="slide-placeholder" style="display:none">
           <svg viewBox="0 0 24 24" width="32" style="stroke:rgba(255,255,255,0.3);fill:none"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
@@ -1445,12 +1430,9 @@ function renderHero() {
         </div>`}
         <div class="slide-text">
           <div>
-            <div class="slide-category">${s.category}</div>
-            <div class="slide-title-text">${s.title}<br><em>${s.titleEm}</em></div>
-          </div>
-          <div class="slide-action">
-            <div class="slide-location">${s.location}</div>
-            <a href="${raw.btnHref}" class="slide-btn">${s.btnLabel} <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            <div class="slide-category">${raw.num}</div>
+            <div class="slide-num-line"></div>
+            <div class="slide-title-text"><span class="headline">${s.headline}</span><em>${s.tagline}</em></div>
           </div>
         </div>
       </div>`;
@@ -1471,16 +1453,10 @@ function updateHeroLanguage() {
     const raw = heroSlides[i];
     if (!raw) return;
     const s = raw[lang] || raw.fr;
-    const cat = el.querySelector('.slide-category');
-    if (cat) cat.textContent = s.category;
     const titleEl = el.querySelector('.slide-title-text');
-    if (titleEl) titleEl.innerHTML = `${s.title}<br><em>${s.titleEm}</em>`;
-    const loc = el.querySelector('.slide-location');
-    if (loc) loc.textContent = s.location;
-    const btn = el.querySelector('.slide-btn');
-    if (btn) btn.innerHTML = `${s.btnLabel} <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>`;
+    if (titleEl) titleEl.innerHTML = `<span class="headline">${s.headline}</span><em>${s.tagline}</em>`;
     const bg = el.querySelector('.slide-bg');
-    if (bg) bg.alt = `Anastasia Mishurina — ${s.category}`;
+    if (bg) bg.alt = `Anastasia Mishurina — ${s.headline}`;
   });
 }
 
@@ -1617,12 +1593,13 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 // напрямую через JS.
 const ATTR_I18N = [
   { sel: '#navToggle', attr: 'aria-label', fr: 'Ouvrir le menu', en: 'Open menu' },
-  { sel: 'textarea[name="message"]', attr: 'placeholder', fr: 'Décrivez votre événement et vos attentes…', en: 'Describe your event and what you have in mind…' },
-  { sel: '.f-select option[value=""]', attr: 'text', fr: 'Choisissez une prestation', en: 'Choose a service' },
+  { sel: 'textarea[name="message"]', attr: 'placeholder', fr: 'Parlez-moi de votre événement, de vos envies et de vos attentes…', en: 'Tell me about your event, your wishes and what you have in mind…' },
+  { sel: 'input[name="lieu"]', attr: 'placeholder', fr: 'Ville, domaine ou région…', en: 'City, estate or region…' },
+  { sel: '.f-select option[value=""]', attr: 'text', fr: 'Choisissez votre événement', en: 'Choose your event' },
   { sel: '.f-select option:nth-child(2)', attr: 'text', fr: 'Mariage', en: 'Wedding' },
-  { sel: '.f-select option:nth-child(3)', attr: 'text', fr: 'Gala & Soirée', en: 'Gala & Evening' },
-  { sel: '.f-select option:nth-child(4)', attr: 'text', fr: 'Plateau TV / Interview', en: 'TV / Interview' },
-  { sel: '.f-select option:nth-child(5)', attr: 'text', fr: 'Shooting photo', en: 'Photo shoot' },
+  { sel: '.f-select option:nth-child(3)', attr: 'text', fr: 'Événement privé', en: 'Private Event' },
+  { sel: '.f-select option:nth-child(4)', attr: 'text', fr: 'Shooting / Editorial', en: 'Photo Shoot / Editorial' },
+  { sel: '.f-select option:nth-child(5)', attr: 'text', fr: 'TV / Interview', en: 'TV / Interview' },
   { sel: '.f-select option:nth-child(6)', attr: 'text', fr: 'Autre', en: 'Other' },
 ];
 

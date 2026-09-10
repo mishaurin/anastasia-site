@@ -1,92 +1,62 @@
 [
   {
     "file": "Hero1.jpeg",
+    "num": "01",
     "fr": {
-      "category": "Mariage",
-      "title": "Pour le jour",
-      "titleEm": "le plus important",
-      "location": "Lyon · France · Europe",
-      "btnLabel": "Réserver"
+      "headline": "Mariages intemporels",
+      "tagline": "Pour les instants qui comptent le plus."
     },
     "en": {
-      "category": "Wedding",
-      "title": "For the day",
-      "titleEm": "that matters most",
-      "location": "Lyon · France · Europe",
-      "btnLabel": "Book now"
-    },
-    "btnHref": "#contact"
+      "headline": "Timeless Weddings",
+      "tagline": "For the moments that matter most."
+    }
   },
   {
     "file": "hero2.jpeg",
+    "num": "02",
     "fr": {
-      "category": "Gala & Soirée",
-      "title": "L'élégance",
-      "titleEm": "à son apogée",
-      "location": "Cannes · Paris · Monaco",
-      "btnLabel": "Découvrir"
+      "headline": "Occasions d'exception",
+      "tagline": "L'élégance, rendue personnelle."
     },
     "en": {
-      "category": "Gala & Evening",
-      "title": "Elegance",
-      "titleEm": "at its peak",
-      "location": "Cannes · Paris · Monaco",
-      "btnLabel": "Discover"
-    },
-    "btnHref": "#contact"
+      "headline": "Special Occasions",
+      "tagline": "Elegance, made personal."
+    }
   },
   {
     "file": "hero3.jpeg",
+    "num": "03",
     "fr": {
-      "category": "Fashion Week",
-      "title": "Milan · Paris",
-      "titleEm": "sur les podiums",
-      "location": "Milano · Paris",
-      "btnLabel": "Voir le portfolio"
+      "headline": "Beauté naturelle",
+      "tagline": "Pensée pour vous ressembler."
     },
     "en": {
-      "category": "Fashion Week",
-      "title": "Milan · Paris",
-      "titleEm": "on the runway",
-      "location": "Milano · Paris",
-      "btnLabel": "View portfolio"
-    },
-    "btnHref": "#portfolio"
+      "headline": "Effortless Beauty",
+      "tagline": "Made to feel like you."
+    }
   },
   {
     "file": "hero4.jpeg",
+    "num": "04",
     "fr": {
-      "category": "Plateau TV & Interview",
-      "title": "Impeccable",
-      "titleEm": "à l'écran",
-      "location": "Eurovision · France TV",
-      "btnLabel": "Réserver"
+      "headline": "L'art de l'élégance",
+      "tagline": "Peaufiné à la perfection."
     },
     "en": {
-      "category": "TV & Interview",
-      "title": "Impeccable",
-      "titleEm": "on screen",
-      "location": "Eurovision · France TV",
-      "btnLabel": "Book now"
-    },
-    "btnHref": "#contact"
+      "headline": "The Art of Elegance",
+      "tagline": "Refined to perfection."
+    }
   },
   {
     "file": "hero5.jpeg",
+    "num": "05",
     "fr": {
-      "category": "Shooting Editorial",
-      "title": "L'art",
-      "titleEm": "en image",
-      "location": "Paris · Milan · Lyon",
-      "btnLabel": "Voir le portfolio"
+      "headline": "La beauté, capturée",
+      "tagline": "Intemporelle à chaque image."
     },
     "en": {
-      "category": "Editorial Shoot",
-      "title": "The art",
-      "titleEm": "of the image",
-      "location": "Paris · Milan · Lyon",
-      "btnLabel": "View portfolio"
-    },
-    "btnHref": "#portfolio"
+      "headline": "Beauty, Captured",
+      "tagline": "Timeless in every frame."
+    }
   }
 ]
