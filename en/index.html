@@ -2,14 +2,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Anastasia Mishurina — Professional Makeup Artist · Lyon &amp; Europe</title>
+<title>Destination Wedding Makeup Artist in France | Anastasia Mishurina</title>
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Anastasia Mishurina — Professional Makeup Artist">
-<meta property="og:description" content="Professional makeup artist based in Lyon. Luxury weddings, galas, TV, Fashion Week. Available throughout Europe.">
+<meta property="og:title" content="Destination Wedding Makeup Artist in France | Anastasia Mishurina">
+<meta property="og:description" content="Luxury bridal hair &amp; makeup for destination weddings in France. Based in Lyon, Anastasia travels across France and Europe for weddings, events and editorial work.">
 <meta property="og:type" content="website"><meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://anastasiamishurina.com/en/">
 <link rel="canonical" href="https://anastasiamishurina.com/en/"><link rel="alternate" hreflang="fr" href="https://anastasiamishurina.com/"><link rel="alternate" hreflang="en" href="https://anastasiamishurina.com/en/"><link rel="alternate" hreflang="x-default" href="https://anastasiamishurina.com/">
-<meta name="description" content="Professional makeup artist based in Lyon. Luxury weddings, galas, TV, Fashion Week. Available throughout Europe.">
+<meta name="description" content="Luxury bridal hair &amp; makeup for destination weddings in France. Based in Lyon, Anastasia travels across France and Europe for weddings, events and editorial work.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&amp;family=Nunito:wght@200;300;400;500&amp;display=swap" rel="stylesheet">
 <style>
 :root {
@@ -650,6 +650,10 @@ footer {
   .services-row { grid-template-columns: 1fr 1fr; }
   footer { grid-template-columns: 1fr; text-align: center; gap: 16px; padding: 40px 28px; }
   .footer-right { align-items: center; }
+  .faq-question { gap: 14px; padding: 24px 0; min-height: auto; align-items: flex-start; }
+  .faq-num { padding-top: 7px; }
+  .faq-icon { margin-top: 13px; margin-left: 0; }
+  .faq-answer-text { padding-left: 32px; padding-right: 0; }
 }
 
 /* ══ FAQ ══ */
@@ -658,9 +662,16 @@ footer {
   padding: 100px 56px;
 }
 #faq .section-eyebrow { margin-bottom: 12px; }
-#faq .section-h { margin-bottom: 64px; }
+#faq .section-h { margin-bottom: 18px; }
+.faq-intro {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px; font-weight: 300;
+  color: var(--ink-faint);
+  max-width: 520px;
+  margin-bottom: 48px;
+}
 
-.faq-list { max-width: 860px; }
+.faq-list { max-width: 1050px; }
 
 .faq-item {
   border-top: 0.5px solid var(--blue-soft);
@@ -671,58 +682,63 @@ footer {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 32px 0;
+  gap: 20px;
+  min-height: 118px;
+  padding: 20px 0;
   background: none;
   border: none;
   text-align: left;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(18px, 2vw, 24px);
-  font-weight: 300;
-  color: var(--ink);
-  line-height: 1.3;
-  transition: color 0.3s;
   cursor: pointer;
 }
-.faq-question:hover { color: var(--blue-ink); }
-.faq-question.open { color: var(--blue-ink); }
+.faq-question:focus-visible {
+  outline: 1.5px solid var(--blue-ink);
+  outline-offset: 6px;
+}
+.faq-num {
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px; font-weight: 400; letter-spacing: 0.15em;
+  color: var(--blue-mid);
+  flex-shrink: 0;
+  min-width: 18px;
+}
+.faq-q-text {
+  flex: 0 1 880px;
+  max-width: 880px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(19px, 2.2vw, 28px);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.35;
+  transition: color 0.3s;
+}
+.faq-question:hover .faq-q-text,
+.faq-question.open .faq-q-text { color: var(--blue-ink); }
 
 .faq-icon {
-  width: 36px; height: 36px; flex-shrink: 0;
-  border: 1px solid var(--blue-deep);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.4s;
-  background: transparent;
+  position: relative;
+  width: 16px; height: 16px;
+  flex-shrink: 0;
+  margin-left: auto;
 }
-.faq-icon svg {
-  width: 14px; height: 14px;
-  stroke: var(--blue-deep);
-  stroke-width: 2;
-  fill: none;
-  transition: transform 0.4s;
+.faq-icon::before, .faq-icon::after {
+  content: '';
+  position: absolute;
+  background: var(--blue-deep);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
-.faq-question:hover .faq-icon {
-  border-color: var(--blue-ink);
-}
-.faq-question:hover .faq-icon svg {
-  stroke: var(--blue-ink);
-}
-.faq-question.open .faq-icon {
-  background: var(--blue-ink);
-  border-color: var(--blue-ink);
-}
-.faq-question.open .faq-icon svg {
-  stroke: white;
-  transform: rotate(45deg);
-}
+.faq-icon::before { top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); }
+.faq-icon::after { left: 50%; top: 0; height: 100%; width: 1px; transform: translateX(-50%); }
+.faq-question:hover .faq-icon::before,
+.faq-question:hover .faq-icon::after { background: var(--blue-ink); }
+.faq-question.open .faq-icon::before,
+.faq-question.open .faq-icon::after { background: var(--blue-ink); }
+.faq-question.open .faq-icon::after { transform: translateX(-50%) scaleY(0); }
 
 .faq-answer {
   display: grid;
   grid-template-rows: 0fr;
   overflow: hidden;
-  transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: grid-template-rows 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .faq-answer.open {
   grid-template-rows: 1fr;
@@ -730,15 +746,53 @@ footer {
 .faq-answer-inner {
   min-height: 0;
   overflow: hidden;
-  padding: 0 48px 36px 0;
-  font-size: 15px;
-  line-height: 1.9;
+}
+.faq-answer-text {
+  padding: 3px 0 45px 38px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  line-height: 1.72;
   color: var(--ink-soft);
   font-weight: 300;
 }
-.faq-answer-inner strong {
+.faq-answer-text strong {
   color: var(--ink);
   font-weight: 400;
+}
+
+.faq-cta {
+  padding-top: 112px;
+  border-top: 0.5px solid var(--blue-soft);
+}
+.faq-cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 300;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.faq-cta-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px; font-weight: 300;
+  color: var(--ink-soft);
+  margin-bottom: 26px;
+}
+.faq-cta-link {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--blue-ink); text-decoration: none;
+  border-bottom: 0.5px solid var(--blue-mid);
+  padding-bottom: 4px;
+  transition: gap 0.3s, border-color 0.3s;
+}
+.faq-cta-link svg { width: 12px; height: 12px; stroke: currentColor; fill: none; }
+.faq-cta-link:hover { gap: 16px; border-color: var(--blue-ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-answer { transition: none; }
+  .faq-icon::before, .faq-icon::after { transition: none; }
+  .faq-cta-link { transition: none; }
 }
 
 
@@ -770,7 +824,7 @@ footer {
   "@type": "LocalBusiness",
   "name": "Anastasia Mishurina",
   "image": "https://anastasiamishurina.com/photos/about/1.jpg",
-  "description": "Professional makeup artist based in Lyon. Luxury weddings, galas, TV, Fashion Week. Available throughout Europe.",
+  "description": "Luxury bridal hair & makeup for destination weddings in France. Based in Lyon, Anastasia travels across France and Europe for weddings, events and editorial work.",
   "url": "https://anastasiamishurina.com/en/",
   "telephone": "+33745713679",
   "email": "aemishurina@gmail.com",
@@ -794,6 +848,79 @@ footer {
     "https://www.instagram.com/anastasiamishurina/"
   ],
   "inLanguage": "en-US"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you offer bridal hair and makeup for destination weddings in France?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — destination weddings are a large part of my work. I travel throughout France with all the products and tools needed to recreate the same experience on location, so your look stays flawless from the ceremony through the final dance, wherever in France your wedding takes place."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer a trial before the big day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and I strongly recommend it, especially for weddings. The trial gives us time to talk through your outfit, your hairstyle, and the mood you're after, then design a look together that truly matches your image. We test textures, shades, and products so that everything is dialed in and perfectly suited for your wedding day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does booking work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It all starts with a first conversation, through the contact form or by email. We talk through your event, your wishes and your needs so I can check my availability and we can define the service that suits you best together. Once the details are confirmed, your date is secured."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you travel outside Lyon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Based in Lyon, I travel throughout France and internationally for weddings, events and shoots. Whether your celebration takes place in a château in Provence, on the French Riviera, in Paris or elsewhere in Europe, we can arrange your beauty preparation directly on site."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with English-speaking brides?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I regularly work with international and English-speaking brides, and I'm comfortable communicating in English throughout the process — from our first conversation to the wedding day itself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What products do you use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I work exclusively with high-end beauty houses, chosen for their quality, their textures and their staying power: Dior, Chanel, Charlotte Tilbury, Hourglass, YSL and more. Every product is selected according to your skin, the look you want, and the demands of your event. The goal is an elegant, comfortable and impeccable finish, from the very first glance to the very last moment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How far in advance should I book?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a wedding, I recommend booking 6 to 12 months ahead, especially for peak season dates. Availability can be more limited for weekends between May and September. If your date is closer, don't hesitate to reach out anyway — I'll confirm my availability with you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you do makeup for several people on the same day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, of course. For weddings and events bringing several people together, I can take care of the beauty preparation for multiple guests and bring in a trusted assistant if needed. The number of people, the schedule, and everyone's needs are worked out in advance to build a smooth timeline and ensure a calm, unhurried preparation."
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -852,7 +979,7 @@ footer {
 <!-- INTRO STRIP -->
 <div class="intro-strip reveal">
   <div class="intro-tagline">
-    
+
     I believe every woman deserves to feel<br><em>radiant</em> — truly herself, only more so.
   </div>
   <div class="intro-proof">
@@ -860,7 +987,7 @@ footer {
   <div class="intro-meta">
     <div class="intro-meta-item">Fashion Week · Milan &amp; Paris</div>
     <div class="intro-meta-item">Festival de Cannes · Eurovision</div>
-    <div class="intro-meta-item">Luxury Weddings · French Châteaux</div>
+    <div class="intro-meta-item">Destination Weddings · French Châteaux</div>
   </div>
   </div>
 </div>
@@ -877,15 +1004,15 @@ footer {
   <div class="services-row reveal">
     <div class="svc">
       <div class="svc-num">01</div>
-      <div class="svc-name">WEDDINGS</div>
+      <h3 class="svc-name">WEDDINGS</h3>
       <p class="svc-desc">
-        
-        The most photographed day of your life deserves absolute attention. From the trial to the final touch-ups, every detail is designed to reveal your beauty and support you with complete ease throughout this one-of-a-kind day.
+
+        The most photographed day of your life deserves absolute attention. From the bridal trial to the final touch-ups, every detail is designed to create a refined, effortless bridal look that feels entirely like you — for weddings and destination weddings anywhere in France.
       </p>
     </div>
     <div class="svc">
       <div class="svc-num">02</div>
-      <div class="svc-name">EVENTS</div>
+      <h3 class="svc-name">EVENTS</h3>
       <p class="svc-desc">
         
         Galas, private parties, exceptional events: I create an elegant, long-lasting look designed to make you feel just as good as you look.
@@ -893,7 +1020,7 @@ footer {
     </div>
     <div class="svc">
       <div class="svc-num">03</div>
-      <div class="svc-name">ON CAMERA</div>
+      <h3 class="svc-name">ON CAMERA</h3>
       <p class="svc-desc">
         
         High-definition cameras leave nothing to chance. With several years of experience on set, I understand the demands of lighting, lenses, and long shooting days.
@@ -901,7 +1028,7 @@ footer {
     </div>
     <div class="svc">
       <div class="svc-num">04</div>
-      <div class="svc-name">EDITORIAL</div>
+      <h3 class="svc-name">EDITORIAL</h3>
       <p class="svc-desc">
         
         Every image tells a story. I work closely with the photographer to create a look that works with the light, the styling, and the lens — down to the smallest detail.
@@ -913,7 +1040,7 @@ footer {
 <!-- ABOUT PREVIEW -->
 <section id="about-preview">
   <div class="about-photo-side">
-    <img src="/photos/about/1.jpg" alt="Anastasia Mishurina" draggable="false" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <img src="/photos/about/1.jpg" alt="Anastasia Mishurina, makeup artist based in Lyon, France" draggable="false" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="about-photo-placeholder">
       <svg viewBox="0 0 24 24" width="36" style="stroke:rgba(255,255,255,0.25);fill:none"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
     </div>
@@ -925,18 +1052,22 @@ footer {
       Beauty is more<br><em>than makeup.</em>
     </h2>
     <p class="about-intro">
-      
-      I'm Anastasia, a makeup artist based in Lyon, with over 10 years of experience. My work has taken me from Milan and Paris Fashion Week to the Cannes Film Festival and Eurovision — but above all, I love creating beauty for women on the days that matter most.
+
+      I'm Anastasia, a luxury makeup artist and hair stylist based in Lyon, France, with over 10 years of experience. My work has taken me from Milan and Paris Fashion Week to the Cannes Film Festival and Eurovision. Today, I specialise in refined beauty for weddings, events and editorial productions, working with both local and international clients across France and Europe.
     </p>
     <p class="about-intro">
-      
+
+      For destination weddings, I travel throughout France and Europe, from intimate celebrations in Lyon to French châteaux in Provence, the French Riviera, Paris and beyond.
+    </p>
+    <p class="about-intro">
+
       My approach is simple: to create a beauty that feels like you — refined, effortless and entirely your own.
     </p>
     <div class="about-highlights">
       <div class="about-hl">Fashion Week · Milan &amp; Paris</div>
       <div class="about-hl">Cannes Film Festival</div>
       <div class="about-hl">Eurovision</div>
-      <div class="about-hl">Luxury Weddings · French Châteaux</div>
+      <div class="about-hl">Destination Weddings · French Châteaux</div>
       <div class="about-hl">Celebrities &amp; Models · International</div>
     </div>
     <a href="#contact" class="about-link">
@@ -1079,94 +1210,124 @@ footer {
   <div class="reveal">
     <div class="section-eyebrow">FAQ</div>
     <h2 class="section-h">
-      
+
       Questions &amp; <em>answers</em>
     </h2>
+    <p class="faq-intro">A few things worth knowing before your appointment.</p>
   </div>
   <div class="faq-list reveal">
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        
-        Do you offer a trial before the big day?
-        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">
+        <span class="faq-num">01</span>
+        <span class="faq-q-text">Do you offer bridal hair and makeup for destination weddings in France?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
         <div class="faq-answer-inner">
-          
-          Yes, and I strongly recommend it, especially for weddings. The trial gives us time to talk through your outfit, your hairstyle, and the mood you're after, then design a look together that truly matches your image. We test textures, shades, and products so that everything is dialed in and perfectly suited for your wedding day.
+          <div class="faq-answer-text">Yes — destination weddings are a large part of my work. I travel throughout France with all the products and tools needed to recreate the same experience on location, so your look stays flawless from the ceremony through the final dance, wherever in France your wedding takes place.</div>
         </div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        
-        How does booking work?
-        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">
+        <span class="faq-num">02</span>
+        <span class="faq-q-text">Do you offer a trial before the big day?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
         <div class="faq-answer-inner">
-          
-          It all starts with a first conversation, through the contact form or by email. We talk through your event, your wishes and your needs so I can check my availability and we can define the service that suits you best together. Once the details are confirmed, your date is secured.
+          <div class="faq-answer-text">Yes, and I strongly recommend it, especially for weddings. The trial gives us time to talk through your outfit, your hairstyle, and the mood you're after, then design a look together that truly matches your image. We test textures, shades, and products so that everything is dialed in and perfectly suited for your wedding day.</div>
         </div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        
-        Do you travel outside Lyon?
-        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">
+        <span class="faq-num">03</span>
+        <span class="faq-q-text">How does booking work?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
         <div class="faq-answer-inner">
-          
-          Absolutely. Based in Lyon, I travel throughout France and internationally for weddings, events and shoots. Whether your celebration takes place in a château in Provence, in Paris or elsewhere in Europe, we can arrange your beauty preparation directly on site.
+          <div class="faq-answer-text">It all starts with a first conversation, through the contact form or by email. We talk through your event, your wishes and your needs so I can check my availability and we can define the service that suits you best together. Once the details are confirmed, your date is secured.</div>
         </div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        
-        What products do you use?
-        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4">
+        <span class="faq-num">04</span>
+        <span class="faq-q-text">Do you travel outside Lyon?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
         <div class="faq-answer-inner">
-          
-          I work exclusively with high-end beauty houses, chosen for their quality, their textures and their staying power: Dior, Chanel, Charlotte Tilbury, Hourglass, YSL and more. Every product is selected according to your skin, the look you want, and the demands of your event. The goal is an elegant, comfortable and impeccable finish, from the very first glance to the very last moment.
+          <div class="faq-answer-text">Absolutely. Based in Lyon, I travel throughout France and internationally for weddings, events and shoots. Whether your celebration takes place in a château in Provence, on the French Riviera, in Paris or elsewhere in Europe, we can arrange your beauty preparation directly on site.</div>
         </div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        
-        How far in advance should I book?
-        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5">
+        <span class="faq-num">05</span>
+        <span class="faq-q-text">Do you work with English-speaking brides?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
         <div class="faq-answer-inner">
-          
-          For a wedding, I recommend booking 6 to 12 months ahead, especially for peak season dates. Availability can be more limited for weekends between May and September. If your date is closer, don't hesitate to reach out anyway — I'll confirm my availability with you.
+          <div class="faq-answer-text">Yes. I regularly work with international and English-speaking brides, and I'm comfortable communicating in English throughout the process — from our first conversation to the wedding day itself.</div>
         </div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        
-        Can you do makeup for several people on the same day?
-        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-answer-6" id="faq-question-6">
+        <span class="faq-num">06</span>
+        <span class="faq-q-text">What products do you use?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6">
         <div class="faq-answer-inner">
-          
-          Yes, of course. For weddings and events bringing several people together, I can take care of the beauty preparation for multiple guests and bring in a trusted assistant if needed. The number of people, the schedule, and everyone's needs are worked out in advance to build a smooth timeline and ensure a calm, unhurried preparation.
+          <div class="faq-answer-text">I work exclusively with high-end beauty houses, chosen for their quality, their textures and their staying power: Dior, Chanel, Charlotte Tilbury, Hourglass, YSL and more. Every product is selected according to your skin, the look you want, and the demands of your event. The goal is an elegant, comfortable and impeccable finish, from the very first glance to the very last moment.</div>
         </div>
       </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-answer-7" id="faq-question-7">
+        <span class="faq-num">07</span>
+        <span class="faq-q-text">How far in advance should I book?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq-answer" id="faq-answer-7" role="region" aria-labelledby="faq-question-7">
+        <div class="faq-answer-inner">
+          <div class="faq-answer-text">For a wedding, I recommend booking 6 to 12 months ahead, especially for peak season dates. Availability can be more limited for weekends between May and September. If your date is closer, don't hesitate to reach out anyway — I'll confirm my availability with you.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-answer-8" id="faq-question-8">
+        <span class="faq-num">08</span>
+        <span class="faq-q-text">Can you do makeup for several people on the same day?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq-answer" id="faq-answer-8" role="region" aria-labelledby="faq-question-8">
+        <div class="faq-answer-inner">
+          <div class="faq-answer-text">Yes, of course. For weddings and events bringing several people together, I can take care of the beauty preparation for multiple guests and bring in a trusted assistant if needed. The number of people, the schedule, and everyone's needs are worked out in advance to build a smooth timeline and ensure a calm, unhurried preparation.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-cta">
+      <div class="faq-cta-title">Still have a question?</div>
+      <p class="faq-cta-text">I'd be happy to talk through the details with you.</p>
+      <a href="#contact" class="faq-cta-link">
+        Get in touch
+        <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
     </div>
 
   </div>
@@ -1427,7 +1588,7 @@ function renderHero() {
           <div>
             <div class="slide-category">${raw.num}</div>
             <div class="slide-num-line"></div>
-            <div class="slide-title-text"><span class="headline">${s.headline}</span><em>${s.tagline}</em></div>
+            <div class="slide-title-text">${i === 0 ? `<h1 class="headline">${s.headline}</h1>` : `<span class="headline">${s.headline}</span>`}<em>${s.tagline}</em></div>
           </div>
         </div>
       </div>`;
@@ -1669,16 +1830,9 @@ function alertFormError(form) {
 function toggleFaq(btn) {
   const answer = btn.nextElementSibling;
   const isOpen = btn.classList.contains('open');
-  // Close all
-  document.querySelectorAll('.faq-question.open').forEach(q => {
-    q.classList.remove('open');
-    q.nextElementSibling.classList.remove('open');
-  });
-  // Open clicked if was closed
-  if (!isOpen) {
-    btn.classList.add('open');
-    answer.classList.add('open');
-  }
+  btn.classList.toggle('open', !isOpen);
+  answer.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', String(!isOpen));
 }
 
 </script>

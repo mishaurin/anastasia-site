@@ -650,6 +650,10 @@ footer {
   .services-row { grid-template-columns: 1fr 1fr; }
   footer { grid-template-columns: 1fr; text-align: center; gap: 16px; padding: 40px 28px; }
   .footer-right { align-items: center; }
+  .faq-question { gap: 14px; padding: 24px 0; min-height: auto; align-items: flex-start; }
+  .faq-num { padding-top: 7px; }
+  .faq-icon { margin-top: 13px; margin-left: 0; }
+  .faq-answer-text { padding-left: 32px; padding-right: 0; }
 }
 
 /* ══ FAQ ══ */
@@ -658,9 +662,16 @@ footer {
   padding: 100px 56px;
 }
 #faq .section-eyebrow { margin-bottom: 12px; }
-#faq .section-h { margin-bottom: 64px; }
+#faq .section-h { margin-bottom: 18px; }
+.faq-intro {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px; font-weight: 300;
+  color: var(--ink-faint);
+  max-width: 520px;
+  margin-bottom: 48px;
+}
 
-.faq-list { max-width: 860px; }
+.faq-list { max-width: 1050px; }
 
 .faq-item {
   border-top: 0.5px solid var(--blue-soft);
@@ -671,58 +682,63 @@ footer {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 32px 0;
+  gap: 20px;
+  min-height: 118px;
+  padding: 20px 0;
   background: none;
   border: none;
   text-align: left;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(18px, 2vw, 24px);
-  font-weight: 300;
-  color: var(--ink);
-  line-height: 1.3;
-  transition: color 0.3s;
   cursor: pointer;
 }
-.faq-question:hover { color: var(--blue-ink); }
-.faq-question.open { color: var(--blue-ink); }
+.faq-question:focus-visible {
+  outline: 1.5px solid var(--blue-ink);
+  outline-offset: 6px;
+}
+.faq-num {
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px; font-weight: 400; letter-spacing: 0.15em;
+  color: var(--blue-mid);
+  flex-shrink: 0;
+  min-width: 18px;
+}
+.faq-q-text {
+  flex: 0 1 880px;
+  max-width: 880px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(19px, 2.2vw, 28px);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.35;
+  transition: color 0.3s;
+}
+.faq-question:hover .faq-q-text,
+.faq-question.open .faq-q-text { color: var(--blue-ink); }
 
 .faq-icon {
-  width: 36px; height: 36px; flex-shrink: 0;
-  border: 1px solid var(--blue-deep);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.4s;
-  background: transparent;
+  position: relative;
+  width: 16px; height: 16px;
+  flex-shrink: 0;
+  margin-left: auto;
 }
-.faq-icon svg {
-  width: 14px; height: 14px;
-  stroke: var(--blue-deep);
-  stroke-width: 2;
-  fill: none;
-  transition: transform 0.4s;
+.faq-icon::before, .faq-icon::after {
+  content: '';
+  position: absolute;
+  background: var(--blue-deep);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
-.faq-question:hover .faq-icon {
-  border-color: var(--blue-ink);
-}
-.faq-question:hover .faq-icon svg {
-  stroke: var(--blue-ink);
-}
-.faq-question.open .faq-icon {
-  background: var(--blue-ink);
-  border-color: var(--blue-ink);
-}
-.faq-question.open .faq-icon svg {
-  stroke: white;
-  transform: rotate(45deg);
-}
+.faq-icon::before { top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); }
+.faq-icon::after { left: 50%; top: 0; height: 100%; width: 1px; transform: translateX(-50%); }
+.faq-question:hover .faq-icon::before,
+.faq-question:hover .faq-icon::after { background: var(--blue-ink); }
+.faq-question.open .faq-icon::before,
+.faq-question.open .faq-icon::after { background: var(--blue-ink); }
+.faq-question.open .faq-icon::after { transform: translateX(-50%) scaleY(0); }
 
 .faq-answer {
   display: grid;
   grid-template-rows: 0fr;
   overflow: hidden;
-  transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: grid-template-rows 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .faq-answer.open {
   grid-template-rows: 1fr;
@@ -730,15 +746,53 @@ footer {
 .faq-answer-inner {
   min-height: 0;
   overflow: hidden;
-  padding: 0 48px 36px 0;
-  font-size: 15px;
-  line-height: 1.9;
+}
+.faq-answer-text {
+  padding: 3px 0 45px 38px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  line-height: 1.72;
   color: var(--ink-soft);
   font-weight: 300;
 }
-.faq-answer-inner strong {
+.faq-answer-text strong {
   color: var(--ink);
   font-weight: 400;
+}
+
+.faq-cta {
+  padding-top: 112px;
+  border-top: 0.5px solid var(--blue-soft);
+}
+.faq-cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 300;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.faq-cta-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px; font-weight: 300;
+  color: var(--ink-soft);
+  margin-bottom: 26px;
+}
+.faq-cta-link {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--blue-ink); text-decoration: none;
+  border-bottom: 0.5px solid var(--blue-mid);
+  padding-bottom: 4px;
+  transition: gap 0.3s, border-color 0.3s;
+}
+.faq-cta-link svg { width: 12px; height: 12px; stroke: currentColor; fill: none; }
+.faq-cta-link:hover { gap: 16px; border-color: var(--blue-ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-answer { transition: none; }
+  .faq-icon::before, .faq-icon::after { transition: none; }
+  .faq-cta-link { transition: none; }
 }
 
 
@@ -1080,93 +1134,97 @@ footer {
     <div class="section-eyebrow">FAQ</div>
     <h2 class="section-h">
       Questions &amp; <em>réponses</em>
-      
+
     </h2>
+    <p class="faq-intro">Quelques informations utiles avant votre rendez-vous.</p>
   </div>
   <div class="faq-list reveal">
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Proposez-vous un essai avant le jour J ?
-        
-        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">
+        <span class="faq-num">01</span>
+        <span class="faq-q-text">Proposez-vous un essai avant le jour J ?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
         <div class="faq-answer-inner">
-          Oui, je le recommande vivement, en particulier pour les mariages. L'essai permet de prendre le temps d'échanger sur votre tenue, votre coiffure et l'ambiance souhaitée, puis de définir ensemble une mise en beauté qui s'accorde parfaitement à votre image. Nous testons les textures, les teintes et les produits afin que tout soit maîtrisé et parfaitement adapté le jour du mariage.
-          
+          <div class="faq-answer-text">Oui, je le recommande vivement, en particulier pour les mariages. L'essai permet de prendre le temps d'échanger sur votre tenue, votre coiffure et l'ambiance souhaitée, puis de définir ensemble une mise en beauté qui s'accorde parfaitement à votre image. Nous testons les textures, les teintes et les produits afin que tout soit maîtrisé et parfaitement adapté le jour du mariage.</div>
         </div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Comment se passe la réservation ?
-        
-        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">
+        <span class="faq-num">02</span>
+        <span class="faq-q-text">Comment se passe la réservation ?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
         <div class="faq-answer-inner">
-          Tout commence par un premier échange, via le formulaire de contact ou par email. Nous discutons de votre événement, de vos envies et de vos besoins afin de vérifier mes disponibilités et de définir ensemble la prestation la plus adaptée. Une fois les détails confirmés, votre date est réservée.
-          
+          <div class="faq-answer-text">Tout commence par un premier échange, via le formulaire de contact ou par email. Nous discutons de votre événement, de vos envies et de vos besoins afin de vérifier mes disponibilités et de définir ensemble la prestation la plus adaptée. Une fois les détails confirmés, votre date est réservée.</div>
         </div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Intervenez-vous en dehors de Lyon ?
-        
-        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">
+        <span class="faq-num">03</span>
+        <span class="faq-q-text">Intervenez-vous en dehors de Lyon ?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
         <div class="faq-answer-inner">
-          Absolument. Basée à Lyon, je me déplace dans toute la France ainsi qu'à l'international pour les mariages, événements et shootings. Que votre réception ait lieu dans un château en Provence, à Paris ou ailleurs en Europe, nous pouvons organiser votre mise en beauté directement sur le lieu de votre événement.
-          
+          <div class="faq-answer-text">Absolument. Basée à Lyon, je me déplace dans toute la France ainsi qu'à l'international pour les mariages, événements et shootings. Que votre réception ait lieu dans un château en Provence, à Paris ou ailleurs en Europe, nous pouvons organiser votre mise en beauté directement sur le lieu de votre événement.</div>
         </div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Quels produits utilisez-vous ?
-        
-        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4">
+        <span class="faq-num">04</span>
+        <span class="faq-q-text">Quels produits utilisez-vous ?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
         <div class="faq-answer-inner">
-          Je travaille exclusivement avec des maisons de beauté haut de gamme, choisies pour leur qualité, leurs textures et leur tenue : Dior, Chanel, Charlotte Tilbury, Hourglass, YSL et bien d'autres. Chaque produit est sélectionné en fonction de votre peau, du rendu souhaité et des exigences de votre événement. L'objectif est d'obtenir une mise en beauté élégante, confortable et impeccable, du premier regard jusqu'au dernier moment.
-          
+          <div class="faq-answer-text">Je travaille exclusivement avec des maisons de beauté haut de gamme, choisies pour leur qualité, leurs textures et leur tenue : Dior, Chanel, Charlotte Tilbury, Hourglass, YSL et bien d'autres. Chaque produit est sélectionné en fonction de votre peau, du rendu souhaité et des exigences de votre événement. L'objectif est d'obtenir une mise en beauté élégante, confortable et impeccable, du premier regard jusqu'au dernier moment.</div>
         </div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Combien de temps à l'avance faut-il réserver ?
-        
-        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5">
+        <span class="faq-num">05</span>
+        <span class="faq-q-text">Combien de temps à l'avance faut-il réserver ?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
         <div class="faq-answer-inner">
-          Pour un mariage, je recommande de réserver entre 6 et 12 mois à l'avance, en particulier pour les dates de haute saison. Les disponibilités peuvent être plus limitées pour les week-ends de mai à septembre. Si votre date est plus proche, n'hésitez toutefois pas à me contacter : je vous confirmerai mes disponibilités.
-          
+          <div class="faq-answer-text">Pour un mariage, je recommande de réserver entre 6 et 12 mois à l'avance, en particulier pour les dates de haute saison. Les disponibilités peuvent être plus limitées pour les week-ends de mai à septembre. Si votre date est plus proche, n'hésitez toutefois pas à me contacter : je vous confirmerai mes disponibilités.</div>
         </div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Pouvez-vous maquiller plusieurs personnes le même jour ?
-        
-        <span class="faq-icon"><svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-answer-6" id="faq-question-6">
+        <span class="faq-num">06</span>
+        <span class="faq-q-text">Pouvez-vous maquiller plusieurs personnes le même jour ?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6">
         <div class="faq-answer-inner">
-          Oui, bien sûr. Pour les mariages et événements réunissant plusieurs personnes, je peux prendre en charge la mise en beauté de plusieurs invitées et faire intervenir, si nécessaire, une assistante de confiance. Le nombre de personnes, les horaires et les besoins de chacune sont définis en amont afin de construire un planning fluide et de garantir une préparation sereine, sans précipitation.
-          
+          <div class="faq-answer-text">Oui, bien sûr. Pour les mariages et événements réunissant plusieurs personnes, je peux prendre en charge la mise en beauté de plusieurs invitées et faire intervenir, si nécessaire, une assistante de confiance. Le nombre de personnes, les horaires et les besoins de chacune sont définis en amont afin de construire un planning fluide et de garantir une préparation sereine, sans précipitation.</div>
         </div>
       </div>
+    </div>
+
+    <div class="faq-cta">
+      <div class="faq-cta-title">Une question sans réponse ?</div>
+      <p class="faq-cta-text">Je serai ravie d'en discuter avec vous.</p>
+      <a href="#contact" class="faq-cta-link">
+        Me contacter
+        <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
     </div>
 
   </div>
@@ -1669,16 +1727,9 @@ function alertFormError(form) {
 function toggleFaq(btn) {
   const answer = btn.nextElementSibling;
   const isOpen = btn.classList.contains('open');
-  // Close all
-  document.querySelectorAll('.faq-question.open').forEach(q => {
-    q.classList.remove('open');
-    q.nextElementSibling.classList.remove('open');
-  });
-  // Open clicked if was closed
-  if (!isOpen) {
-    btn.classList.add('open');
-    answer.classList.add('open');
-  }
+  btn.classList.toggle('open', !isOpen);
+  answer.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', String(!isOpen));
 }
 
 </script>
