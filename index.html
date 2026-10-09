@@ -1256,18 +1256,27 @@ footer {
       Parlons de votre événement —<br><span>je vous répondrai personnellement sous 48h.</span>
       
     </div>
-    <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)"><input type="hidden" name="form-name" value="contact">
+    <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/merci/" onsubmit="handleSubmit(event)"><input type="hidden" name="form-name" value="contact">
+      <p hidden><label>Ne remplissez pas ce champ si vous êtes humain : <input name="bot-field"></label></p>
       <div class="f-field">
         <label class="f-label">Votre prénom</label>
-        <input class="f-input" type="text" name="prenom" placeholder="Marie">
+        <input class="f-input" type="text" name="prenom" placeholder="Marie" required autocomplete="given-name">
+      </div>
+      <div class="f-field">
+        <label class="f-label">Email</label>
+        <input class="f-input" type="email" name="email" placeholder="marie@email.com" required autocomplete="email">
+      </div>
+      <div class="f-field">
+        <label class="f-label">Téléphone</label>
+        <input class="f-input" type="tel" name="telephone" placeholder="06 12 34 56 78" autocomplete="tel">
       </div>
       <div class="f-field">
         <label class="f-label">Date de l'événement</label>
-        <input class="f-input f-date" type="date" name="date" id="eventDate">
+        <input class="f-input f-date" type="date" name="date_evenement" id="eventDate">
       </div>
       <div class="f-field">
         <label class="f-label">Type d'événement</label>
-        <select class="f-select f-input" name="prestation">
+        <select class="f-select f-input" name="type_evenement">
           <option value="" disabled="" selected="">Choisissez votre événement</option>
           <option>Mariage</option>
           <option>Événement privé</option>
@@ -1695,6 +1704,8 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 })();
 
 // ── FORM ──
+const THANK_YOU_URL = '/merci/';
+
 function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
@@ -1709,9 +1720,7 @@ function handleSubmit(e) {
     body: new URLSearchParams(new FormData(form)).toString()
   })
     .then(() => {
-      btn.textContent = 'Message envoyé ✓';
-      btn.style.background = '#6A9CBD';
-      form.reset();
+      window.location.href = THANK_YOU_URL;
     })
     .catch(() => {
       btn.disabled = false;

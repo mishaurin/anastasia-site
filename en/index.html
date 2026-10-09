@@ -1359,18 +1359,27 @@ footer {
       
       Let's talk about your event —<br><span>I'll reply to you personally within 48h.</span>
     </div>
-    <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)"><input type="hidden" name="form-name" value="contact">
+    <form class="contact-form" name="contact-en" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/en/thank-you/" onsubmit="handleSubmit(event)"><input type="hidden" name="form-name" value="contact-en">
+      <p hidden><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
       <div class="f-field">
         <label class="f-label">Your first name</label>
-        <input class="f-input" type="text" name="prenom" placeholder="Marie">
+        <input class="f-input" type="text" name="prenom" placeholder="Marie" required autocomplete="given-name">
+      </div>
+      <div class="f-field">
+        <label class="f-label">Email</label>
+        <input class="f-input" type="email" name="email" placeholder="marie@email.com" required autocomplete="email">
+      </div>
+      <div class="f-field">
+        <label class="f-label">Phone</label>
+        <input class="f-input" type="tel" name="telephone" placeholder="+1 234 567 8900" autocomplete="tel">
       </div>
       <div class="f-field">
         <label class="f-label">Event date</label>
-        <input class="f-input f-date" type="date" name="date" id="eventDate">
+        <input class="f-input f-date" type="date" name="date_evenement" id="eventDate">
       </div>
       <div class="f-field">
         <label class="f-label">Event type</label>
-        <select class="f-select f-input" name="prestation">
+        <select class="f-select f-input" name="type_evenement">
           <option value="" disabled="" selected="">Choose your event</option>
           <option>Wedding</option>
           <option>Private Event</option>
@@ -1798,13 +1807,15 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 })();
 
 // ── FORM ──
+const THANK_YOU_URL = '/en/thank-you/';
+
 function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const btn = form.querySelector('.btn-send');
   const originalText = btn.textContent;
   btn.disabled = true;
-  btn.textContent = 'Envoi en cours…';
+  btn.textContent = 'Sending…';
 
   fetch('/', {
     method: 'POST',
@@ -1812,9 +1823,7 @@ function handleSubmit(e) {
     body: new URLSearchParams(new FormData(form)).toString()
   })
     .then(() => {
-      btn.textContent = 'Message envoyé ✓';
-      btn.style.background = '#6A9CBD';
-      form.reset();
+      window.location.href = THANK_YOU_URL;
     })
     .catch(() => {
       btn.disabled = false;
@@ -1831,7 +1840,7 @@ function alertFormError(form) {
     note.style.cssText = 'font-size:11px;color:#B23A3A;text-align:center;line-height:1.65;margin-top:12px';
     form.querySelector('.f-submit').appendChild(note);
   }
-  note.textContent = "L'envoi a échoué. Réessayez, ou écrivez directement à " + CONTACT_EMAIL + ".";
+  note.textContent = "Something went wrong. Please try again, or write directly to " + CONTACT_EMAIL + ".";
 }
 
 // ── FAQ ──

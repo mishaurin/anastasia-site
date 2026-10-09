@@ -1,0 +1,252 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Merci — Anastasia Mishurina</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&amp;family=Nunito:wght@200;300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --white:     #FFFFFF;
+  --off-white: #FAF8F5;
+  --cream:     #F2EDE6;
+  --blue-mist: #E8EFF7;
+  --blue-soft: #D4E3F0;
+  --blue-mid:  #A8C4DC;
+  --blue-deep: #467798;
+  --blue-ink:  #3A6B8A;
+  --petal:     #EDD9D0;
+  --rose:      #C9A090;
+  --ink:       #2C3A42;
+  --ink-soft:  #4A5C66;
+  --ink-faint: #5C707C;
+  --gold:      #C8A882;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--white); color: var(--ink); font-family: 'Nunito', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+/* ══ NAV ══ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 56px; height: 72px;
+  background: var(--white);
+  border-bottom: 0.5px solid var(--blue-soft);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px; font-weight: 500;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+}
+.nav-menu { display: flex; gap: 36px; list-style: none; }
+.nav-menu a {
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none; transition: color 0.3s;
+}
+.nav-menu a:hover { color: var(--blue-ink); }
+.nav-right { display: flex; align-items: center; gap: 24px; }
+.nav-cta {
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 10px 22px; border: 0.5px solid var(--blue-ink);
+  color: var(--blue-ink); text-decoration: none; transition: all 0.3s;
+}
+.nav-cta:hover { background: var(--blue-ink); color: white; }
+
+/* ══ LANGUAGE ══ */
+.nav-lang { display: flex; gap: 8px; align-items: center; }
+.lang-btn {
+  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+  background: none; border: none; color: var(--ink-faint); cursor: pointer;
+  font-family: 'Nunito', sans-serif; font-weight: 300; transition: color 0.3s;
+  text-decoration: none;
+}
+.lang-btn.active { color: var(--blue-ink); font-weight: 500; }
+.lang-sep { width: 0.5px; height: 10px; background: var(--blue-soft); }
+
+/* ══ MOBILE NAV ══ */
+.nav-toggle {
+  display: none; width: 32px; height: 32px; padding: 0; margin: 0;
+  background: none; border: none; cursor: pointer;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+}
+.nav-toggle span {
+  display: block; width: 20px; height: 1px; background: var(--ink);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.nav-mobile-panel {
+  display: none; position: fixed; top: 72px; left: 0; right: 0; z-index: 99;
+  background: var(--white); border-bottom: 0.5px solid var(--blue-soft);
+  flex-direction: column; padding: 8px 24px 24px;
+  max-height: calc(100vh - 72px); overflow-y: auto;
+}
+.nav-mobile-panel.open { display: flex; }
+.nav-mobile-panel a {
+  font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none; padding: 16px 0;
+  border-bottom: 0.5px solid var(--blue-soft);
+}
+.nav-mobile-panel a:last-child { border-bottom: none; }
+
+/* ══ THANK YOU ══ */
+.thank-wrap {
+  margin-top: 72px;
+  min-height: calc(100vh - 72px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 80px 24px;
+  background: var(--off-white);
+}
+.thank-inner { max-width: 560px; text-align: center; }
+.thank-eyebrow {
+  font-size: 9.5px; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--blue-deep); margin-bottom: 20px;
+}
+.thank-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4.5vw, 52px); font-weight: 300; line-height: 1.15;
+  color: var(--ink); margin-bottom: 28px;
+}
+.thank-heading em { font-style: italic; color: var(--blue-deep); }
+.thank-text {
+  font-size: 17px; font-weight: 400; line-height: 1.75;
+  color: var(--ink-soft); margin-bottom: 40px;
+}
+.home-link {
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 15px 32px; border: 0.5px solid var(--blue-ink);
+  color: var(--blue-ink); text-decoration: none;
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  transition: all 0.4s;
+}
+.home-link:hover { background: var(--blue-ink); color: white; gap: 20px; }
+.home-link svg { width: 13px; height: 13px; stroke: currentColor; fill: none; }
+
+/* ══ FOOTER ══ */
+footer {
+  background: var(--ink); padding: 42px 56px;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 40px;
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--blue-mid); font-weight: 400; line-height: 1.8;
+}
+.footer-center { text-align: center; font-size: 11px; letter-spacing: 0.2em; color: rgba(168,196,220,0.85); }
+.footer-center a { color: inherit; text-decoration: none; transition: color 0.3s; }
+.footer-center a:hover { color: var(--blue-mid); }
+.footer-right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.footer-social { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-mid); text-decoration: none; opacity: 0.85; transition: opacity 0.3s; }
+.footer-social:hover { opacity: 1; }
+.footer-copy { font-size: 10px; color: rgba(168,196,220,0.85); }
+
+/* ══ REVEAL ══ */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 960px) {
+  nav { padding: 0 12px; }
+  .nav-menu { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-right { gap: 8px; }
+  .nav-lang { gap: 3px; }
+  .lang-btn { font-size: 9px; letter-spacing: 0.08em; }
+  .lang-sep { display: none; }
+  .nav-cta { padding: 8px 9px; font-size: 8.5px; letter-spacing: 0.1em; }
+  .thank-wrap { padding: 56px 24px; }
+  footer { grid-template-columns: 1fr; text-align: center; gap: 16px; padding: 40px 28px; }
+  .footer-right { align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Anastasia Mishurina</a>
+  <ul class="nav-menu">
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#about-preview">À propos</a></li>
+    <li><a href="/#portfolio">Portfolio</a></li>
+    <li><a href="/#praise">Témoignages</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-lang"><span class="lang-btn active">FR</span>
+      <div class="lang-sep"></div>
+      <a href="/en/thank-you/" class="lang-btn">EN</a></div>
+    <a href="/#contact" class="nav-cta">Réserver</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMobilePanel">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile-panel" id="navMobilePanel">
+  <a href="/#services">Services</a>
+  <a href="/#about-preview">À propos</a>
+  <a href="/#portfolio">Portfolio</a>
+  <a href="/#praise">Témoignages</a>
+  <a href="/#faq">FAQ</a>
+  <a href="/#contact">Contact</a>
+</div>
+
+<!-- THANK YOU -->
+<section class="thank-wrap">
+  <div class="thank-inner reveal">
+    <div class="thank-eyebrow">Merci</div>
+    <h1 class="thank-heading">Votre message est bien <em>arrivé.</em></h1>
+    <p class="thank-text">Je vous répondrai personnellement sous 48 heures. Merci de votre confiance — j'ai hâte d'échanger avec vous sur votre événement.</p>
+    <a href="/" class="home-link">
+      Retour à l'accueil
+      <svg viewBox="0 0 24 24" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Anastasia Mishurina<br><span style="font-size:9px;opacity:0.4;letter-spacing:0.3em">Makeup Artist</span></div>
+  <div class="footer-center"><a href="https://anastasiamishurina.com">anastasiamishurina.com</a></div>
+  <div class="footer-right">
+    <a href="https://www.instagram.com/anastasiamishurina/" class="footer-social" target="_blank" rel="noopener">Instagram</a>
+    <div class="footer-copy">© 2026 Anastasia Mishurina</div>
+  </div>
+</footer>
+
+<script>
+// ── MOBILE NAV ──
+(function() {
+  const toggle = document.getElementById('navToggle');
+  const panel = document.getElementById('navMobilePanel');
+  if (!toggle || !panel) return;
+
+  function closeMenu() {
+    panel.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  function openMenu() {
+    panel.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  toggle.addEventListener('click', () => {
+    const isOpen = panel.classList.contains('open');
+    isOpen ? closeMenu() : openMenu();
+  });
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+})();
+
+// ── REVEAL ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+</body></html>
