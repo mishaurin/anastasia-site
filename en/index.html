@@ -826,7 +826,6 @@ footer {
   "image": "https://anastasiamishurina.com/photos/about/1.jpg",
   "description": "Luxury bridal hair & makeup for destination weddings in France. Based in Lyon, Anastasia travels across France and Europe for weddings, events and editorial work.",
   "url": "https://anastasiamishurina.com/en/",
-  "telephone": "+33745713679",
   "email": "aemishurina@gmail.com",
   "address": {
     "@type": "PostalAddress",
@@ -1343,11 +1342,7 @@ footer {
     </h2>
     <div class="contact-detail">
       <div class="c-label">Email</div>
-      <div class="c-value"><a href="mailto:aemishurina@gmail.com">aemishurina@gmail.com</a></div>
-    </div>
-    <div class="contact-detail">
-      <div class="c-label">Phone</div>
-      <div class="c-value"><a href="tel:+33745713679">+33 74 571 36 79</a></div>
+      <div class="c-value"><a href="#" id="contactEmail"></a></div>
     </div>
     <div class="contact-detail">
       <div class="c-label">Location</div>
@@ -1414,6 +1409,17 @@ footer {
 </footer>
 
 <script>
+// ── CONTACT EMAIL (assembled at runtime so it never appears as plain text
+// in the page source, deterring basic scrapers from harvesting it) ──
+const CONTACT_EMAIL = ['aemishurina', 'gmail.com'].join('@');
+(function() {
+  const link = document.getElementById('contactEmail');
+  if (link) {
+    link.href = 'mailto:' + CONTACT_EMAIL;
+    link.textContent = CONTACT_EMAIL;
+  }
+})();
+
 // ── PHOTOS from photos.json ──
 async function loadPortfolio() {
   try {
@@ -1464,6 +1470,8 @@ async function loadPortfolio() {
                alt="${caption}"
                loading="lazy"
                draggable="false"
+               width="${p.w || 800}"
+               height="${p.h || 1000}"
                style="width:100%;height:auto;display:block"
                onerror="this.style.display='none'">
         </div>
@@ -1823,7 +1831,7 @@ function alertFormError(form) {
     note.style.cssText = 'font-size:11px;color:#B23A3A;text-align:center;line-height:1.65;margin-top:12px';
     form.querySelector('.f-submit').appendChild(note);
   }
-  note.textContent = "L'envoi a échoué. Réessayez, ou écrivez directement à aemishurina@gmail.com.";
+  note.textContent = "L'envoi a échoué. Réessayez, ou écrivez directement à " + CONTACT_EMAIL + ".";
 }
 
 // ── FAQ ──
