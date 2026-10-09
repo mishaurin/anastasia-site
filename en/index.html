@@ -1822,7 +1822,8 @@ function handleSubmit(e) {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams(new FormData(form)).toString()
   })
-    .then(() => {
+    .then((res) => {
+      if (!res.ok) throw new Error('Netlify Forms responded with ' + res.status);
       window.location.href = THANK_YOU_URL;
     })
     .catch(() => {
