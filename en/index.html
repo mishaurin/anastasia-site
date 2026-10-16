@@ -8,9 +8,17 @@
 <meta property="og:description" content="Luxury bridal hair &amp; makeup for destination weddings in France. Based in Lyon, Anastasia travels across France and Europe for weddings, events and editorial work.">
 <meta property="og:type" content="website"><meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://anastasiamishurina.com/en/">
+<meta property="og:site_name" content="Anastasia Mishurina">
+<meta property="og:image" content="https://anastasiamishurina.com/photos/og/og-cover.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bride in a white gown — makeup by Anastasia Mishurina">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://anastasiamishurina.com/en/"><link rel="alternate" hreflang="fr" href="https://anastasiamishurina.com/"><link rel="alternate" hreflang="en" href="https://anastasiamishurina.com/en/"><link rel="alternate" hreflang="x-default" href="https://anastasiamishurina.com/">
 <meta name="description" content="Luxury bridal hair &amp; makeup for destination weddings in France. Based in Lyon, Anastasia travels across France and Europe for weddings, events and editorial work.">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&amp;family=Nunito:wght@200;300;400;500&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Nunito:wght@300;400;500&amp;display=swap" rel="stylesheet">
 <style>
 :root {
   --white:     #FFFFFF;
@@ -238,6 +246,12 @@ nav {
   color: var(--ink); line-height: 1.4;
 }
 .intro-tagline em { color: var(--blue-deep); font-style: normal; }
+.intro-text { display: flex; flex-direction: column; gap: 18px; }
+.intro-h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 10px; font-weight: 400; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--blue-deep); line-height: 1.7;
+}
 .intro-proof { display: flex; align-items: center; gap: 32px; }
 .intro-divider { width: 1px; height: 72px; background: var(--blue-mid); flex-shrink: 0; }
 .intro-meta { display: flex; flex-direction: column; gap: 14px; }
@@ -821,32 +835,137 @@ footer {
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Anastasia Mishurina",
-  "image": "https://anastasiamishurina.com/photos/about/1.jpg",
-  "description": "Luxury bridal hair & makeup for destination weddings in France. Based in Lyon, Anastasia travels across France and Europe for weddings, events and editorial work.",
-  "url": "https://anastasiamishurina.com/en/",
-  "email": "aemishurina@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Lyon",
-    "addressCountry": "FR"
-  },
-  "areaServed": [
-    "Lyon",
-    "France",
-    "Europe"
-  ],
-  "serviceType": [
-    "Wedding makeup",
-    "Gala makeup",
-    "TV makeup",
-    "Photo shoot makeup"
-  ],
-  "sameAs": [
-    "https://www.instagram.com/anastasiamishurina/"
-  ],
-  "inLanguage": "en-US"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://anastasiamishurina.com/#website",
+      "url": "https://anastasiamishurina.com/",
+      "name": "Anastasia Mishurina",
+      "inLanguage": [
+        "fr-FR",
+        "en"
+      ],
+      "publisher": {
+        "@id": "https://anastasiamishurina.com/#business"
+      }
+    },
+    {
+      "@type": "HealthAndBeautyBusiness",
+      "@id": "https://anastasiamishurina.com/#business",
+      "name": "Anastasia Mishurina",
+      "url": "https://anastasiamishurina.com/",
+      "description": "Makeup artist and hair stylist based in Lyon, France, with over 10 years of experience: bridal makeup and hair, destination weddings, events and galas, TV and editorial work across France and Europe.",
+      "image": [
+        "https://anastasiamishurina.com/photos/og/og-cover.jpg",
+        "https://anastasiamishurina.com/photos/about/1.jpg"
+      ],
+      "email": "aemishurina@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lyon",
+        "addressRegion": "Auvergne-Rhône-Alpes",
+        "addressCountry": "FR"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lyon"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Auvergne-Rhône-Alpes"
+        },
+        {
+          "@type": "Country",
+          "name": "France"
+        },
+        {
+          "@type": "Place",
+          "name": "Europe"
+        }
+      ],
+      "founder": {
+        "@id": "https://anastasiamishurina.com/#anastasia"
+      },
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Bridal makeup"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Bridal hairstyling"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Bridal makeup trial"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Event and gala makeup"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "TV makeup"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Photo shoot and editorial makeup"
+          }
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/anastasiamishurina/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://anastasiamishurina.com/#anastasia",
+      "name": "Anastasia Mishurina",
+      "jobTitle": "Makeup artist and hair stylist",
+      "image": "https://anastasiamishurina.com/photos/about/1.jpg",
+      "worksFor": {
+        "@id": "https://anastasiamishurina.com/#business"
+      },
+      "workLocation": {
+        "@type": "City",
+        "name": "Lyon"
+      },
+      "sameAs": [
+        "https://www.instagram.com/anastasiamishurina/"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://anastasiamishurina.com/en/#webpage",
+      "url": "https://anastasiamishurina.com/en/",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://anastasiamishurina.com/#website"
+      },
+      "about": {
+        "@id": "https://anastasiamishurina.com/#business"
+      },
+      "primaryImageOfPage": "https://anastasiamishurina.com/photos/og/og-cover.jpg"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -918,6 +1037,14 @@ footer {
         "@type": "Answer",
         "text": "Yes, of course. For weddings and events bringing several people together, I can take care of the beauty preparation for multiple guests and bring in a trusted assistant if needed. The number of people, the schedule, and everyone's needs are worked out in advance to build a smooth timeline and ensure a calm, unhurried preparation."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you also create hairstyles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I offer the complete look, makeup and hairstyling, for the bride, her family and guests, and for events. I don't offer haircuts or colouring: my work focuses on styling your hair for the day itself, designed together with your dress and your makeup."
+      }
     }
   ]
 }
@@ -957,7 +1084,24 @@ footer {
 
 <!-- HERO CAROUSEL (слайды рендерятся из hero.json скриптом внизу страницы) -->
 <section id="hero">
-  <div class="slides-wrap" id="slidesWrap"></div>
+  <div class="slides-wrap" id="slidesWrap">
+    <!-- Первый слайд стоит прямо в HTML, чтобы картинка грузилась сразу (LCP).
+         Если меняете первый слайд в hero.json — поменяйте файл и тексты и здесь. -->
+    <div class="slide active" data-static="1">
+      <img src="/photos/hero/Hero1.jpeg" alt="Anastasia Mishurina — Timeless Weddings" class="slide-bg" draggable="false" fetchpriority="high"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="slide-placeholder" style="display:none">
+        <svg viewBox="0 0 24 24" width="32" style="stroke:rgba(255,255,255,0.3);fill:none"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      </div>
+      <div class="slide-text">
+        <div>
+          <div class="slide-category">01</div>
+          <div class="slide-num-line"></div>
+          <div class="slide-title-text"><span class="headline">Timeless Weddings</span><em>For the moments that matter most.</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Arrows -->
   <div class="carousel-arrows">
@@ -977,9 +1121,11 @@ footer {
 
 <!-- INTRO STRIP -->
 <div class="intro-strip reveal">
-  <div class="intro-tagline">
-
-    I believe every woman deserves to feel<br><em>radiant</em> — truly herself, only more so.
+  <div class="intro-text">
+    <h1 class="intro-h1">Wedding &amp; destination wedding makeup artist · Lyon, France</h1>
+    <div class="intro-tagline">
+      I believe every woman deserves to feel<br><em>radiant</em> — truly herself, only more so.
+    </div>
   </div>
   <div class="intro-proof">
   <div class="intro-divider"></div>
@@ -1320,6 +1466,19 @@ footer {
       </div>
     </div>
 
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-answer-9" id="faq-question-9">
+        <span class="faq-num">09</span>
+        <span class="faq-q-text">Do you also create hairstyles?</span>
+        <span class="faq-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq-answer" id="faq-answer-9" role="region" aria-labelledby="faq-question-9">
+        <div class="faq-answer-inner">
+          <div class="faq-answer-text">Yes. I offer the complete look, makeup and hairstyling, for the bride, her family and guests, and for events. I don't offer haircuts or colouring: my work focuses on styling your hair for the day itself, designed together with your dress and your makeup.</div>
+        </div>
+      </div>
+    </div>
+
     <div class="faq-cta">
       <div class="faq-cta-title">Still have a question?</div>
       <p class="faq-cta-text">I'd be happy to talk through the details with you.</p>
@@ -1360,6 +1519,7 @@ footer {
       Let's talk about your event —<br><span>I'll reply to you personally within 48h.</span>
     </div>
     <form class="contact-form" name="contact-en" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/en/thank-you/" onsubmit="handleSubmit(event)"><input type="hidden" name="form-name" value="contact-en">
+      <input type="hidden" name="source" id="formSource">
       <p hidden><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
       <div class="f-field">
         <label class="f-label">Your first name</label>
@@ -1588,7 +1748,10 @@ function renderHero() {
   const heroSlides = window._heroSlides;
   if (!wrap || !heroSlides) return;
   const lang = 'en';
-  wrap.innerHTML = heroSlides.map((raw, i) => {
+  // Первый слайд уже есть в HTML (data-static) — не перерисовываем его, добавляем остальные.
+  const staticSlide = wrap.querySelector('.slide[data-static]');
+  const html = heroSlides.map((raw, i) => {
+    if (staticSlide && i === 0) return '';
     const s = raw[lang] || raw.fr;
     return `
       <div class="slide${i === 0 ? ' active' : ''}">
@@ -1605,11 +1768,12 @@ function renderHero() {
           <div>
             <div class="slide-category">${raw.num}</div>
             <div class="slide-num-line"></div>
-            <div class="slide-title-text">${i === 0 ? `<h1 class="headline">${s.headline}</h1>` : `<span class="headline">${s.headline}</span>`}<em>${s.tagline}</em></div>
+            <div class="slide-title-text">${i === 0 ? `<span class="headline">${s.headline}</span>` : `<span class="headline">${s.headline}</span>`}<em>${s.tagline}</em></div>
           </div>
         </div>
       </div>`;
   }).join('');
+  if (staticSlide) wrap.insertAdjacentHTML('beforeend', html); else wrap.innerHTML = html;
   initHeroCarousel();
 }
 
@@ -1697,7 +1861,9 @@ function initHeroCarousel() {
   startAuto();
 }
 
-loadHero();
+// Слайды 2–5 подгружаем после загрузки страницы, чтобы они не мешали первому экрану.
+if (document.readyState === 'complete') loadHero();
+else window.addEventListener('load', loadHero);
 
 // ── PRAISE SLIDER ──
 (function(){
@@ -1787,10 +1953,7 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     return `${yyyy}-${mm}-${dd}`;
   }
   const today = new Date();
-  const tomorrow = new Date(today);
-  tomorrow.setDate(today.getDate() + 1);
   dateInput.min = toISODate(today);
-  dateInput.value = toISODate(tomorrow);
 
   // Chrome/Edge/Firefox n'ouvrent le calendrier qu'au clic sur l'icône —
   // on force l'ouverture au clic n'importe où dans le champ.
@@ -1804,6 +1967,25 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
       try { dateInput.showPicker(); } catch (e) {}
     }
   });
+})();
+
+// ── LEAD SOURCE (откуда пришла заявка: utm-метки или сайт-источник) ──
+(function() {
+  const field = document.getElementById('formSource');
+  if (!field) return;
+  const KEY = 'am_source';
+  let src = null;
+  try { src = sessionStorage.getItem(KEY); } catch (e) {}
+  if (!src) {
+    const p = new URLSearchParams(location.search);
+    const utm = ['utm_source', 'utm_medium', 'utm_campaign'].map(k => p.get(k)).filter(Boolean).join(' / ');
+    let ref = '';
+    try { ref = document.referrer ? new URL(document.referrer).hostname : ''; } catch (e) {}
+    if (ref === location.hostname) ref = '';
+    src = (utm || ref || 'direct') + ' → ' + location.pathname;
+    try { sessionStorage.setItem(KEY, src); } catch (e) {}
+  }
+  field.value = src;
 })();
 
 // ── FORM ──

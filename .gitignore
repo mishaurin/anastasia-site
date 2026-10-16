@@ -1,3 +1,7 @@
 .DS_Store
 photos/.DS_Store
 *.test
+
+# Выгрузки Google Search Console — не публиковать
+https___*/
+.claude/settings.local.json

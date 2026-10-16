@@ -1,13 +1,14 @@
 [build]
   publish = "."
 
-# Запрет листинга директорий
+# ── Фото: базовая защита. Индексацию фото НЕ запрещаем (X-Robots-Tag убран),
+#    чтобы работы Анастасии находились в Google Images и превью в соцсетях работали ──
 [[headers]]
   for = "/photos/*"
   [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
     Content-Security-Policy = "default-src 'self'"
     X-Content-Type-Options = "nosniff"
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
 
 # ── Основные заголовки безопасности ──
 [[headers]]
@@ -17,32 +18,6 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
-
-# ── Кэширование фото (быстрая загрузка, но с проверкой обновлений) ──
-[[headers]]
-  for = "/photos/*.jpg"
-  [headers.values]
-    Cache-Control = "public, max-age=3600, must-revalidate"
-
-[[headers]]
-  for = "/photos/*.jpeg"
-  [headers.values]
-    Cache-Control = "public, max-age=3600, must-revalidate"
-
-[[headers]]
-  for = "/photos/*.png"
-  [headers.values]
-    Cache-Control = "public, max-age=3600, must-revalidate"
-
-[[headers]]
-  for = "/photos/*.JPG"
-  [headers.values]
-    Cache-Control = "public, max-age=3600, must-revalidate"
-
-[[headers]]
-  for = "/photos/*.JPEG"
-  [headers.values]
-    Cache-Control = "public, max-age=3600, must-revalidate"
 
 # ── HTML и JSON всегда свежие ──
 [[headers]]
@@ -55,9 +30,44 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
-# ── Редирект www → без www ──
+[[headers]]
+  for = "/hero.json"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ── Служебные файлы репозитория не должны открываться на сайте ──
 [[redirects]]
-  from = "https://www.anastasiamishurina.fr/*"
-  to = "https://anastasiamishurina.fr/:splat"
-  status = 301
+  from = "/README.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/check-photos.js*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/docs/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.claude/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.impeccable/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/https___*"
+  to = "/404.html"
+  status = 404
   force = true
